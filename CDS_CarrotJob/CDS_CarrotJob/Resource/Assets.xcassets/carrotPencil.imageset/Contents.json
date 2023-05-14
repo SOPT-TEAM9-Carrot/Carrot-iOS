@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "carrotPencil.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
