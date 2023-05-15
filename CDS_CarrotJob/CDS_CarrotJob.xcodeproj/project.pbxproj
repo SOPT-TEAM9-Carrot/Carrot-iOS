@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		586BF3002A113B08002AD443 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF2FF2A113B08002AD443 /* UIImage+Extension.swift */; };
+		586BF3022A114204002AD443 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF3012A114204002AD443 /* UIFont+Extension.swift */; };
+		58D304E12A11F174005E04CB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 58D304E02A11F174005E04CB /* .swiftlint.yml */; };
 		D3D03F762A10D9B9005AEE77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D03F752A10D9B9005AEE77 /* AppDelegate.swift */; };
 		D3D03F782A10D9B9005AEE77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D03F772A10D9B9005AEE77 /* SceneDelegate.swift */; };
 		D3D03F7A2A10D9B9005AEE77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D03F792A10D9B9005AEE77 /* ViewController.swift */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		586BF2FF2A113B08002AD443 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		586BF3012A114204002AD443 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		58D304E02A11F174005E04CB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		D3D03F722A10D9B9005AEE77 /* CDS_CarrotJob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CDS_CarrotJob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D03F752A10D9B9005AEE77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3D03F772A10D9B9005AEE77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +52,7 @@
 		D3D03F692A10D9B9005AEE77 = {
 			isa = PBXGroup;
 			children = (
+				58D304E02A11F174005E04CB /* .swiftlint.yml */,
 				D3D03F742A10D9B9005AEE77 /* CDS_CarrotJob */,
 				D3D03F732A10D9B9005AEE77 /* Products */,
 			);
@@ -156,6 +163,8 @@
 		D3D03FA42A10DDD0005AEE77 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				586BF2FF2A113B08002AD443 /* UIImage+Extension.swift */,
+				586BF3012A114204002AD443 /* UIFont+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -167,6 +176,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D3D03F862A10D9BA005AEE77 /* Build configuration list for PBXNativeTarget "CDS_CarrotJob" */;
 			buildPhases = (
+				58143BC12A11ED490088A558 /* ShellScript */,
 				D3D03F6E2A10D9B9005AEE77 /* Sources */,
 				D3D03F6F2A10D9B9005AEE77 /* Frameworks */,
 				D3D03F702A10D9B9005AEE77 /* Resources */,
@@ -230,12 +240,33 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58D304E12A11F174005E04CB /* .swiftlint.yml in Resources */,
 				D3D03F822A10D9BA005AEE77 /* LaunchScreen.storyboard in Resources */,
 				D3D03F7F2A10D9BA005AEE77 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		58143BC12A11ED490088A558 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D3D03F6E2A10D9B9005AEE77 /* Sources */ = {
@@ -245,6 +276,8 @@
 				D3D03F7A2A10D9B9005AEE77 /* ViewController.swift in Sources */,
 				D3D03F762A10D9B9005AEE77 /* AppDelegate.swift in Sources */,
 				D3D03F782A10D9B9005AEE77 /* SceneDelegate.swift in Sources */,
+				586BF3022A114204002AD443 /* UIFont+Extension.swift in Sources */,
+				586BF3002A113B08002AD443 /* UIImage+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
