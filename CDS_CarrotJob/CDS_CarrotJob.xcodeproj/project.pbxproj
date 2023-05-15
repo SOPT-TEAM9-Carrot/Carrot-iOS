@@ -18,12 +18,17 @@
 		037C35EF2A121F5B00FAC78B /* UIImageView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35EE2A121F5B00FAC78B /* UIImageView +.swift */; };
 		037C35F22A12242500FAC78B /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 037C35F12A12242500FAC78B /* Color.xcassets */; };
 		037C35F52A1226C100FAC78B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35F42A1226C100FAC78B /* Color.swift */; };
+		037C35FC2A122A3600FAC78B /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35FB2A122A3600FAC78B /* BaseView.swift */; };
+		037C35FE2A122BCB00FAC78B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35FD2A122BCB00FAC78B /* BaseViewController.swift */; };
+		037C36022A122C6700FAC78B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36012A122C6700FAC78B /* HomeViewController.swift */; };
+		037C36082A122D2500FAC78B /* JobDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36072A122D2500FAC78B /* JobDetailViewController.swift */; };
+		037C360D2A122D5800FAC78B /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C360C2A122D5800FAC78B /* ReviewViewController.swift */; };
+		037C36132A122DA100FAC78B /* ApplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36122A122DA100FAC78B /* ApplyViewController.swift */; };
 		586BF3002A113B08002AD443 /* UIImage +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF2FF2A113B08002AD443 /* UIImage +.swift */; };
 		586BF3022A114204002AD443 /* UIFont +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF3012A114204002AD443 /* UIFont +.swift */; };
 		58D304E12A11F174005E04CB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 58D304E02A11F174005E04CB /* .swiftlint.yml */; };
 		D3D03F762A10D9B9005AEE77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D03F752A10D9B9005AEE77 /* AppDelegate.swift */; };
 		D3D03F782A10D9B9005AEE77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D03F772A10D9B9005AEE77 /* SceneDelegate.swift */; };
-		D3D03F7A2A10D9B9005AEE77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D03F792A10D9B9005AEE77 /* ViewController.swift */; };
 		D3D03F7F2A10D9BA005AEE77 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3D03F7E2A10D9BA005AEE77 /* Image.xcassets */; };
 		D3D03F822A10D9BA005AEE77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D03F802A10D9BA005AEE77 /* LaunchScreen.storyboard */; };
 		D3D03F8B2A10D9E3005AEE77 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D3D03F8A2A10D9E3005AEE77 /* SnapKit */; };
@@ -44,6 +49,12 @@
 		037C35EE2A121F5B00FAC78B /* UIImageView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView +.swift"; sourceTree = "<group>"; };
 		037C35F12A12242500FAC78B /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		037C35F42A1226C100FAC78B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		037C35FB2A122A3600FAC78B /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		037C35FD2A122BCB00FAC78B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		037C36012A122C6700FAC78B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		037C36072A122D2500FAC78B /* JobDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailViewController.swift; sourceTree = "<group>"; };
+		037C360C2A122D5800FAC78B /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		037C36122A122DA100FAC78B /* ApplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyViewController.swift; sourceTree = "<group>"; };
 		586BF2FF2A113B08002AD443 /* UIImage +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage +.swift"; sourceTree = "<group>"; };
 		586BF3012A114204002AD443 /* UIFont +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont +.swift"; sourceTree = "<group>"; };
 		58D304E02A11F174005E04CB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -52,7 +63,6 @@
 		D3D03F722A10D9B9005AEE77 /* CDS_CarrotJob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CDS_CarrotJob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D03F752A10D9B9005AEE77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3D03F772A10D9B9005AEE77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D3D03F792A10D9B9005AEE77 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D3D03F7E2A10D9BA005AEE77 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 		D3D03F812A10D9BA005AEE77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3D03F832A10D9BA005AEE77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -98,6 +108,131 @@
 			path = NameSpace;
 			sourceTree = "<group>";
 		};
+		037C35F62A12297E00FAC78B /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				037C35F72A12298600FAC78B /* Common */,
+				037C35FF2A122C3000FAC78B /* Home */,
+				037C36052A122D0900FAC78B /* JobDetail */,
+				037C360A2A122D4700FAC78B /* Review */,
+				037C36102A122D8C00FAC78B /* Apply */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		037C35F72A12298600FAC78B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				037C35FA2A122A2400FAC78B /* Base */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		037C35FA2A122A2400FAC78B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				037C35FB2A122A3600FAC78B /* BaseView.swift */,
+				037C35FD2A122BCB00FAC78B /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		037C35FF2A122C3000FAC78B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				037C36002A122C5700FAC78B /* ViewController */,
+				037C36032A122CC000FAC78B /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		037C36002A122C5700FAC78B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				037C36012A122C6700FAC78B /* HomeViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		037C36032A122CC000FAC78B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		037C36052A122D0900FAC78B /* JobDetail */ = {
+			isa = PBXGroup;
+			children = (
+				037C36062A122D0F00FAC78B /* ViewController */,
+				037C36092A122D3D00FAC78B /* View */,
+			);
+			path = JobDetail;
+			sourceTree = "<group>";
+		};
+		037C36062A122D0F00FAC78B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				037C36072A122D2500FAC78B /* JobDetailViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		037C36092A122D3D00FAC78B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		037C360A2A122D4700FAC78B /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				037C360B2A122D4E00FAC78B /* ViewController */,
+				037C360F2A122D8400FAC78B /* View */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
+		037C360B2A122D4E00FAC78B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				037C360C2A122D5800FAC78B /* ReviewViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		037C360F2A122D8400FAC78B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		037C36102A122D8C00FAC78B /* Apply */ = {
+			isa = PBXGroup;
+			children = (
+				037C36112A122D9200FAC78B /* ViewController */,
+				037C36142A122DBA00FAC78B /* View */,
+			);
+			path = Apply;
+			sourceTree = "<group>";
+		};
+		037C36112A122D9200FAC78B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				037C36122A122DA100FAC78B /* ApplyViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		037C36142A122DBA00FAC78B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		58D304E22A11FEF9005E04CB /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,10 +264,9 @@
 			children = (
 				D3D03F952A10DC88005AEE77 /* Application */,
 				037C35DD2A121B7400FAC78B /* Network */,
-				D3D03F9A2A10DCE4005AEE77 /* Presentation */,
+				037C35F62A12297E00FAC78B /* Presentation */,
 				D3D03F9B2A10DD01005AEE77 /* Resource */,
 				D3D03F9C2A10DD0D005AEE77 /* Utils */,
-				D3D03F792A10D9B9005AEE77 /* ViewController.swift */,
 				D3D03F802A10D9BA005AEE77 /* LaunchScreen.storyboard */,
 			);
 			path = CDS_CarrotJob;
@@ -145,18 +279,6 @@
 				D3D03F772A10D9B9005AEE77 /* SceneDelegate.swift */,
 			);
 			path = Application;
-			sourceTree = "<group>";
-		};
-		D3D03F9A2A10DCE4005AEE77 /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				D3D03F9D2A10DD30005AEE77 /* Common */,
-				D3D03F9E2A10DD37005AEE77 /* Home */,
-				D3D03FA02A10DD5F005AEE77 /* JobDetail */,
-				D3D03FA12A10DD6D005AEE77 /* Review */,
-				D3D03FA22A10DD75005AEE77 /* Apply */,
-			);
-			path = Presentation;
 			sourceTree = "<group>";
 		};
 		D3D03F9B2A10DD01005AEE77 /* Resource */ = {
@@ -176,41 +298,6 @@
 				D3D03FA42A10DDD0005AEE77 /* Extension */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		D3D03F9D2A10DD30005AEE77 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		D3D03F9E2A10DD37005AEE77 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		D3D03FA02A10DD5F005AEE77 /* JobDetail */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = JobDetail;
-			sourceTree = "<group>";
-		};
-		D3D03FA12A10DD6D005AEE77 /* Review */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Review;
-			sourceTree = "<group>";
-		};
-		D3D03FA22A10DD75005AEE77 /* Apply */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Apply;
 			sourceTree = "<group>";
 		};
 		D3D03FA42A10DDD0005AEE77 /* Extension */ = {
@@ -335,13 +422,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3D03F7A2A10D9B9005AEE77 /* ViewController.swift in Sources */,
 				D3D03F762A10D9B9005AEE77 /* AppDelegate.swift in Sources */,
 				D3D03F782A10D9B9005AEE77 /* SceneDelegate.swift in Sources */,
+				037C360D2A122D5800FAC78B /* ReviewViewController.swift in Sources */,
 				037C35E12A121E2400FAC78B /* NSObject +.swift in Sources */,
 				037C35DF2A121B8600FAC78B /* NetworkResult.swift in Sources */,
+				037C36022A122C6700FAC78B /* HomeViewController.swift in Sources */,
 				037C35E52A121E7C00FAC78B /* UITextField +.swift in Sources */,
 				037C35ED2A121F3300FAC78B /* String +.swift in Sources */,
+				037C36082A122D2500FAC78B /* JobDetailViewController.swift in Sources */,
+				037C35FE2A122BCB00FAC78B /* BaseViewController.swift in Sources */,
 				037C35EB2A121EBD00FAC78B /* UICollectionView +.swift in Sources */,
 				037C35F52A1226C100FAC78B /* Color.swift in Sources */,
 				037C35E72A121E9800FAC78B /* UIStackView +.swift in Sources */,
@@ -349,7 +439,9 @@
 				037C35E32A121E6200FAC78B /* UIView +.swift in Sources */,
 				586BF3022A114204002AD443 /* UIFont +.swift in Sources */,
 				037C35E92A121EAD00FAC78B /* UITableView +.swift in Sources */,
+				037C36132A122DA100FAC78B /* ApplyViewController.swift in Sources */,
 				586BF3002A113B08002AD443 /* UIImage +.swift in Sources */,
+				037C35FC2A122A3600FAC78B /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
