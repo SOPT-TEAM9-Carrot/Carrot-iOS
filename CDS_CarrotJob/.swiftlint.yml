@@ -1,0 +1,21 @@
+# Removed rules from original rules
+disabled_rules:
+ - function_parameter_count
+ - line_length
+ - trailing_whitespace
+ - discouraged_direct_init
+# Added rules from original rules
+opt_in_rules:
+ - empty_count
+ - empty_string
+included:
+ - CDS_CarrotJob
+excluded:
+ - Carthage
+ - Pods
+ - CDS_CarrotJob/Application
+ - CDS_CarrotJob/Utils/Extension/UIFont+Extension.swift
+
+# Customized Rules
+file_length: 600
+type_body_length: 350
