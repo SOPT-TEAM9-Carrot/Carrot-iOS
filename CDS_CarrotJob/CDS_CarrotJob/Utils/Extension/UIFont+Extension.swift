@@ -14,7 +14,7 @@ extension UIFont {
     }
     
     enum NotoSansFamily: String {
-        case medium, bold
+        case Medium, Bold
     }
     
     enum NotoSansFontSize: CGFloat {
