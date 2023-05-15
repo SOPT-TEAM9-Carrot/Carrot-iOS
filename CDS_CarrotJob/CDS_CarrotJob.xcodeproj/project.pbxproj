@@ -25,6 +25,8 @@
 		586BF2FF2A113B08002AD443 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		586BF3012A114204002AD443 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		58D304E02A11F174005E04CB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		58D304E32A11FF0A005E04CB /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
+		58D304E42A11FF0A005E04CB /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		D3D03F722A10D9B9005AEE77 /* CDS_CarrotJob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CDS_CarrotJob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D03F752A10D9B9005AEE77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3D03F772A10D9B9005AEE77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58D304E22A11FEF9005E04CB /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				58D304E42A11FF0A005E04CB /* NotoSansKR-Bold.otf */,
+				58D304E32A11FF0A005E04CB /* NotoSansKR-Medium.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		D3D03F692A10D9B9005AEE77 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +122,7 @@
 		D3D03F9B2A10DD01005AEE77 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				58D304E22A11FEF9005E04CB /* Font */,
 				D3D03F7E2A10D9BA005AEE77 /* Assets.xcassets */,
 				D3D03F832A10D9BA005AEE77 /* Info.plist */,
 			);
