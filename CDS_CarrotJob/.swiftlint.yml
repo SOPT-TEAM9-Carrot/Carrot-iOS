@@ -17,7 +17,7 @@ excluded:
  - CDS_CarrotJob/Utils/Extension/UIFont +.swift
  - CDS_CarrotJob/Utils/Extension/UICollectionView +.swift
  - CDS_CarrotJob/Utils/Extension/UITableView +.swift
-
+ - CDS_CarrotJob/Utils/NameSpace/Color.swift
 # Customized Rules
 file_length: 600
 type_body_length: 350

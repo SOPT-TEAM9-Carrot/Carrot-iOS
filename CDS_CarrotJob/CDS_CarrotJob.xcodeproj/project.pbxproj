@@ -16,13 +16,15 @@
 		037C35EB2A121EBD00FAC78B /* UICollectionView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35EA2A121EBD00FAC78B /* UICollectionView +.swift */; };
 		037C35ED2A121F3300FAC78B /* String +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35EC2A121F3300FAC78B /* String +.swift */; };
 		037C35EF2A121F5B00FAC78B /* UIImageView +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35EE2A121F5B00FAC78B /* UIImageView +.swift */; };
-		586BF3002A113B08002AD443 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF2FF2A113B08002AD443 /* UIImage+Extension.swift */; };
+		037C35F22A12242500FAC78B /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 037C35F12A12242500FAC78B /* Color.xcassets */; };
+		037C35F52A1226C100FAC78B /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35F42A1226C100FAC78B /* Color.swift */; };
+		586BF3002A113B08002AD443 /* UIImage +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF2FF2A113B08002AD443 /* UIImage +.swift */; };
 		586BF3022A114204002AD443 /* UIFont +.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF3012A114204002AD443 /* UIFont +.swift */; };
 		58D304E12A11F174005E04CB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 58D304E02A11F174005E04CB /* .swiftlint.yml */; };
 		D3D03F762A10D9B9005AEE77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D03F752A10D9B9005AEE77 /* AppDelegate.swift */; };
 		D3D03F782A10D9B9005AEE77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D03F772A10D9B9005AEE77 /* SceneDelegate.swift */; };
 		D3D03F7A2A10D9B9005AEE77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D03F792A10D9B9005AEE77 /* ViewController.swift */; };
-		D3D03F7F2A10D9BA005AEE77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3D03F7E2A10D9BA005AEE77 /* Assets.xcassets */; };
+		D3D03F7F2A10D9BA005AEE77 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3D03F7E2A10D9BA005AEE77 /* Image.xcassets */; };
 		D3D03F822A10D9BA005AEE77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3D03F802A10D9BA005AEE77 /* LaunchScreen.storyboard */; };
 		D3D03F8B2A10D9E3005AEE77 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D3D03F8A2A10D9E3005AEE77 /* SnapKit */; };
 		D3D03F8E2A10D9EF005AEE77 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = D3D03F8D2A10D9EF005AEE77 /* Then */; };
@@ -40,7 +42,9 @@
 		037C35EA2A121EBD00FAC78B /* UICollectionView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView +.swift"; sourceTree = "<group>"; };
 		037C35EC2A121F3300FAC78B /* String +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String +.swift"; sourceTree = "<group>"; };
 		037C35EE2A121F5B00FAC78B /* UIImageView +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView +.swift"; sourceTree = "<group>"; };
-		586BF2FF2A113B08002AD443 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		037C35F12A12242500FAC78B /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		037C35F42A1226C100FAC78B /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		586BF2FF2A113B08002AD443 /* UIImage +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage +.swift"; sourceTree = "<group>"; };
 		586BF3012A114204002AD443 /* UIFont +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont +.swift"; sourceTree = "<group>"; };
 		58D304E02A11F174005E04CB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		58D304E32A11FF0A005E04CB /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
@@ -49,7 +53,7 @@
 		D3D03F752A10D9B9005AEE77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3D03F772A10D9B9005AEE77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D3D03F792A10D9B9005AEE77 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D3D03F7E2A10D9BA005AEE77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D3D03F7E2A10D9BA005AEE77 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 		D3D03F812A10D9BA005AEE77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3D03F832A10D9BA005AEE77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +79,23 @@
 				037C35DE2A121B8600FAC78B /* NetworkResult.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		037C35F02A12240600FAC78B /* AssetCatalog */ = {
+			isa = PBXGroup;
+			children = (
+				D3D03F7E2A10D9BA005AEE77 /* Image.xcassets */,
+				037C35F12A12242500FAC78B /* Color.xcassets */,
+			);
+			path = AssetCatalog;
+			sourceTree = "<group>";
+		};
+		037C35F32A12269600FAC78B /* NameSpace */ = {
+			isa = PBXGroup;
+			children = (
+				037C35F42A1226C100FAC78B /* Color.swift */,
+			);
+			path = NameSpace;
 			sourceTree = "<group>";
 		};
 		58D304E22A11FEF9005E04CB /* Font */ = {
@@ -141,8 +162,8 @@
 		D3D03F9B2A10DD01005AEE77 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				037C35F02A12240600FAC78B /* AssetCatalog */,
 				58D304E22A11FEF9005E04CB /* Font */,
-				D3D03F7E2A10D9BA005AEE77 /* Assets.xcassets */,
 				D3D03F832A10D9BA005AEE77 /* Info.plist */,
 			);
 			path = Resource;
@@ -151,6 +172,7 @@
 		D3D03F9C2A10DD0D005AEE77 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				037C35F32A12269600FAC78B /* NameSpace */,
 				D3D03FA42A10DDD0005AEE77 /* Extension */,
 			);
 			path = Utils;
@@ -194,7 +216,7 @@
 		D3D03FA42A10DDD0005AEE77 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				586BF2FF2A113B08002AD443 /* UIImage+Extension.swift */,
+				586BF2FF2A113B08002AD443 /* UIImage +.swift */,
 				586BF3012A114204002AD443 /* UIFont +.swift */,
 				037C35E02A121E2400FAC78B /* NSObject +.swift */,
 				037C35E22A121E6200FAC78B /* UIView +.swift */,
@@ -280,8 +302,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				58D304E12A11F174005E04CB /* .swiftlint.yml in Resources */,
+				037C35F22A12242500FAC78B /* Color.xcassets in Resources */,
 				D3D03F822A10D9BA005AEE77 /* LaunchScreen.storyboard in Resources */,
-				D3D03F7F2A10D9BA005AEE77 /* Assets.xcassets in Resources */,
+				D3D03F7F2A10D9BA005AEE77 /* Image.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,12 +343,13 @@
 				037C35E52A121E7C00FAC78B /* UITextField +.swift in Sources */,
 				037C35ED2A121F3300FAC78B /* String +.swift in Sources */,
 				037C35EB2A121EBD00FAC78B /* UICollectionView +.swift in Sources */,
+				037C35F52A1226C100FAC78B /* Color.swift in Sources */,
 				037C35E72A121E9800FAC78B /* UIStackView +.swift in Sources */,
 				037C35EF2A121F5B00FAC78B /* UIImageView +.swift in Sources */,
 				037C35E32A121E6200FAC78B /* UIView +.swift in Sources */,
 				586BF3022A114204002AD443 /* UIFont +.swift in Sources */,
 				037C35E92A121EAD00FAC78B /* UITableView +.swift in Sources */,
-				586BF3002A113B08002AD443 /* UIImage+Extension.swift in Sources */,
+				586BF3002A113B08002AD443 /* UIImage +.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
