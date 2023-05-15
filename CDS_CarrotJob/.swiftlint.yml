@@ -14,7 +14,9 @@ excluded:
  - Carthage
  - Pods
  - CDS_CarrotJob/Application
- - CDS_CarrotJob/Utils/Extension/UIFont+Extension.swift
+ - CDS_CarrotJob/Utils/Extension/UIFont +.swift
+ - CDS_CarrotJob/Utils/Extension/UICollectionView +.swift
+ - CDS_CarrotJob/Utils/Extension/UITableView +.swift
 
 # Customized Rules
 file_length: 600
