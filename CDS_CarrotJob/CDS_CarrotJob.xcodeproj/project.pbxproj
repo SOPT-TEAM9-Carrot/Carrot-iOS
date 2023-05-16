@@ -29,6 +29,7 @@
 		037C361D2A13790E00FAC78B /* JobDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C361C2A13790E00FAC78B /* JobDetail.swift */; };
 		037C361F2A13792100FAC78B /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C361E2A13792100FAC78B /* Review.swift */; };
 		037C36212A13792800FAC78B /* Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36202A13792800FAC78B /* Apply.swift */; };
+		037C36232A137DC300FAC78B /* HomeNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36222A137DC300FAC78B /* HomeNavigationView.swift */; };
 		586BF3002A113B08002AD443 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF2FF2A113B08002AD443 /* UIImage+.swift */; };
 		586BF3022A114204002AD443 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF3012A114204002AD443 /* UIFont+.swift */; };
 		58D304E12A11F174005E04CB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 58D304E02A11F174005E04CB /* .swiftlint.yml */; };
@@ -65,6 +66,7 @@
 		037C361C2A13790E00FAC78B /* JobDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetail.swift; sourceTree = "<group>"; };
 		037C361E2A13792100FAC78B /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		037C36202A13792800FAC78B /* Apply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apply.swift; sourceTree = "<group>"; };
+		037C36222A137DC300FAC78B /* HomeNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationView.swift; sourceTree = "<group>"; };
 		586BF2FF2A113B08002AD443 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		586BF3012A114204002AD443 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		58D304E02A11F174005E04CB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				037C361A2A13790500FAC78B /* Home.swift */,
+				037C36222A137DC300FAC78B /* HomeNavigationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				037C360D2A122D5800FAC78B /* ReviewViewController.swift in Sources */,
 				037C35E12A121E2400FAC78B /* NSObject+.swift in Sources */,
 				037C35DF2A121B8600FAC78B /* NetworkResult.swift in Sources */,
+				037C36232A137DC300FAC78B /* HomeNavigationView.swift in Sources */,
 				037C36022A122C6700FAC78B /* HomeViewController.swift in Sources */,
 				037C35E52A121E7C00FAC78B /* UITextField+.swift in Sources */,
 				037C36162A122EB700FAC78B /* Image.swift in Sources */,
