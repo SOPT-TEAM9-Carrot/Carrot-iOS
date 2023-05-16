@@ -43,4 +43,3 @@ final class AdvertisingButton: UIButton {
         configuration = config
     }
 }
-

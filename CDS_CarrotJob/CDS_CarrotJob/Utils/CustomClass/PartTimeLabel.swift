@@ -50,4 +50,3 @@ final class PartTimeLabel: UILabel {
         font = .notoSansFont(weightOf: .Medium, sizeOf: .font11)
     }
 }
-

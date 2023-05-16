@@ -32,6 +32,9 @@
 		037C36232A137DC300FAC78B /* HomeNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36222A137DC300FAC78B /* HomeNavigationView.swift */; };
 		037C36262A138C0600FAC78B /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 037C36242A138C0600FAC78B /* NotoSansKR-Bold.otf */; };
 		037C36272A138C0600FAC78B /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 037C36252A138C0600FAC78B /* NotoSansKR-Medium.otf */; };
+		037C362B2A139BD800FAC78B /* PartTimeJobCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C362A2A139BD800FAC78B /* PartTimeJobCollectionViewCell.swift */; };
+		037C36302A13A56300FAC78B /* AdvertisingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C362F2A13A56300FAC78B /* AdvertisingButton.swift */; };
+		037C36322A13B0B300FAC78B /* PartTimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36312A13B0B300FAC78B /* PartTimeLabel.swift */; };
 		586BF3002A113B08002AD443 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF2FF2A113B08002AD443 /* UIImage+.swift */; };
 		586BF3022A114204002AD443 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF3012A114204002AD443 /* UIFont+.swift */; };
 		58D304E12A11F174005E04CB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 58D304E02A11F174005E04CB /* .swiftlint.yml */; };
@@ -71,6 +74,9 @@
 		037C36222A137DC300FAC78B /* HomeNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationView.swift; sourceTree = "<group>"; };
 		037C36242A138C0600FAC78B /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		037C36252A138C0600FAC78B /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
+		037C362A2A139BD800FAC78B /* PartTimeJobCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartTimeJobCollectionViewCell.swift; sourceTree = "<group>"; };
+		037C362F2A13A56300FAC78B /* AdvertisingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisingButton.swift; sourceTree = "<group>"; };
+		037C36312A13B0B300FAC78B /* PartTimeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartTimeLabel.swift; sourceTree = "<group>"; };
 		586BF2FF2A113B08002AD443 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		586BF3012A114204002AD443 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		58D304E02A11F174005E04CB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -157,6 +163,7 @@
 			children = (
 				037C36002A122C5700FAC78B /* ViewController */,
 				037C36032A122CC000FAC78B /* View */,
+				037C36292A139BA700FAC78B /* Cell */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -253,6 +260,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		037C36292A139BA700FAC78B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				037C362A2A139BD800FAC78B /* PartTimeJobCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		037C362E2A13A55300FAC78B /* CustomClass */ = {
+			isa = PBXGroup;
+			children = (
+				037C362F2A13A56300FAC78B /* AdvertisingButton.swift */,
+				037C36312A13B0B300FAC78B /* PartTimeLabel.swift */,
+			);
+			path = CustomClass;
+			sourceTree = "<group>";
+		};
 		58D304E22A11FEF9005E04CB /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +338,7 @@
 		D3D03F9C2A10DD0D005AEE77 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				037C362E2A13A55300FAC78B /* CustomClass */,
 				037C35F32A12269600FAC78B /* NameSpace */,
 				D3D03FA42A10DDD0005AEE77 /* Extension */,
 			);
@@ -445,10 +470,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3D03F762A10D9B9005AEE77 /* AppDelegate.swift in Sources */,
+				037C362B2A139BD800FAC78B /* PartTimeJobCollectionViewCell.swift in Sources */,
 				D3D03F782A10D9B9005AEE77 /* SceneDelegate.swift in Sources */,
 				037C360D2A122D5800FAC78B /* ReviewViewController.swift in Sources */,
 				037C35E12A121E2400FAC78B /* NSObject+.swift in Sources */,
 				037C35DF2A121B8600FAC78B /* NetworkResult.swift in Sources */,
+				037C36302A13A56300FAC78B /* AdvertisingButton.swift in Sources */,
 				037C36232A137DC300FAC78B /* HomeNavigationView.swift in Sources */,
 				037C36022A122C6700FAC78B /* HomeViewController.swift in Sources */,
 				037C35E52A121E7C00FAC78B /* UITextField+.swift in Sources */,
@@ -458,6 +485,7 @@
 				037C35FE2A122BCB00FAC78B /* BaseViewController.swift in Sources */,
 				037C35EB2A121EBD00FAC78B /* UICollectionView+.swift in Sources */,
 				037C35F52A1226C100FAC78B /* Color.swift in Sources */,
+				037C36322A13B0B300FAC78B /* PartTimeLabel.swift in Sources */,
 				037C35E72A121E9800FAC78B /* UIStackView+.swift in Sources */,
 				037C361B2A13790500FAC78B /* Home.swift in Sources */,
 				037C361D2A13790E00FAC78B /* JobDetail.swift in Sources */,
