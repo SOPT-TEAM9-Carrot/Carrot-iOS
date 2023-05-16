@@ -18,7 +18,8 @@ final class HomeNavigationView: UIView {
     private let carrotJobLabel = UILabel()
     private let profileButton = UIButton()
     private let writingButton = UIButton()
-    private let searchTextField = UITextField()
+    private let searchBar = UITextField()
+//    private let searchBar = UISearchBar()
     private let lineView = UIView()
     
     // MARK: - View Life Cycle
@@ -61,14 +62,27 @@ extension HomeNavigationView {
             $0.setImage(UIImage.loadImageOf(carrotImageName: .carrotPencil), for: .normal)
         }
         
-        searchTextField.do {
+        searchBar.do {
             $0.backgroundColor = Color.gray7
-            $0.placeholder = "'어린이날 알바' 찾아보기"
-            $0.setPlaceholderColor(placeholderColor: Color.gray5)
-            $0.font = .notoSansFont(weightOf: .Medium, sizeOf: .font14)
-            $0.layer.cornerRadius = 6
-            $0.setLeftPaddingPoints(10)
+               $0.placeholder = "'어린이날 알바' 찾아보기"
+               $0.setPlaceholderColor(placeholderColor: Color.gray5)
+               $0.font = .notoSansFont(weightOf: .Medium, sizeOf: .font14)
+               $0.layer.cornerRadius = 6
+               $0.setLeftPaddingPoints(10)
         }
+        
+//        searchBar.do {
+//            let placeholder = "'어린이날 알바' 찾아보기"
+//            let attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [
+//                NSAttributedString.Key.font: UIFont.notoSansFont(weightOf: .Medium, sizeOf: .font14)!, // 원하는 폰트 설정
+//                NSAttributedString.Key.foregroundColor: Color.gray5 // 원하는 색상 설정
+//            ])
+//            if let textField = searchBar.value(forKey: "searchField") as? UITextField {
+//                textField.attributedPlaceholder = attributedPlaceholder
+//            }
+//            $0.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
+//            $0.layer.cornerRadius = 6
+//        }
         
         lineView.do {
             $0.backgroundColor = Color.gray7
@@ -80,7 +94,7 @@ extension HomeNavigationView {
     private func setLayout() {
         
         addSubviews(dismissButton, carrotJobLabel, profileButton,
-                    writingButton, searchTextField, lineView)
+                    writingButton, searchBar, lineView)
         
         dismissButton.snp.makeConstraints {
             $0.top.equalToSuperview()
@@ -104,14 +118,14 @@ extension HomeNavigationView {
             $0.top.equalToSuperview()
         }
         
-        searchTextField.snp.makeConstraints {
+        searchBar.snp.makeConstraints {
             $0.top.equalTo(dismissButton.snp.bottom).offset(4)
             $0.leading.trailing.equalToSuperview().inset(17)
             $0.height.equalTo(36)
         }
         
         lineView.snp.makeConstraints {
-            $0.top.equalTo(searchTextField.snp.bottom).offset(8)
+            $0.top.equalTo(searchBar.snp.bottom).offset(8)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(1)
         }
