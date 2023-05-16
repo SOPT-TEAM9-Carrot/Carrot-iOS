@@ -35,6 +35,7 @@
 		037C362B2A139BD800FAC78B /* PartTimeJobCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C362A2A139BD800FAC78B /* PartTimeJobCollectionViewCell.swift */; };
 		037C36302A13A56300FAC78B /* AdvertisingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C362F2A13A56300FAC78B /* AdvertisingButton.swift */; };
 		037C36322A13B0B300FAC78B /* PartTimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36312A13B0B300FAC78B /* PartTimeLabel.swift */; };
+		037C36362A13B99A00FAC78B /* PartTimeJobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36352A13B99A00FAC78B /* PartTimeJobModel.swift */; };
 		586BF3002A113B08002AD443 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF2FF2A113B08002AD443 /* UIImage+.swift */; };
 		586BF3022A114204002AD443 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF3012A114204002AD443 /* UIFont+.swift */; };
 		58D304E12A11F174005E04CB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 58D304E02A11F174005E04CB /* .swiftlint.yml */; };
@@ -77,6 +78,7 @@
 		037C362A2A139BD800FAC78B /* PartTimeJobCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartTimeJobCollectionViewCell.swift; sourceTree = "<group>"; };
 		037C362F2A13A56300FAC78B /* AdvertisingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisingButton.swift; sourceTree = "<group>"; };
 		037C36312A13B0B300FAC78B /* PartTimeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartTimeLabel.swift; sourceTree = "<group>"; };
+		037C36352A13B99A00FAC78B /* PartTimeJobModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartTimeJobModel.swift; sourceTree = "<group>"; };
 		586BF2FF2A113B08002AD443 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		586BF3012A114204002AD443 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		58D304E02A11F174005E04CB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -277,6 +279,22 @@
 			path = CustomClass;
 			sourceTree = "<group>";
 		};
+		037C36332A13B98600FAC78B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				037C36342A13B98D00FAC78B /* Model */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		037C36342A13B98D00FAC78B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				037C36352A13B99A00FAC78B /* PartTimeJobModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		58D304E22A11FEF9005E04CB /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				D3D03F952A10DC88005AEE77 /* Application */,
+				037C36332A13B98600FAC78B /* Data */,
 				037C35DD2A121B7400FAC78B /* Network */,
 				037C35F62A12297E00FAC78B /* Presentation */,
 				D3D03F9B2A10DD01005AEE77 /* Resource */,
@@ -496,6 +515,7 @@
 				586BF3022A114204002AD443 /* UIFont+.swift in Sources */,
 				037C35E92A121EAD00FAC78B /* UITableView+.swift in Sources */,
 				037C36132A122DA100FAC78B /* ApplyViewController.swift in Sources */,
+				037C36362A13B99A00FAC78B /* PartTimeJobModel.swift in Sources */,
 				586BF3002A113B08002AD443 /* UIImage+.swift in Sources */,
 				037C35FC2A122A3600FAC78B /* BaseView.swift in Sources */,
 			);
