@@ -36,6 +36,7 @@
 		037C36302A13A56300FAC78B /* AdvertisingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C362F2A13A56300FAC78B /* AdvertisingButton.swift */; };
 		037C36322A13B0B300FAC78B /* PartTimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36312A13B0B300FAC78B /* PartTimeLabel.swift */; };
 		037C36362A13B99A00FAC78B /* PartTimeJobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36352A13B99A00FAC78B /* PartTimeJobModel.swift */; };
+		037C36382A13BC3400FAC78B /* PartTimeJobCellTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36372A13BC3400FAC78B /* PartTimeJobCellTestViewController.swift */; };
 		586BF3002A113B08002AD443 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF2FF2A113B08002AD443 /* UIImage+.swift */; };
 		586BF3022A114204002AD443 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF3012A114204002AD443 /* UIFont+.swift */; };
 		58D304E12A11F174005E04CB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 58D304E02A11F174005E04CB /* .swiftlint.yml */; };
@@ -79,6 +80,7 @@
 		037C362F2A13A56300FAC78B /* AdvertisingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisingButton.swift; sourceTree = "<group>"; };
 		037C36312A13B0B300FAC78B /* PartTimeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartTimeLabel.swift; sourceTree = "<group>"; };
 		037C36352A13B99A00FAC78B /* PartTimeJobModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartTimeJobModel.swift; sourceTree = "<group>"; };
+		037C36372A13BC3400FAC78B /* PartTimeJobCellTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartTimeJobCellTestViewController.swift; sourceTree = "<group>"; };
 		586BF2FF2A113B08002AD443 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		586BF3012A114204002AD443 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		58D304E02A11F174005E04CB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				037C36012A122C6700FAC78B /* HomeViewController.swift */,
+				037C36372A13BC3400FAC78B /* PartTimeJobCellTestViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				D3D03F762A10D9B9005AEE77 /* AppDelegate.swift in Sources */,
 				037C362B2A139BD800FAC78B /* PartTimeJobCollectionViewCell.swift in Sources */,
 				D3D03F782A10D9B9005AEE77 /* SceneDelegate.swift in Sources */,
+				037C36382A13BC3400FAC78B /* PartTimeJobCellTestViewController.swift in Sources */,
 				037C360D2A122D5800FAC78B /* ReviewViewController.swift in Sources */,
 				037C35E12A121E2400FAC78B /* NSObject+.swift in Sources */,
 				037C35DF2A121B8600FAC78B /* NetworkResult.swift in Sources */,
