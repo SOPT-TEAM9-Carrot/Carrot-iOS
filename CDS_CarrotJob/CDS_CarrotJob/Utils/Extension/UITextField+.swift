@@ -9,12 +9,12 @@ import UIKit
 
 extension UITextField {
     
-    func setPlaceholderSetting(placeholderColor: UIColor, placeholderFont: UIFont) {
+    func setPlaceholderColor(placeholderColor: UIColor) {
             attributedPlaceholder = NSAttributedString(
                 string: placeholder ?? "",
                 attributes: [
                     .foregroundColor: placeholderColor,
-                    .font: placeholderFont
+                    .font: font
                 ].compactMapValues { $0 }
             )
     }

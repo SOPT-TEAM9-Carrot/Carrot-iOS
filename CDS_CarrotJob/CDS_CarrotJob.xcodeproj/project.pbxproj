@@ -30,6 +30,8 @@
 		037C361F2A13792100FAC78B /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C361E2A13792100FAC78B /* Review.swift */; };
 		037C36212A13792800FAC78B /* Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36202A13792800FAC78B /* Apply.swift */; };
 		037C36232A137DC300FAC78B /* HomeNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36222A137DC300FAC78B /* HomeNavigationView.swift */; };
+		037C36262A138C0600FAC78B /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 037C36242A138C0600FAC78B /* NotoSansKR-Bold.otf */; };
+		037C36272A138C0600FAC78B /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 037C36252A138C0600FAC78B /* NotoSansKR-Medium.otf */; };
 		586BF3002A113B08002AD443 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF2FF2A113B08002AD443 /* UIImage+.swift */; };
 		586BF3022A114204002AD443 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF3012A114204002AD443 /* UIFont+.swift */; };
 		58D304E12A11F174005E04CB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 58D304E02A11F174005E04CB /* .swiftlint.yml */; };
@@ -67,11 +69,11 @@
 		037C361E2A13792100FAC78B /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		037C36202A13792800FAC78B /* Apply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apply.swift; sourceTree = "<group>"; };
 		037C36222A137DC300FAC78B /* HomeNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationView.swift; sourceTree = "<group>"; };
+		037C36242A138C0600FAC78B /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
+		037C36252A138C0600FAC78B /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
 		586BF2FF2A113B08002AD443 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		586BF3012A114204002AD443 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		58D304E02A11F174005E04CB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		58D304E32A11FF0A005E04CB /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
-		58D304E42A11FF0A005E04CB /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		D3D03F722A10D9B9005AEE77 /* CDS_CarrotJob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CDS_CarrotJob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D03F752A10D9B9005AEE77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3D03F772A10D9B9005AEE77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -254,8 +256,8 @@
 		58D304E22A11FEF9005E04CB /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				58D304E42A11FF0A005E04CB /* NotoSansKR-Bold.otf */,
-				58D304E32A11FF0A005E04CB /* NotoSansKR-Medium.otf */,
+				037C36242A138C0600FAC78B /* NotoSansKR-Bold.otf */,
+				037C36252A138C0600FAC78B /* NotoSansKR-Medium.otf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -406,10 +408,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				037C36272A138C0600FAC78B /* NotoSansKR-Medium.otf in Resources */,
 				58D304E12A11F174005E04CB /* .swiftlint.yml in Resources */,
 				037C35F22A12242500FAC78B /* Color.xcassets in Resources */,
 				D3D03F822A10D9BA005AEE77 /* LaunchScreen.storyboard in Resources */,
 				D3D03F7F2A10D9BA005AEE77 /* Image.xcassets in Resources */,
+				037C36262A138C0600FAC78B /* NotoSansKR-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
