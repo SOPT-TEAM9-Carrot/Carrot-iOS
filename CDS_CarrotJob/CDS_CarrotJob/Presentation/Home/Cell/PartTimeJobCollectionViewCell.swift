@@ -175,4 +175,14 @@ extension PartTimeJobCollectionViewCell {
     }
     
     // MARK: - Methods
+    
+    func setDataBind(model: PartTimeJobModel) {
+        jobNameLabel.text = model.jobName
+        jobLocationLabel.text = model.jobLocation
+        reviewCountLabel.text = model.reviewCount
+        jobDayWeekLabel.text = model.jobDayWeek
+        jobTimeLabel.text = model.jobTime
+        jobImage.image = model.jobImage
+        jobHourlyWageLabel.text = model.jobHourlyWage
+    }
 }
