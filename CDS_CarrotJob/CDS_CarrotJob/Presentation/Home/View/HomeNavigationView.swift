@@ -21,10 +21,6 @@ final class HomeNavigationView: UIView {
     private let searchTextField = UITextField()
     private let lineView = UIView()
     
-    // MARK: - Properties
-    
-    // MARK: - Initializer
-    
     // MARK: - View Life Cycle
     
     override init(frame: CGRect) {
@@ -120,8 +116,4 @@ extension HomeNavigationView {
             $0.height.equalTo(1)
         }
     }
-    
-    // MARK: - Methods
-    
-    // MARK: - @objc Methods
 }
