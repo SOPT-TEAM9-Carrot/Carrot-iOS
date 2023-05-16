@@ -25,6 +25,10 @@
 		037C360D2A122D5800FAC78B /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C360C2A122D5800FAC78B /* ReviewViewController.swift */; };
 		037C36132A122DA100FAC78B /* ApplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36122A122DA100FAC78B /* ApplyViewController.swift */; };
 		037C36162A122EB700FAC78B /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36152A122EB700FAC78B /* Image.swift */; };
+		037C361B2A13790500FAC78B /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C361A2A13790500FAC78B /* Home.swift */; };
+		037C361D2A13790E00FAC78B /* JobDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C361C2A13790E00FAC78B /* JobDetail.swift */; };
+		037C361F2A13792100FAC78B /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C361E2A13792100FAC78B /* Review.swift */; };
+		037C36212A13792800FAC78B /* Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36202A13792800FAC78B /* Apply.swift */; };
 		586BF3002A113B08002AD443 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF2FF2A113B08002AD443 /* UIImage+.swift */; };
 		586BF3022A114204002AD443 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF3012A114204002AD443 /* UIFont+.swift */; };
 		58D304E12A11F174005E04CB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 58D304E02A11F174005E04CB /* .swiftlint.yml */; };
@@ -57,6 +61,10 @@
 		037C360C2A122D5800FAC78B /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		037C36122A122DA100FAC78B /* ApplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyViewController.swift; sourceTree = "<group>"; };
 		037C36152A122EB700FAC78B /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		037C361A2A13790500FAC78B /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		037C361C2A13790E00FAC78B /* JobDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetail.swift; sourceTree = "<group>"; };
+		037C361E2A13792100FAC78B /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		037C36202A13792800FAC78B /* Apply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apply.swift; sourceTree = "<group>"; };
 		586BF2FF2A113B08002AD443 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		586BF3012A114204002AD443 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		58D304E02A11F174005E04CB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -160,6 +168,7 @@
 		037C36032A122CC000FAC78B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				037C361A2A13790500FAC78B /* Home.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -184,6 +193,7 @@
 		037C36092A122D3D00FAC78B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				037C361C2A13790E00FAC78B /* JobDetail.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -208,6 +218,7 @@
 		037C360F2A122D8400FAC78B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				037C361E2A13792100FAC78B /* Review.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -232,6 +243,7 @@
 		037C36142A122DBA00FAC78B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				037C36202A13792800FAC78B /* Apply.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -439,7 +451,11 @@
 				037C35EB2A121EBD00FAC78B /* UICollectionView+.swift in Sources */,
 				037C35F52A1226C100FAC78B /* Color.swift in Sources */,
 				037C35E72A121E9800FAC78B /* UIStackView+.swift in Sources */,
+				037C361B2A13790500FAC78B /* Home.swift in Sources */,
+				037C361D2A13790E00FAC78B /* JobDetail.swift in Sources */,
 				037C35EF2A121F5B00FAC78B /* UIImageView+.swift in Sources */,
+				037C361F2A13792100FAC78B /* Review.swift in Sources */,
+				037C36212A13792800FAC78B /* Apply.swift in Sources */,
 				037C35E32A121E6200FAC78B /* UIView+.swift in Sources */,
 				586BF3022A114204002AD443 /* UIFont+.swift in Sources */,
 				037C35E92A121EAD00FAC78B /* UITableView+.swift in Sources */,
