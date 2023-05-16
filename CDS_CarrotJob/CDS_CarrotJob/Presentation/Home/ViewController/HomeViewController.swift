@@ -15,6 +15,8 @@ final class HomeViewController: UIViewController {
     
     // MARK: - UI Components
     
+    private let navigationView = HomeNavigationView()
+    
     // MARK: - Properties
     
     // MARK: - Initializer
@@ -25,6 +27,7 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         setLayout()
+        navigationController?.isNavigationBarHidden = true
     }
 }
 
@@ -34,12 +37,21 @@ extension HomeViewController {
     
     func setUI() {
         
+        view.backgroundColor = Color.white
+        
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
         
+        view.addSubviews(navigationView)
+        
+        navigationView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            $0.height.equalTo(96)
+        }
     }
     
     // MARK: - Methods

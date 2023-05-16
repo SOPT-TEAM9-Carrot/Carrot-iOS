@@ -71,6 +71,7 @@ extension HomeNavigationView {
             $0.setPlaceholderColor(placeholderColor: Color.gray5)
             $0.font = .notoSansFont(weightOf: .Medium, sizeOf: .font14)
             $0.layer.cornerRadius = 6
+            $0.setLeftPaddingPoints(10)
         }
         
         lineView.do {
