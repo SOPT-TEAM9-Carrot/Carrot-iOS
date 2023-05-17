@@ -9,6 +9,7 @@ import UIKit
 
 import SnapKit
 import Then
+import Kingfisher
 
 final class PartTimeJobCollectionViewCell: UICollectionViewCell {
     
@@ -132,10 +133,11 @@ extension PartTimeJobCollectionViewCell {
         jobDayWeekLabel.snp.makeConstraints {
             $0.bottom.equalToSuperview().inset(15)
             $0.leading.equalToSuperview().inset(16)
+            $0.height.equalTo(20)
         }
         
         lineView.snp.makeConstraints {
-            $0.bottom.equalToSuperview().inset(20)
+            $0.bottom.equalToSuperview().inset(19)
             $0.leading.equalTo(jobDayWeekLabel.snp.trailing).offset(8)
             $0.width.equalTo(1)
             $0.height.equalTo(11)
@@ -144,11 +146,13 @@ extension PartTimeJobCollectionViewCell {
         jobTimeLabel.snp.makeConstraints {
             $0.bottom.equalTo(jobDayWeekLabel)
             $0.leading.equalTo(lineView.snp.trailing).offset(8)
+            $0.height.equalTo(20)
         }
         
         reviewCountLabel.snp.makeConstraints {
             $0.bottom.equalTo(jobDayWeekLabel.snp.top).offset(-5)
             $0.leading.equalTo(jobDayWeekLabel)
+            $0.height.equalTo(20)
         }
         
         contactStatusView.snp.makeConstraints {
@@ -185,7 +189,8 @@ extension PartTimeJobCollectionViewCell {
         reviewCountLabel.text = dummyModel.reviewCount
         jobDayWeekLabel.text = dummyModel.jobDayWeek
         jobTimeLabel.text = dummyModel.jobTime
-        jobImage.image = serverModel.jobImage
+        guard let url = URL(string: serverModel.jobImage) else { return }
+        jobImage.kf.setImage(with: url)
         var hourlyWage = String(serverModel.jobHourlyWage)
         if hourlyWage.count > 3 {
             hourlyWage.insert(",", at: hourlyWage.index(hourlyWage.endIndex, offsetBy: -3))
