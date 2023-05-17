@@ -50,6 +50,7 @@ class OrangeUIButton: UIButton {
 }
 
 extension OrangeUIButton {
+    /// type 만 입력하면, 색상과 폰트를 맞춰 그립니다. 크기와 addTarget 만 설정하면 됩니다.
     func setUIOfButtonFor(type: CarrotButtonType) {
         self.setTitle(type.title, for: .normal)
         self.titleLabel?.font = .notoSansFont(weightOf: .Bold, sizeOf: .font14)
