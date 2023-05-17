@@ -14,13 +14,10 @@ struct PartTimeServerModel {
 }
 
 struct PartTimeJobModel {
-//    let jobName: String
     let jobLocation: String
     let reviewCount: String
     let jobDayWeek: String
     let jobTime: String
-//    let jobImage: UIImage
-//    let jobHourlyWage: String
 }
 
 extension PartTimeServerModel {
@@ -32,7 +29,6 @@ extension PartTimeServerModel {
             PartTimeServerModel(jobName: "데이즈호텔 프론트", jobImage: "https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202203/24/6cff806a-82ef-4a54-a7ba-acd0ced51ba6.jpg", jobHourlyWage: 10000),
             PartTimeServerModel(jobName: "데이즈호텔 프론트", jobImage: "https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202203/24/6cff806a-82ef-4a54-a7ba-acd0ced51ba6.jpg", jobHourlyWage: 10000),
             PartTimeServerModel(jobName: "데이즈호텔 프론트", jobImage: "https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202203/24/6cff806a-82ef-4a54-a7ba-acd0ced51ba6.jpg", jobHourlyWage: 10000)
-//            PartTimeServerModel(jobName: "데이즈호텔 프론트", jobImage: Image.carrotBell, jobHourlyWage: 10000)
         ]
     }
 }

@@ -42,6 +42,8 @@ final class PartTimeLabel: UILabel {
         return contentSize
     }
     
+    // MARK: - UI Components Property
+    
     func setUI() {
         
         backgroundColor = partTimeLabelBackgroundColor
