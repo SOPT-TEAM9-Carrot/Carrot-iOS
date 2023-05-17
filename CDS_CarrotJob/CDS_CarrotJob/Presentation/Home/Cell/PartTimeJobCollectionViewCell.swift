@@ -128,7 +128,7 @@ extension PartTimeJobCollectionViewCell {
         
         advertisingButton.snp.makeConstraints {
             $0.top.equalTo(jobLocationLabel)
-            $0.leading.equalTo(jobLocationLabel.snp.trailing)
+            $0.leading.equalTo(jobLocationLabel.snp.trailing).offset(5)
             $0.width.equalTo(50)
             $0.height.equalTo(18)
         }

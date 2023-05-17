@@ -21,7 +21,7 @@ extension PartTimeJobModel {
     
     static func partTimeJobdummyData() -> [PartTimeJobModel] {
         return [
-            PartTimeJobModel(jobName: "데이즈호텔 프론트", jobLocation: "데이즈호텔 명동  *  충무로 1가  *  ", reviewCount: "1", jobDayWeek: "월~일", jobTime: "18:00 ~ 00:30", jobImage: Image.carrotBell, jobHourlyWage: "10,000"),
+            PartTimeJobModel(jobName: "데이즈호텔 프론트", jobLocation: "데이즈호텔 명동  •  충무로 1가  •", reviewCount: "1", jobDayWeek: "월~일", jobTime: "18:00 ~ 00:30", jobImage: Image.carrotBell, jobHourlyWage: "10,000"),
             PartTimeJobModel(jobName: "데이즈호텔 프론트", jobLocation: "데이즈호텔 명동  *  충무로 1가  *  ", reviewCount: "1", jobDayWeek: "월~일", jobTime: "18:00 ~ 00:30", jobImage: Image.carrotBell, jobHourlyWage: "10,000"),
             PartTimeJobModel(jobName: "데이즈호텔 프론트", jobLocation: "데이즈호텔 명동  *  충무로 1가  *  ", reviewCount: "1", jobDayWeek: "월~일", jobTime: "18:00 ~ 00:30", jobImage: Image.carrotBell, jobHourlyWage: "10,000"),
             PartTimeJobModel(jobName: "데이즈호텔 프론트", jobLocation: "데이즈호텔 명동  *  충무로 1가  *  ", reviewCount: "1", jobDayWeek: "월~일", jobTime: "18:00 ~ 00:30", jobImage: Image.carrotBell, jobHourlyWage: "10,000"),
