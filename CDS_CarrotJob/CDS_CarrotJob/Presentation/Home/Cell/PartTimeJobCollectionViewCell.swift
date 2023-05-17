@@ -16,7 +16,7 @@ final class PartTimeJobCollectionViewCell: UICollectionViewCell {
     
     private let jobNameLabel = UILabel()
     private let jobLocationLabel = UILabel()
-    private let advertisingButton = AdvertisingButton(title: "광고", image: Image.carrotInformationCircle, spacing: 7)
+    private let advertisingButton = AdvertisingButton(buttonName: "광고", buttonImage: Image.carrotInformationCircle)
     private let reviewCountLabel = UILabel()
     private let contactStatusView = PartTimeLabel(text: "연락을 잘해줘요", textColor: Color.gray2, backgroundColor: Color.gray7)
     private let distanceTimeStatusView = PartTimeLabel(text: "걸어서 10분", textColor: Color.blue1, backgroundColor: Color.blue2)
@@ -67,16 +67,6 @@ extension PartTimeJobCollectionViewCell {
             $0.textColor = Color.mainColor1
         }
         
-        contactStatusView.do {
-            $0.layer.cornerRadius = 4
-            $0.clipsToBounds = true
-        }
-        
-        distanceTimeStatusView.do {
-            $0.layer.cornerRadius = 4
-            $0.clipsToBounds = true
-        }
-        
         jobDayWeekLabel.do {
             $0.font = .notoSansFont(weightOf: .Medium, sizeOf: .font14)
             $0.textColor = Color.gray4
@@ -117,13 +107,11 @@ extension PartTimeJobCollectionViewCell {
         jobNameLabel.snp.makeConstraints {
             $0.top.equalToSuperview().inset(12)
             $0.leading.equalToSuperview().inset(16)
-            $0.height.equalTo(18)
         }
         
         jobLocationLabel.snp.makeConstraints {
             $0.top.equalTo(jobNameLabel.snp.bottom).offset(3)
             $0.leading.equalToSuperview().inset(17)
-            $0.height.equalTo(18)
         }
         
         advertisingButton.snp.makeConstraints {

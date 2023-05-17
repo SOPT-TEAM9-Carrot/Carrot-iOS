@@ -40,14 +40,3 @@ enum CarrotImages: String {
     case carrotTalkBubble
     case carrotXMark
 }
-
-extension UIImage {
-    func resized(toWidth width: CGFloat, height: CGFloat) -> UIImage? {
-        let newSize = CGSize(width: width, height: height)
-        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0)
-        draw(in: CGRect(origin: .zero, size: newSize))
-        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return resizedImage
-    }
-}

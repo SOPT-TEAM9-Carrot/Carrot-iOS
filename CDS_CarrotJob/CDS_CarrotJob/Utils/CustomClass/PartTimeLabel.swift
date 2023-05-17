@@ -14,7 +14,7 @@ final class PartTimeLabel: UILabel {
     var partTimeLabeltext: String
     var partTimeLabelTextColor: UIColor
     var partTimeLabelBackgroundColor: UIColor
-    private var padding = UIEdgeInsets(top: 5.0, left: 8.0, bottom: 8.0, right: 3.0)
+    private var padding = UIEdgeInsets(top: 3.0, left: 8.0, bottom: 8.0, right: 3.0)
     
     // MARK: - Initializer
     
