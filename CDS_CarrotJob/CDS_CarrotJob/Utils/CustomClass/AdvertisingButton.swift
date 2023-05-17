@@ -11,12 +11,12 @@ final class AdvertisingButton: UIButton {
     
     // MARK: - Property
     
-    var buttonName: AttributedString
+    var buttonName: String
     var buttonImage: UIImage
     
     // MARK: - Initializer
     
-    init(buttonName: AttributedString, buttonImage: UIImage) {
+    init(buttonName: String, buttonImage: UIImage) {
         self.buttonName = buttonName
         self.buttonImage = buttonImage
         super.init(frame: .zero)
@@ -31,15 +31,15 @@ final class AdvertisingButton: UIButton {
     
     func setUI() {
         
-        buttonName.font = .notoSansFont(weightOf: .Medium, sizeOf: .font11)
-        
-        var config = UIButton.Configuration.filled()
-        config.attributedTitle = buttonName
-        config.titleAlignment = .center
-        config.image = buttonImage
-        config.imagePadding = 9
-        config.baseBackgroundColor = .clear
-        config.imagePlacement = NSDirectionalRectEdge.trailing
-        configuration = config
+        backgroundColor = .clear
+        setTitle(buttonName, for: .normal)
+        setTitleColor(Color.gray3, for: .normal)
+        tintColor = Color.gray3
+        let symbolConfiguration = UIImage.SymbolConfiguration(pointSize: 9, weight: .light)
+        setImage(UIImage(systemName: "info.circle", withConfiguration: symbolConfiguration), for: .normal)
+        titleLabel?.font = .notoSansFont(weightOf: .Medium, sizeOf: .font11)
+        semanticContentAttribute = .forceRightToLeft
+        contentHorizontalAlignment = .trailing
+        imageEdgeInsets = .init(top: 1, left: 3, bottom: 0, right: 0)
     }
 }

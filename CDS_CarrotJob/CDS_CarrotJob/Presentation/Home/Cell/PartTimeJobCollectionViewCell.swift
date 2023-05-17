@@ -107,17 +107,19 @@ extension PartTimeJobCollectionViewCell {
         jobNameLabel.snp.makeConstraints {
             $0.top.equalToSuperview().inset(12)
             $0.leading.equalToSuperview().inset(16)
+            $0.height.equalTo(18)
         }
         
         jobLocationLabel.snp.makeConstraints {
             $0.top.equalTo(jobNameLabel.snp.bottom).offset(3)
             $0.leading.equalToSuperview().inset(17)
+            $0.height.equalTo(18)
         }
         
         advertisingButton.snp.makeConstraints {
             $0.top.equalTo(jobLocationLabel)
             $0.leading.equalTo(jobLocationLabel.snp.trailing).offset(5)
-            $0.width.equalTo(50)
+            $0.width.equalTo(40)
             $0.height.equalTo(18)
         }
         
