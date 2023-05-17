@@ -94,4 +94,3 @@ extension PartTimeJobCellTestViewController: UICollectionViewDelegateFlowLayout 
         return CGSize(width: width, height: height)
     }
 }
-
