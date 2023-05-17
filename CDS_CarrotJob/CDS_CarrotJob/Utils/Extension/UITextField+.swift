@@ -9,7 +9,7 @@ import UIKit
 
 extension UITextField {
     
-    func setPlaceholderColor(_ placeholderColor: UIColor) {
+    func setPlaceholderColor(placeholderColor: UIColor) {
             attributedPlaceholder = NSAttributedString(
                 string: placeholder ?? "",
                 attributes: [
