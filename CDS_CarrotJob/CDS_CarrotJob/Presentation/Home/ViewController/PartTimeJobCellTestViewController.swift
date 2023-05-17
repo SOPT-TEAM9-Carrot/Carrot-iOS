@@ -20,7 +20,8 @@ final class PartTimeJobCellTestViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         return collectionView
     }()
-    private var model: [PartTimeJobModel] = PartTimeJobModel.partTimeJobdummyData()
+    private var dummyModel = PartTimeJobModel.partTimeJobdummyData()
+    private var serverModel = PartTimeServerModel.partTimeJobServerData()
     
     // MARK: - Properties
     
@@ -74,12 +75,12 @@ extension PartTimeJobCellTestViewController {
 extension PartTimeJobCellTestViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return model.count
+        return dummyModel.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(type: PartTimeJobCollectionViewCell.self, indexPath: indexPath)
-        cell.setDataBind(model: model[indexPath.row])
+        cell.setDataBind(serverModel: serverModel[indexPath.row], dummyModel: dummyModel[indexPath.row])
         return cell
     }
 }
