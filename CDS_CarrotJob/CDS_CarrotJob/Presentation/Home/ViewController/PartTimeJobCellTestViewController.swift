@@ -33,6 +33,7 @@ final class PartTimeJobCellTestViewController: UIViewController {
         super.viewDidLoad()
         setUI()
         setLayout()
+        view.backgroundColor = .white
     }
 }
 
@@ -93,5 +94,9 @@ extension PartTimeJobCellTestViewController: UICollectionViewDelegateFlowLayout 
         let width = UIScreen.main.bounds.width
         let height = 140.0
         return CGSize(width: width, height: height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
 }
