@@ -15,9 +15,10 @@ final class HomeLocalJobViewController: BaseViewController {
     
     private let originView = HomeLocalJobView()
     
-    override func loadView() {
-        self.view = originView
-    }
+//    override func loadView() {
+//        self.view = originView
+//
+//    }
     // MARK: - UI Components
     
     // MARK: - Properties
@@ -28,7 +29,15 @@ final class HomeLocalJobViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = true
         setUI()
         setLayout()
+        self.view.addSubview(originView)
+        originView.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(723)
+        }
     }
 }
+

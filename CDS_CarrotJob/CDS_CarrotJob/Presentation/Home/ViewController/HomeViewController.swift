@@ -13,7 +13,6 @@ import Then
 
 final class HomeViewController: UIViewController {
     
-    
     // MARK: - UI Components
     
     private let navigationView = HomeNavigationView()
