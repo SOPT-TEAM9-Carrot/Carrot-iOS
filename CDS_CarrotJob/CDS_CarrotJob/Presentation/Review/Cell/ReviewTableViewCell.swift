@@ -9,6 +9,7 @@ import UIKit
 
 import SnapKit
 import Then
+import Kingfisher
 
 final class ReviewTableViewCell: UITableViewCell {
     
@@ -157,4 +158,14 @@ extension ReviewTableViewCell {
     }
     
     // MARK: - Methods
+    
+    func setDataBind(serverModel: ReviewServerModel, dummyModel: ReviewModel) {
+        guard let url = URL(string: serverModel.profileImage) else { return }
+        profileImage.kf.setImage(with: url)
+        nickNameLabel.text = serverModel.nickName
+        commentLabel.text = serverModel.comment
+        certificationsCountLabel.text = dummyModel.certificationCount
+        monthAgoLabel.text = dummyModel.monthAgo
+        jobTitle.text = dummyModel.jobTitle
+    }
 }
