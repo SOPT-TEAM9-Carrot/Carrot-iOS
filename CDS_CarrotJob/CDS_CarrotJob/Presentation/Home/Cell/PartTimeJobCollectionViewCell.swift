@@ -18,9 +18,11 @@ final class PartTimeJobCollectionViewCell: UICollectionViewCell {
     private let jobNameLabel = UILabel()
     private let jobLocationLabel = UILabel()
     private let advertisingButton = AdvertisingButton(buttonName: "광고", buttonImage: Image.carrotInformationCircle)
+    private let reviewStackView = UIStackView()
     private let reviewCountLabel = UILabel()
     private let contactStatusView = PartTimeLabel(text: "연락을 잘해줘요", textColor: Color.gray2, backgroundColor: Color.gray7)
     private let distanceTimeStatusView = PartTimeLabel(text: "걸어서 10분", textColor: Color.blue1, backgroundColor: Color.blue2)
+    private let jobTimeStackView = UIStackView()
     private let jobDayWeekLabel = UILabel()
     private let lineView = UIView()
     private let jobTimeLabel = UILabel()
@@ -63,9 +65,23 @@ extension PartTimeJobCollectionViewCell {
             $0.setTitle("광고", for: .normal)
         }
         
+        reviewStackView.do {
+            $0.axis = .horizontal
+            $0.distribution = .equalSpacing
+            $0.alignment = .center
+            $0.spacing = 8
+        }
+        
         reviewCountLabel.do {
             $0.font = .notoSansFont(weightOf: .Bold, sizeOf: .font12)
             $0.textColor = Color.mainColor1
+        }
+        
+        jobTimeStackView.do {
+            $0.axis = .horizontal
+            $0.distribution = .equalSpacing
+            $0.alignment = .center
+            $0.spacing = 8
         }
         
         jobDayWeekLabel.do {
@@ -101,9 +117,10 @@ extension PartTimeJobCollectionViewCell {
     
     private func setLayout() {
         
-        addSubviews(jobNameLabel, jobLocationLabel, advertisingButton, reviewCountLabel,
-                    contactStatusView, distanceTimeStatusView, jobDayWeekLabel,
-                    lineView, jobTimeLabel, jobImage, jobHourlyWageLabel, underLineView)
+        addSubviews(jobNameLabel, jobLocationLabel, reviewStackView, advertisingButton,
+                    jobTimeStackView, jobImage, jobHourlyWageLabel, underLineView)
+        reviewStackView.addArrangedSubviews(reviewCountLabel, contactStatusView, distanceTimeStatusView)
+        jobTimeStackView.addArrangedSubviews(jobDayWeekLabel, lineView, jobTimeLabel)
         
         jobNameLabel.snp.makeConstraints {
             $0.top.equalToSuperview().inset(12)
@@ -130,41 +147,41 @@ extension PartTimeJobCollectionViewCell {
             $0.width.height.equalTo(70)
         }
         
-        jobDayWeekLabel.snp.makeConstraints {
+        jobTimeStackView.snp.makeConstraints {
             $0.bottom.equalToSuperview().inset(15)
             $0.leading.equalToSuperview().inset(16)
             $0.height.equalTo(20)
         }
         
+        jobDayWeekLabel.snp.makeConstraints {
+            $0.height.equalTo(20)
+        }
+        
         lineView.snp.makeConstraints {
-            $0.bottom.equalToSuperview().inset(19)
-            $0.leading.equalTo(jobDayWeekLabel.snp.trailing).offset(8)
             $0.width.equalTo(1)
-            $0.height.equalTo(11)
+            $0.height.equalTo(10)
         }
         
         jobTimeLabel.snp.makeConstraints {
-            $0.bottom.equalTo(jobDayWeekLabel)
-            $0.leading.equalTo(lineView.snp.trailing).offset(8)
             $0.height.equalTo(20)
+        }
+        
+        reviewStackView.snp.makeConstraints {
+            $0.bottom.equalTo(jobTimeStackView.snp.top).offset(-2)
+            $0.leading.equalTo(jobTimeStackView)
+            $0.height.equalTo(24)
         }
         
         reviewCountLabel.snp.makeConstraints {
-            $0.bottom.equalTo(jobDayWeekLabel.snp.top).offset(-5)
-            $0.leading.equalTo(jobDayWeekLabel)
-            $0.height.equalTo(20)
+            $0.centerY.equalToSuperview()
         }
         
         contactStatusView.snp.makeConstraints {
-            $0.bottom.equalTo(jobDayWeekLabel.snp.top).offset(-2)
-            $0.leading.equalTo(reviewCountLabel.snp.trailing).offset(8)
             $0.width.equalTo(90)
             $0.height.equalTo(24)
         }
         
         distanceTimeStatusView.snp.makeConstraints {
-            $0.bottom.equalTo(contactStatusView)
-            $0.leading.equalTo(contactStatusView.snp.trailing).offset(8)
             $0.width.equalTo(72)
             $0.height.equalTo(24)
         }
