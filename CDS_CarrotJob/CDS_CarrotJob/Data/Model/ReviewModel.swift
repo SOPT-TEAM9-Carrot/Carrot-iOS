@@ -36,11 +36,11 @@ extension ReviewModel {
     
     static func reviewModelDummyData() -> [ReviewModel] {
         return [
-            ReviewModel(certificationCount: "인계동 인증 29회 •", monthAgo: "2개월 전", jobTitle: "[알바급구] 인계동 단기 오늘!! 금(10) 홀"),
-            ReviewModel(certificationCount: "인계동 인증 29회 •", monthAgo: "2개월 전", jobTitle: "[알바급구] 인계동 단기 오늘!! 금(10) 홀"),
-            ReviewModel(certificationCount: "인계동 인증 29회 •", monthAgo: "2개월 전", jobTitle: "[알바급구] 인계동 단기 오늘!! 금(10) 홀"),
-            ReviewModel(certificationCount: "인계동 인증 29회 •", monthAgo: "2개월 전", jobTitle: "[알바급구] 인계동 단기 오늘!! 금(10) 홀"),
-            ReviewModel(certificationCount: "인계동 인증 29회 •", monthAgo: "2개월 전", jobTitle: "[알바급구] 인계동 단기 오늘!! 금(10) 홀")
+            ReviewModel(certificationCount: "인계동 인증 29회  •", monthAgo: "2개월 전", jobTitle: "[알바급구] 인계동 단기 오늘!! 금(10) 홀"),
+            ReviewModel(certificationCount: "인계동 인증 29회  •", monthAgo: "2개월 전", jobTitle: "[알바급구] 인계동 단기 오늘!! 금(10) 홀"),
+            ReviewModel(certificationCount: "인계동 인증 29회  •", monthAgo: "2개월 전", jobTitle: "[알바급구] 인계동 단기 오늘!! 금(10) 홀"),
+            ReviewModel(certificationCount: "인계동 인증 29회  •", monthAgo: "2개월 전", jobTitle: "[알바급구] 인계동 단기 오늘!! 금(10) 홀"),
+            ReviewModel(certificationCount: "인계동 인증 29회  •", monthAgo: "2개월 전", jobTitle: "[알바급구] 인계동 단기 오늘!! 금(10) 홀")
         ]
     }
 }

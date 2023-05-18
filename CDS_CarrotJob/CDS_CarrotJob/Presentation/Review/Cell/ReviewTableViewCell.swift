@@ -47,7 +47,8 @@ extension ReviewTableViewCell {
         backgroundColor = Color.white
         
         profileImage.do {
-            $0.image = Image.carrotPersonProfile
+            $0.layer.cornerRadius = 17
+            $0.clipsToBounds = true
         }
         
         nickNameLabel.do {
@@ -106,6 +107,7 @@ extension ReviewTableViewCell {
         
         profileImage.snp.makeConstraints {
             $0.top.leading.equalToSuperview().inset(16)
+            $0.width.height.equalTo(36)
         }
         
         nickNameLabel.snp.makeConstraints {
@@ -128,7 +130,7 @@ extension ReviewTableViewCell {
         
         monthAgoLabel.snp.makeConstraints {
             $0.top.equalTo(certificationsCountLabel)
-            $0.leading.equalTo(certificationsCountLabel.snp.trailing).offset(15)
+            $0.leading.equalTo(certificationsCountLabel.snp.trailing).offset(5)
             $0.height.equalTo(20)
         }
         
@@ -136,7 +138,7 @@ extension ReviewTableViewCell {
             $0.bottom.equalToSuperview().inset(17)
             $0.leading.equalTo(nickNameLabel)
             $0.width.equalTo(23)
-            $0.height.equalTo(15)
+            $0.height.equalTo(16)
         }
         
         jobTitle.snp.makeConstraints {
