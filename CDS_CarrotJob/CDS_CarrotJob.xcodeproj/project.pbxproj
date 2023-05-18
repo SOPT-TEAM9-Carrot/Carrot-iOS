@@ -38,6 +38,7 @@
 		037C36322A13B0B300FAC78B /* PartTimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36312A13B0B300FAC78B /* PartTimeLabel.swift */; };
 		037C36362A13B99A00FAC78B /* PartTimeJobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36352A13B99A00FAC78B /* PartTimeJobModel.swift */; };
 		037C36382A13BC3400FAC78B /* PartTimeJobCellTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36372A13BC3400FAC78B /* PartTimeJobCellTestViewController.swift */; };
+		03F59DF82A1640D100942002 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59DF72A1640D100942002 /* ReviewModel.swift */; };
 		586BF3002A113B08002AD443 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF2FF2A113B08002AD443 /* UIImage+.swift */; };
 		586BF3022A114204002AD443 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF3012A114204002AD443 /* UIFont+.swift */; };
 		58ACBD512A1474A2005EF7A4 /* GrayUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ACBD502A1474A2005EF7A4 /* GrayUIButton.swift */; };
@@ -85,6 +86,7 @@
 		037C36312A13B0B300FAC78B /* PartTimeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartTimeLabel.swift; sourceTree = "<group>"; };
 		037C36352A13B99A00FAC78B /* PartTimeJobModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartTimeJobModel.swift; sourceTree = "<group>"; };
 		037C36372A13BC3400FAC78B /* PartTimeJobCellTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartTimeJobCellTestViewController.swift; sourceTree = "<group>"; };
+		03F59DF72A1640D100942002 /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
 		586BF2FF2A113B08002AD443 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		586BF3012A114204002AD443 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		58ACBD502A1474A2005EF7A4 /* GrayUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayUIButton.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				037C36352A13B99A00FAC78B /* PartTimeJobModel.swift */,
+				03F59DF72A1640D100942002 /* ReviewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				037C35EB2A121EBD00FAC78B /* UICollectionView+.swift in Sources */,
 				037C35F52A1226C100FAC78B /* Color.swift in Sources */,
 				037C36322A13B0B300FAC78B /* PartTimeLabel.swift in Sources */,
+				03F59DF82A1640D100942002 /* ReviewModel.swift in Sources */,
 				037C35E72A121E9800FAC78B /* UIStackView+.swift in Sources */,
 				037C361B2A13790500FAC78B /* Home.swift in Sources */,
 				037C361D2A13790E00FAC78B /* JobDetail.swift in Sources */,
