@@ -45,6 +45,9 @@
 		589640312A176D8700DC8C3E /* JobStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589640302A176D8700DC8C3E /* JobStatisticsView.swift */; };
 		589640332A176D9000DC8C3E /* JobTitleStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589640322A176D9000DC8C3E /* JobTitleStackView.swift */; };
 		589640352A176D9700DC8C3E /* LabelWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589640342A176D9700DC8C3E /* LabelWithImage.swift */; };
+		589640392A17715F00DC8C3E /* DetailProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589640382A17715F00DC8C3E /* DetailProfileView.swift */; };
+		5896403B2A17717300DC8C3E /* EmployerProfileStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5896403A2A17717300DC8C3E /* EmployerProfileStackView.swift */; };
+		5896403D2A17718400DC8C3E /* KaKaoMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5896403C2A17718400DC8C3E /* KaKaoMapView.swift */; };
 		58ACBD512A1474A2005EF7A4 /* GrayUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ACBD502A1474A2005EF7A4 /* GrayUIButton.swift */; };
 		58ACBD532A1474AC005EF7A4 /* OrangeUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ACBD522A1474AC005EF7A4 /* OrangeUIButton.swift */; };
 		58D304E12A11F174005E04CB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 58D304E02A11F174005E04CB /* .swiftlint.yml */; };
@@ -97,6 +100,9 @@
 		589640302A176D8700DC8C3E /* JobStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobStatisticsView.swift; sourceTree = "<group>"; };
 		589640322A176D9000DC8C3E /* JobTitleStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobTitleStackView.swift; sourceTree = "<group>"; };
 		589640342A176D9700DC8C3E /* LabelWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithImage.swift; sourceTree = "<group>"; };
+		589640382A17715F00DC8C3E /* DetailProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProfileView.swift; sourceTree = "<group>"; };
+		5896403A2A17717300DC8C3E /* EmployerProfileStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerProfileStackView.swift; sourceTree = "<group>"; };
+		5896403C2A17718400DC8C3E /* KaKaoMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaKaoMapView.swift; sourceTree = "<group>"; };
 		58ACBD502A1474A2005EF7A4 /* GrayUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayUIButton.swift; sourceTree = "<group>"; };
 		58ACBD522A1474AC005EF7A4 /* OrangeUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeUIButton.swift; sourceTree = "<group>"; };
 		58D304E02A11F174005E04CB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -227,6 +233,7 @@
 		037C36092A122D3D00FAC78B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				589640362A1770EF00DC8C3E /* DetailProfile */,
 				589640282A176CBA00DC8C3E /* MainDetail */,
 			);
 			path = View;
@@ -332,6 +339,24 @@
 				589640302A176D8700DC8C3E /* JobStatisticsView.swift */,
 				589640322A176D9000DC8C3E /* JobTitleStackView.swift */,
 				589640342A176D9700DC8C3E /* LabelWithImage.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		589640362A1770EF00DC8C3E /* DetailProfile */ = {
+			isa = PBXGroup;
+			children = (
+				589640382A17715F00DC8C3E /* DetailProfileView.swift */,
+				589640372A17712C00DC8C3E /* Components */,
+			);
+			path = DetailProfile;
+			sourceTree = "<group>";
+		};
+		589640372A17712C00DC8C3E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5896403A2A17717300DC8C3E /* EmployerProfileStackView.swift */,
+				5896403C2A17718400DC8C3E /* KaKaoMapView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -553,6 +578,7 @@
 				037C36022A122C6700FAC78B /* HomeViewController.swift in Sources */,
 				037C35E52A121E7C00FAC78B /* UITextField+.swift in Sources */,
 				58ACBD532A1474AC005EF7A4 /* OrangeUIButton.swift in Sources */,
+				5896403B2A17717300DC8C3E /* EmployerProfileStackView.swift in Sources */,
 				589640312A176D8700DC8C3E /* JobStatisticsView.swift in Sources */,
 				037C36162A122EB700FAC78B /* Image.swift in Sources */,
 				037C35ED2A121F3300FAC78B /* String+.swift in Sources */,
@@ -563,7 +589,9 @@
 				589640332A176D9000DC8C3E /* JobTitleStackView.swift in Sources */,
 				037C35EB2A121EBD00FAC78B /* UICollectionView+.swift in Sources */,
 				037C35F52A1226C100FAC78B /* Color.swift in Sources */,
+				5896403D2A17718400DC8C3E /* KaKaoMapView.swift in Sources */,
 				037C36322A13B0B300FAC78B /* PartTimeLabel.swift in Sources */,
+				589640392A17715F00DC8C3E /* DetailProfileView.swift in Sources */,
 				037C35E72A121E9800FAC78B /* UIStackView+.swift in Sources */,
 				5896402B2A176D5C00DC8C3E /* MainDetailView.swift in Sources */,
 				5896402F2A176D8000DC8C3E /* JobLocalInformingView.swift in Sources */,
