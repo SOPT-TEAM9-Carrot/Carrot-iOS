@@ -21,3 +21,4 @@ excluded:
 # Customized Rules
 file_length: 600
 type_body_length: 350
+function_body_length: 100
