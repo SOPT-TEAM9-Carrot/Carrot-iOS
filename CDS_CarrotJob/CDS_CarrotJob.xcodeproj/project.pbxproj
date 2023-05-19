@@ -26,7 +26,6 @@
 		037C36132A122DA100FAC78B /* ApplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36122A122DA100FAC78B /* ApplyViewController.swift */; };
 		037C36162A122EB700FAC78B /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36152A122EB700FAC78B /* Image.swift */; };
 		037C361B2A13790500FAC78B /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C361A2A13790500FAC78B /* Home.swift */; };
-		037C361D2A13790E00FAC78B /* JobDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C361C2A13790E00FAC78B /* JobDetail.swift */; };
 		037C361F2A13792100FAC78B /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C361E2A13792100FAC78B /* Review.swift */; };
 		037C36212A13792800FAC78B /* Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36202A13792800FAC78B /* Apply.swift */; };
 		037C36232A137DC300FAC78B /* HomeNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36222A137DC300FAC78B /* HomeNavigationView.swift */; };
@@ -40,6 +39,12 @@
 		586BF3002A113B08002AD443 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF2FF2A113B08002AD443 /* UIImage+.swift */; };
 		586BF3022A114204002AD443 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF3012A114204002AD443 /* UIFont+.swift */; };
 		589640272A176A4800DC8C3E /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589640262A176A4800DC8C3E /* Int+.swift */; };
+		5896402B2A176D5C00DC8C3E /* MainDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5896402A2A176D5C00DC8C3E /* MainDetailView.swift */; };
+		5896402D2A176D7700DC8C3E /* JobInformationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5896402C2A176D7700DC8C3E /* JobInformationStackView.swift */; };
+		5896402F2A176D8000DC8C3E /* JobLocalInformingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5896402E2A176D8000DC8C3E /* JobLocalInformingView.swift */; };
+		589640312A176D8700DC8C3E /* JobStatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589640302A176D8700DC8C3E /* JobStatisticsView.swift */; };
+		589640332A176D9000DC8C3E /* JobTitleStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589640322A176D9000DC8C3E /* JobTitleStackView.swift */; };
+		589640352A176D9700DC8C3E /* LabelWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589640342A176D9700DC8C3E /* LabelWithImage.swift */; };
 		58ACBD512A1474A2005EF7A4 /* GrayUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ACBD502A1474A2005EF7A4 /* GrayUIButton.swift */; };
 		58ACBD532A1474AC005EF7A4 /* OrangeUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ACBD522A1474AC005EF7A4 /* OrangeUIButton.swift */; };
 		58D304E12A11F174005E04CB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 58D304E02A11F174005E04CB /* .swiftlint.yml */; };
@@ -73,7 +78,6 @@
 		037C36122A122DA100FAC78B /* ApplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyViewController.swift; sourceTree = "<group>"; };
 		037C36152A122EB700FAC78B /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		037C361A2A13790500FAC78B /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		037C361C2A13790E00FAC78B /* JobDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetail.swift; sourceTree = "<group>"; };
 		037C361E2A13792100FAC78B /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		037C36202A13792800FAC78B /* Apply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apply.swift; sourceTree = "<group>"; };
 		037C36222A137DC300FAC78B /* HomeNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationView.swift; sourceTree = "<group>"; };
@@ -87,6 +91,12 @@
 		586BF2FF2A113B08002AD443 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		586BF3012A114204002AD443 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		589640262A176A4800DC8C3E /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
+		5896402A2A176D5C00DC8C3E /* MainDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDetailView.swift; sourceTree = "<group>"; };
+		5896402C2A176D7700DC8C3E /* JobInformationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobInformationStackView.swift; sourceTree = "<group>"; };
+		5896402E2A176D8000DC8C3E /* JobLocalInformingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobLocalInformingView.swift; sourceTree = "<group>"; };
+		589640302A176D8700DC8C3E /* JobStatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobStatisticsView.swift; sourceTree = "<group>"; };
+		589640322A176D9000DC8C3E /* JobTitleStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobTitleStackView.swift; sourceTree = "<group>"; };
+		589640342A176D9700DC8C3E /* LabelWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithImage.swift; sourceTree = "<group>"; };
 		58ACBD502A1474A2005EF7A4 /* GrayUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayUIButton.swift; sourceTree = "<group>"; };
 		58ACBD522A1474AC005EF7A4 /* OrangeUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeUIButton.swift; sourceTree = "<group>"; };
 		58D304E02A11F174005E04CB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -217,7 +227,7 @@
 		037C36092A122D3D00FAC78B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				037C361C2A13790E00FAC78B /* JobDetail.swift */,
+				589640282A176CBA00DC8C3E /* MainDetail */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -303,6 +313,27 @@
 				037C36352A13B99A00FAC78B /* PartTimeJobModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		589640282A176CBA00DC8C3E /* MainDetail */ = {
+			isa = PBXGroup;
+			children = (
+				5896402A2A176D5C00DC8C3E /* MainDetailView.swift */,
+				589640292A176CC700DC8C3E /* Components */,
+			);
+			path = MainDetail;
+			sourceTree = "<group>";
+		};
+		589640292A176CC700DC8C3E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5896402C2A176D7700DC8C3E /* JobInformationStackView.swift */,
+				5896402E2A176D8000DC8C3E /* JobLocalInformingView.swift */,
+				589640302A176D8700DC8C3E /* JobStatisticsView.swift */,
+				589640322A176D9000DC8C3E /* JobTitleStackView.swift */,
+				589640342A176D9700DC8C3E /* LabelWithImage.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		58ACBD4F2A14747F005EF7A4 /* Components */ = {
@@ -514,6 +545,7 @@
 				D3D03F782A10D9B9005AEE77 /* SceneDelegate.swift in Sources */,
 				037C36382A13BC3400FAC78B /* PartTimeJobCellTestViewController.swift in Sources */,
 				037C360D2A122D5800FAC78B /* ReviewViewController.swift in Sources */,
+				5896402D2A176D7700DC8C3E /* JobInformationStackView.swift in Sources */,
 				037C35E12A121E2400FAC78B /* NSObject+.swift in Sources */,
 				037C35DF2A121B8600FAC78B /* NetworkResult.swift in Sources */,
 				037C36302A13A56300FAC78B /* AdvertisingButton.swift in Sources */,
@@ -521,17 +553,21 @@
 				037C36022A122C6700FAC78B /* HomeViewController.swift in Sources */,
 				037C35E52A121E7C00FAC78B /* UITextField+.swift in Sources */,
 				58ACBD532A1474AC005EF7A4 /* OrangeUIButton.swift in Sources */,
+				589640312A176D8700DC8C3E /* JobStatisticsView.swift in Sources */,
 				037C36162A122EB700FAC78B /* Image.swift in Sources */,
 				037C35ED2A121F3300FAC78B /* String+.swift in Sources */,
+				589640352A176D9700DC8C3E /* LabelWithImage.swift in Sources */,
 				037C36082A122D2500FAC78B /* JobDetailViewController.swift in Sources */,
 				037C35FE2A122BCB00FAC78B /* BaseViewController.swift in Sources */,
 				589640272A176A4800DC8C3E /* Int+.swift in Sources */,
+				589640332A176D9000DC8C3E /* JobTitleStackView.swift in Sources */,
 				037C35EB2A121EBD00FAC78B /* UICollectionView+.swift in Sources */,
 				037C35F52A1226C100FAC78B /* Color.swift in Sources */,
 				037C36322A13B0B300FAC78B /* PartTimeLabel.swift in Sources */,
 				037C35E72A121E9800FAC78B /* UIStackView+.swift in Sources */,
+				5896402B2A176D5C00DC8C3E /* MainDetailView.swift in Sources */,
+				5896402F2A176D8000DC8C3E /* JobLocalInformingView.swift in Sources */,
 				037C361B2A13790500FAC78B /* Home.swift in Sources */,
-				037C361D2A13790E00FAC78B /* JobDetail.swift in Sources */,
 				037C35EF2A121F5B00FAC78B /* UIImageView+.swift in Sources */,
 				037C361F2A13792100FAC78B /* Review.swift in Sources */,
 				037C36212A13792800FAC78B /* Apply.swift in Sources */,
