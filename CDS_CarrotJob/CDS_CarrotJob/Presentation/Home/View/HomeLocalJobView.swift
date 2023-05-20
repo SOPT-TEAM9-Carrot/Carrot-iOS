@@ -116,4 +116,3 @@ extension HomeLocalJobView: UICollectionViewDataSource {
         return cell
     }
 }
-
