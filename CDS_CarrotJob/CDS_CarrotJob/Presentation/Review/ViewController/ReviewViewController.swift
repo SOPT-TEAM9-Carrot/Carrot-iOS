@@ -78,32 +78,7 @@ extension ReviewViewController {
     
     private func popToJobDetail() {
         print("popToJobDetail")
-//        navigationController?.popViewController(animated: true)
-//        navigationController?.navigationBar.isHidden = true
     }
-    
-//    private func setNavigationBar() {
-//
-//        navigationController?.navigationBar.tintColor = Color.gray1
-//        navigationController?.navigationBar.backgroundColor = Color.white
-//        navigationItem.leftBarButtonItem = UIBarButtonItem (
-//            image: Image.carrotXMark,
-//            style: .plain,
-//            target: self,
-//            action: #selector(backButtonTapped))
-//        let attributes: [NSAttributedString.Key: Any] = [
-//            NSAttributedString.Key.foregroundColor: Color.gray1,
-//            NSAttributedString.Key.font: UIFont.notoSansFont(weightOf: .Bold, sizeOf: .font14)!
-//        ]
-//        let navigationItem = UINavigationItem()
-//        let title = "후기"
-//        navigationItem.title = title
-//        navigationItem.titleView = UILabel()
-//
-//        if let titleLabel = navigationItem.titleView as? UILabel {
-//            titleLabel.attributedText = NSAttributedString(string: title, attributes: attributes)
-//        }
-//    }
     
     private func setNavigationBar() {
         navigationController?.navigationBar.tintColor = Color.gray1
@@ -115,12 +90,12 @@ extension ReviewViewController {
             target: self,
             action: #selector(backButtonTapped)
         )
+        
+        let title = "후기"
         let attributes: [NSAttributedString.Key: Any] = [
             NSAttributedString.Key.foregroundColor: Color.gray1,
             NSAttributedString.Key.font: UIFont.notoSansFont(weightOf: .Bold, sizeOf: .font14)!
         ]
-        let title = "후기"
-        navigationItem.title = title
         
         if let titleLabel = navigationItem.titleView as? UILabel {
             titleLabel.attributedText = NSAttributedString(string: title, attributes: attributes)

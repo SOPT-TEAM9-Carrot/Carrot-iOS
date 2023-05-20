@@ -6,7 +6,6 @@
 //
 
 
-
 import UIKit
 
 import Alamofire
@@ -55,7 +54,7 @@ class HomeLocalJobCollectionViewCell: UICollectionViewCell {
     }
     
     func setLayout() {
-        contentView.addSubviews(jobImageView, mainInfoLabel, subInfoLabel,moneyInfoLabel)
+        contentView.addSubviews(jobImageView, mainInfoLabel, subInfoLabel, moneyInfoLabel)
         
         jobImageView.snp.makeConstraints {
             $0.top.horizontalEdges.equalToSuperview()
