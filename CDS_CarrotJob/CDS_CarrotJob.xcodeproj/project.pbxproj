@@ -44,6 +44,12 @@
 		58ACBD512A1474A2005EF7A4 /* GrayUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ACBD502A1474A2005EF7A4 /* GrayUIButton.swift */; };
 		58ACBD532A1474AC005EF7A4 /* OrangeUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ACBD522A1474AC005EF7A4 /* OrangeUIButton.swift */; };
 		58D304E12A11F174005E04CB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 58D304E02A11F174005E04CB /* .swiftlint.yml */; };
+		D3A53EC02A137CF6008EDC52 /* HomeLocalJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A53EBF2A137CF6008EDC52 /* HomeLocalJobView.swift */; };
+		D3A53EC22A138315008EDC52 /* HomeLoaclJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A53EC12A138315008EDC52 /* HomeLoaclJobViewController.swift */; };
+		D3A53EC42A138C1A008EDC52 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D3A53EC32A138C19008EDC52 /* NotoSansKR-Bold.otf */; };
+		D3A53EC62A138C23008EDC52 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D3A53EC52A138C23008EDC52 /* NotoSansKR-Medium.otf */; };
+		D3A53ECE2A138D94008EDC52 /* HomeLocalJobCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A53ECD2A138D94008EDC52 /* HomeLocalJobCollectionViewCell.swift */; };
+		D3A53ED02A139F1F008EDC52 /* jobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A53ECF2A139F1F008EDC52 /* jobModel.swift */; };
 		D3D03F762A10D9B9005AEE77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D03F752A10D9B9005AEE77 /* AppDelegate.swift */; };
 		D3D03F782A10D9B9005AEE77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D03F772A10D9B9005AEE77 /* SceneDelegate.swift */; };
 		D3D03F7F2A10D9BA005AEE77 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3D03F7E2A10D9BA005AEE77 /* Image.xcassets */; };
@@ -92,6 +98,12 @@
 		58ACBD502A1474A2005EF7A4 /* GrayUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayUIButton.swift; sourceTree = "<group>"; };
 		58ACBD522A1474AC005EF7A4 /* OrangeUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeUIButton.swift; sourceTree = "<group>"; };
 		58D304E02A11F174005E04CB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		D3A53EBF2A137CF6008EDC52 /* HomeLocalJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLocalJobView.swift; sourceTree = "<group>"; };
+		D3A53EC12A138315008EDC52 /* HomeLoaclJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLoaclJobViewController.swift; sourceTree = "<group>"; };
+		D3A53EC32A138C19008EDC52 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
+		D3A53EC52A138C23008EDC52 /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
+		D3A53ECD2A138D94008EDC52 /* HomeLocalJobCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLocalJobCollectionViewCell.swift; sourceTree = "<group>"; };
+		D3A53ECF2A139F1F008EDC52 /* jobModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jobModel.swift; sourceTree = "<group>"; };
 		D3D03F722A10D9B9005AEE77 /* CDS_CarrotJob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CDS_CarrotJob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D03F752A10D9B9005AEE77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3D03F772A10D9B9005AEE77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -193,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				037C36012A122C6700FAC78B /* HomeViewController.swift */,
+				D3A53EC12A138315008EDC52 /* HomeLoaclJobViewController.swift */,
 				037C36372A13BC3400FAC78B /* PartTimeJobCellTestViewController.swift */,
 			);
 			path = ViewController;
@@ -202,6 +215,9 @@
 			isa = PBXGroup;
 			children = (
 				037C361A2A13790500FAC78B /* Home.swift */,
+				D3A53EBF2A137CF6008EDC52 /* HomeLocalJobView.swift */,
+				D3A53ECD2A138D94008EDC52 /* HomeLocalJobCollectionViewCell.swift */,
+				D3A53ECF2A139F1F008EDC52 /* jobModel.swift */,
 				037C36222A137DC300FAC78B /* HomeNavigationView.swift */,
 			);
 			path = View;
@@ -531,6 +547,8 @@
 				037C36232A137DC300FAC78B /* HomeNavigationView.swift in Sources */,
 				037C36022A122C6700FAC78B /* HomeViewController.swift in Sources */,
 				037C35E52A121E7C00FAC78B /* UITextField+.swift in Sources */,
+				D3A53EC02A137CF6008EDC52 /* HomeLocalJobView.swift in Sources */,
+				D3A53ECE2A138D94008EDC52 /* HomeLocalJobCollectionViewCell.swift in Sources */,
 				58ACBD532A1474AC005EF7A4 /* OrangeUIButton.swift in Sources */,
 				037C36162A122EB700FAC78B /* Image.swift in Sources */,
 				037C35ED2A121F3300FAC78B /* String+.swift in Sources */,
@@ -548,8 +566,10 @@
 				037C36212A13792800FAC78B /* Apply.swift in Sources */,
 				037C35E32A121E6200FAC78B /* UIView+.swift in Sources */,
 				586BF3022A114204002AD443 /* UIFont+.swift in Sources */,
+				D3A53EC22A138315008EDC52 /* HomeLoaclJobViewController.swift in Sources */,
 				037C35E92A121EAD00FAC78B /* UITableView+.swift in Sources */,
 				037C36132A122DA100FAC78B /* ApplyViewController.swift in Sources */,
+				D3A53ED02A139F1F008EDC52 /* jobModel.swift in Sources */,
 				037C36362A13B99A00FAC78B /* PartTimeJobModel.swift in Sources */,
 				035F4DE32A151FE4005E8BBA /* ReviewTableViewCell.swift in Sources */,
 				586BF3002A113B08002AD443 /* UIImage+.swift in Sources */,
