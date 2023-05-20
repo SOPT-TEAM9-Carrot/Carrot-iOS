@@ -48,6 +48,7 @@
 		589640392A17715F00DC8C3E /* DetailProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589640382A17715F00DC8C3E /* DetailProfileView.swift */; };
 		5896403B2A17717300DC8C3E /* EmployerProfileStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5896403A2A17717300DC8C3E /* EmployerProfileStackView.swift */; };
 		5896403D2A17718400DC8C3E /* KaKaoMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5896403C2A17718400DC8C3E /* KaKaoMapView.swift */; };
+		589640412A178A1F00DC8C3E /* DetailLocalListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589640402A178A1F00DC8C3E /* DetailLocalListView.swift */; };
 		58ACBD512A1474A2005EF7A4 /* GrayUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ACBD502A1474A2005EF7A4 /* GrayUIButton.swift */; };
 		58ACBD532A1474AC005EF7A4 /* OrangeUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ACBD522A1474AC005EF7A4 /* OrangeUIButton.swift */; };
 		58D304E12A11F174005E04CB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 58D304E02A11F174005E04CB /* .swiftlint.yml */; };
@@ -103,6 +104,7 @@
 		589640382A17715F00DC8C3E /* DetailProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProfileView.swift; sourceTree = "<group>"; };
 		5896403A2A17717300DC8C3E /* EmployerProfileStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerProfileStackView.swift; sourceTree = "<group>"; };
 		5896403C2A17718400DC8C3E /* KaKaoMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaKaoMapView.swift; sourceTree = "<group>"; };
+		589640402A178A1F00DC8C3E /* DetailLocalListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLocalListView.swift; sourceTree = "<group>"; };
 		58ACBD502A1474A2005EF7A4 /* GrayUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayUIButton.swift; sourceTree = "<group>"; };
 		58ACBD522A1474AC005EF7A4 /* OrangeUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrangeUIButton.swift; sourceTree = "<group>"; };
 		58D304E02A11F174005E04CB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 		037C36092A122D3D00FAC78B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5896403E2A1789EB00DC8C3E /* DetailLocalList */,
 				589640362A1770EF00DC8C3E /* DetailProfile */,
 				589640282A176CBA00DC8C3E /* MainDetail */,
 			);
@@ -359,6 +362,14 @@
 				5896403C2A17718400DC8C3E /* KaKaoMapView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		5896403E2A1789EB00DC8C3E /* DetailLocalList */ = {
+			isa = PBXGroup;
+			children = (
+				589640402A178A1F00DC8C3E /* DetailLocalListView.swift */,
+			);
+			path = DetailLocalList;
 			sourceTree = "<group>";
 		};
 		58ACBD4F2A14747F005EF7A4 /* Components */ = {
@@ -564,6 +575,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				589640412A178A1F00DC8C3E /* DetailLocalListView.swift in Sources */,
 				58ACBD512A1474A2005EF7A4 /* GrayUIButton.swift in Sources */,
 				D3D03F762A10D9B9005AEE77 /* AppDelegate.swift in Sources */,
 				037C362B2A139BD800FAC78B /* PartTimeJobCollectionViewCell.swift in Sources */,

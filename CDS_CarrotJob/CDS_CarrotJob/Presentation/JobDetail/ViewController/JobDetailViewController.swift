@@ -19,6 +19,7 @@ final class JobDetailViewController: UIViewController {
     private let contentView = UIView()
     private let mainDetailView = MainDetailView()
     private let detailProfileView = DetailProfileView()
+    private let detailLocalListView = DetailLocalListView()
     
     // MARK: - View Life Cycle
     
@@ -56,7 +57,7 @@ extension JobDetailViewController {
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         
-        contentView.addSubviews(mainDetailView, detailProfileView)
+        contentView.addSubviews(mainDetailView, detailProfileView, detailLocalListView)
         
         scrollView.snp.makeConstraints {
             $0.top.equalToSuperview().inset(40)
@@ -78,6 +79,12 @@ extension JobDetailViewController {
             $0.horizontalEdges.equalToSuperview()
             $0.top.equalTo(mainDetailView.snp.bottom)
             $0.height.equalTo(380)
+        }
+        
+        detailLocalListView.snp.makeConstraints {
+            $0.horizontalEdges.equalToSuperview()
+            $0.top.equalTo(detailProfileView.snp.bottom)
+            $0.height.equalTo(540)
             $0.bottom.equalToSuperview()
         }
     }
