@@ -214,4 +214,8 @@ extension PartTimeJobCollectionViewCell {
         }
         jobHourlyWageLabel.text = "시급 " + "\(hourlyWage)" + "원"
     }
+    
+    func setUnderLineHidden() {
+        underLineView.isHidden = true
+    }
 }
