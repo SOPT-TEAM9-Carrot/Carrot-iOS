@@ -15,10 +15,10 @@ final class HomeLocalJobViewController: BaseViewController {
     
     private let originView = HomeLocalJobView()
     
-//    override func loadView() {
-//        self.view = originView
-//
-//    }
+    //    override func loadView() {
+    //        self.view = originView
+    //
+    //    }
     // MARK: - UI Components
     
     // MARK: - Properties

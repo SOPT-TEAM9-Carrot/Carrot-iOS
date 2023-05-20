@@ -12,7 +12,7 @@ import Then
 
 final class HomeLocalJobView: UIView {
     
-    var dataArray: [Job] = Job.dummy()
+    var dataArray: [JobLocalModel] = JobLocalModel.dummy()
     
     // MARK: - 상단 라벨
     private let title1Label = UILabel()
@@ -24,6 +24,8 @@ final class HomeLocalJobView: UIView {
         super.init(frame: frame)
         setUI()
         setLayout()
+        setRegister()
+        setDelegate()
     }
     
     required init?(coder: NSCoder) {
@@ -40,20 +42,16 @@ extension HomeLocalJobView {
             $0.textColor = .black
             $0.font = .notoSansFont(weightOf: .Bold, sizeOf: .font16)
             $0.text = "내 주변 사장님이"
-            $0.numberOfLines = 0
         }
         
         title2Label.do {
             $0.textColor = .black
             $0.font = .notoSansFont(weightOf: .Bold, sizeOf: .font16)
             $0.text = "상도동 떡잎방법대님을 찾고 있어요!"
-            $0.numberOfLines = 0
         }
-        homeLocalJobCollectionView.dataSource = self
-        
+    
         homeLocalJobCollectionView.do {
             $0.isScrollEnabled = false
-            $0.register(HomeLocalJobCollectionViewCell.self, forCellWithReuseIdentifier: "CollectionView1")
             $0.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
         }
         
@@ -90,12 +88,20 @@ extension HomeLocalJobView {
     private func flowLayout() -> UICollectionViewFlowLayout {
         let flowLayout = UICollectionViewFlowLayout()
         let width = (UIScreen.main.bounds.width / 2.0) - 20
-//        flowLayout.itemSize = CGSize(width: 174, height: 220)
+        //        flowLayout.itemSize = CGSize(width: 174, height: 220)
         flowLayout.itemSize = CGSize(width: width, height: 220)
         // 사실 이 부분.. 뷰 기준으로 나누고 해야하는 거 같은데 일단은 임의로 width값 바꿔서 넣었어요..
         flowLayout.minimumInteritemSpacing = 8
         flowLayout.minimumLineSpacing = 7
         return flowLayout
+    }
+    
+    private func setRegister() {
+        homeLocalJobCollectionView.registerCell(HomeLocalJobCollectionViewCell.self)
+    }
+    
+    private func setDelegate() {
+        homeLocalJobCollectionView.dataSource = self
     }
 }
 
@@ -103,13 +109,11 @@ extension HomeLocalJobView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.dataArray.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionView1", for: indexPath) as? HomeLocalJobCollectionViewCell else {
-            print("NOT WORKING!!NOT WORKING!!NOT WORKING!!NOT WORKING!!")
-            return UICollectionViewCell() }
-        
+        let cell = collectionView.dequeueCell(type: HomeLocalJobCollectionViewCell.self, indexPath: indexPath)
         cell.configureCell(model: dataArray[indexPath.row])
         return cell
     }
 }
+

@@ -32,14 +32,15 @@ class HomeLocalJobCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     func setUI() {
         backgroundColor = .white
         layer.borderWidth = 1
         layer.cornerRadius = 8
-        layer.borderColor = UIColor(named: "gray7")?.cgColor
+        layer.borderColor = Color.gray7.cgColor
         
         mainInfoLabel.do {
-            $0.textColor = .black
+            $0.textColor = Color.gray1
             $0.numberOfLines = 2
             $0.font = .notoSansFont(weightOf: .Bold, sizeOf: .font14)
         }
@@ -54,10 +55,7 @@ class HomeLocalJobCollectionViewCell: UICollectionViewCell {
     }
     
     func setLayout() {
-        contentView.addSubview(jobImageView)
-        contentView.addSubview(mainInfoLabel)
-        contentView.addSubview(subInfoLabel)
-        contentView.addSubview(moneyInfoLabel)
+        contentView.addSubviews(jobImageView, mainInfoLabel, subInfoLabel,moneyInfoLabel)
         
         jobImageView.snp.makeConstraints {
             $0.top.horizontalEdges.equalToSuperview()
@@ -83,7 +81,7 @@ class HomeLocalJobCollectionViewCell: UICollectionViewCell {
 }
 
 extension HomeLocalJobCollectionViewCell {
-    func configureCell(model: Job) {
+    func configureCell(model: JobLocalModel) {
         self.jobImageView.image = model.jobImage
         self.mainInfoLabel.text = model.mainInfo
         self.subInfoLabel.text = model.subInfo
