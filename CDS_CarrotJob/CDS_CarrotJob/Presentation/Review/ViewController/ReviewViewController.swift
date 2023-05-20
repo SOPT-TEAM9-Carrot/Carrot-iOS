@@ -16,8 +16,8 @@ final class ReviewViewController: UIViewController {
     // MARK: - UI Components
     
     private lazy var reviewTableView = UITableView(frame: .zero, style: .plain)
-    private let serverModel = ReviewServerModel.reviewServerData()
-    private let reviewModel = ReviewModel.reviewModelDummyData()
+    private let serverModel = ReviewServerModel.fetchReviewServerData()
+    private let reviewModel = ReviewModel.fetchReviewModelDummyData()
     
     // MARK: - Properties
     
