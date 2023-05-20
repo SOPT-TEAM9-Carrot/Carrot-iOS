@@ -22,7 +22,7 @@ struct PartTimeJobModel {
 
 extension PartTimeServerModel {
     
-    static func partTimeJobServerData() -> [PartTimeServerModel] {
+    static func fetchPartTimeJobServerData() -> [PartTimeServerModel] {
         return [
             PartTimeServerModel(jobName: "데이즈호텔 프론트", jobImage: "https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202203/24/6cff806a-82ef-4a54-a7ba-acd0ced51ba6.jpg", jobHourlyWage: 10000),
             PartTimeServerModel(jobName: "데이즈호텔 프론트", jobImage: "https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202203/24/6cff806a-82ef-4a54-a7ba-acd0ced51ba6.jpg", jobHourlyWage: 10000),
@@ -35,7 +35,7 @@ extension PartTimeServerModel {
 
 extension PartTimeJobModel {
     
-    static func partTimeJobdummyData() -> [PartTimeJobModel] {
+    static func fetchPartTimeJobdummyData() -> [PartTimeJobModel] {
         return [
             PartTimeJobModel(jobLocation: "데이즈호텔 명동  •  충무로 1가  •", reviewCount: "후기 1", jobDayWeek: "월~일", jobTime: "18:00 ~ 00:30"),
             PartTimeJobModel(jobLocation: "데이즈호텔 명동  •  충무로 1가  •", reviewCount: "후기 1", jobDayWeek: "월~일", jobTime: "18:00 ~ 00:30"),
