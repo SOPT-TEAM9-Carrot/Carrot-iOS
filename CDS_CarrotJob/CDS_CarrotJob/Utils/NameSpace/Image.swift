@@ -23,6 +23,7 @@ public enum Image {
     public static let carrotHeartFill = UIImage(named: "carrotHeartFill")!
     public static let carrotInformationCircle = UIImage(named: "carrotInformationCircle")!
     public static let carrotNavigationBack = UIImage(named: "carrotNavigationBack")!
+    public static let carrotBack = UIImage(named: "carrotBack")!
     public static let carrotPersonProfile = UIImage(named: "carrotPersonProfile")!
     public static let carrotPencil = UIImage(named: "carrotPencil")!
     public static let carrotRoleBox = UIImage(named: "carrotRoleBox")!
