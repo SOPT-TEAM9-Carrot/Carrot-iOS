@@ -109,8 +109,8 @@ extension ReviewViewController {
         navigationController?.navigationBar.tintColor = Color.gray1
         navigationController?.navigationBar.backgroundColor = Color.white
         let buttonInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 8) // 원하는 여백 값으로 수정
-        navigationItem.leftBarButtonItem = UIBarButtonItem (
-            image: Image.carrotNavigationBack,
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: Image.carrotBack,
             style: .plain,
             target: self,
             action: #selector(backButtonTapped)
@@ -131,7 +131,6 @@ extension ReviewViewController {
         }
     }
 
-    
     // MARK: - @objc Methods
     
     @objc private func backButtonTapped() {
