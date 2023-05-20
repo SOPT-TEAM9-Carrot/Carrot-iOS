@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		035F4DE32A151FE4005E8BBA /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F4DE22A151FE4005E8BBA /* ReviewTableViewCell.swift */; };
 		037C35DF2A121B8600FAC78B /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35DE2A121B8600FAC78B /* NetworkResult.swift */; };
 		037C35E12A121E2400FAC78B /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35E02A121E2400FAC78B /* NSObject+.swift */; };
 		037C35E32A121E6200FAC78B /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35E22A121E6200FAC78B /* UIView+.swift */; };
@@ -37,6 +38,7 @@
 		037C36322A13B0B300FAC78B /* PartTimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36312A13B0B300FAC78B /* PartTimeLabel.swift */; };
 		037C36362A13B99A00FAC78B /* PartTimeJobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36352A13B99A00FAC78B /* PartTimeJobModel.swift */; };
 		037C36382A13BC3400FAC78B /* PartTimeJobCellTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36372A13BC3400FAC78B /* PartTimeJobCellTestViewController.swift */; };
+		03F59DF82A1640D100942002 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59DF72A1640D100942002 /* ReviewModel.swift */; };
 		586BF3002A113B08002AD443 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF2FF2A113B08002AD443 /* UIImage+.swift */; };
 		586BF3022A114204002AD443 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF3012A114204002AD443 /* UIFont+.swift */; };
 		58ACBD512A1474A2005EF7A4 /* GrayUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ACBD502A1474A2005EF7A4 /* GrayUIButton.swift */; };
@@ -59,6 +61,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		035F4DE22A151FE4005E8BBA /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		037C35DE2A121B8600FAC78B /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		037C35E02A121E2400FAC78B /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 		037C35E22A121E6200FAC78B /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
@@ -89,6 +92,7 @@
 		037C36312A13B0B300FAC78B /* PartTimeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartTimeLabel.swift; sourceTree = "<group>"; };
 		037C36352A13B99A00FAC78B /* PartTimeJobModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartTimeJobModel.swift; sourceTree = "<group>"; };
 		037C36372A13BC3400FAC78B /* PartTimeJobCellTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartTimeJobCellTestViewController.swift; sourceTree = "<group>"; };
+		03F59DF72A1640D100942002 /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
 		586BF2FF2A113B08002AD443 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		586BF3012A114204002AD443 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		58ACBD502A1474A2005EF7A4 /* GrayUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayUIButton.swift; sourceTree = "<group>"; };
@@ -123,6 +127,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		035F4DE12A151FC9005E8BBA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				035F4DE22A151FE4005E8BBA /* ReviewTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		037C35DD2A121B7400FAC78B /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +253,7 @@
 			children = (
 				037C360B2A122D4E00FAC78B /* ViewController */,
 				037C360F2A122D8400FAC78B /* View */,
+				035F4DE12A151FC9005E8BBA /* Cell */,
 			);
 			path = Review;
 			sourceTree = "<group>";
@@ -286,15 +299,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		58ACBD4F2A14747F005EF7A4 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				58ACBD502A1474A2005EF7A4 /* GrayUIButton.swift */,
-				58ACBD522A1474AC005EF7A4 /* OrangeUIButton.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		037C36292A139BA700FAC78B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,8 +328,18 @@
 			isa = PBXGroup;
 			children = (
 				037C36352A13B99A00FAC78B /* PartTimeJobModel.swift */,
+				03F59DF72A1640D100942002 /* ReviewModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		58ACBD4F2A14747F005EF7A4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				58ACBD502A1474A2005EF7A4 /* GrayUIButton.swift */,
+				58ACBD522A1474AC005EF7A4 /* OrangeUIButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		58D304E22A11FEF9005E04CB /* Font */ = {
@@ -543,6 +557,7 @@
 				037C35EB2A121EBD00FAC78B /* UICollectionView+.swift in Sources */,
 				037C35F52A1226C100FAC78B /* Color.swift in Sources */,
 				037C36322A13B0B300FAC78B /* PartTimeLabel.swift in Sources */,
+				03F59DF82A1640D100942002 /* ReviewModel.swift in Sources */,
 				037C35E72A121E9800FAC78B /* UIStackView+.swift in Sources */,
 				037C361B2A13790500FAC78B /* Home.swift in Sources */,
 				037C361D2A13790E00FAC78B /* JobDetail.swift in Sources */,
@@ -556,6 +571,7 @@
 				037C36132A122DA100FAC78B /* ApplyViewController.swift in Sources */,
 				D3A53ED02A139F1F008EDC52 /* jobModel.swift in Sources */,
 				037C36362A13B99A00FAC78B /* PartTimeJobModel.swift in Sources */,
+				035F4DE32A151FE4005E8BBA /* ReviewTableViewCell.swift in Sources */,
 				586BF3002A113B08002AD443 /* UIImage+.swift in Sources */,
 				037C35FC2A122A3600FAC78B /* BaseView.swift in Sources */,
 			);
