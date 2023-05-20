@@ -39,4 +39,6 @@ enum CarrotImages: String {
     case carrotStar
     case carrotTalkBubble
     case carrotXMark
+    case carrotFace
+    case employerProfile
 }
