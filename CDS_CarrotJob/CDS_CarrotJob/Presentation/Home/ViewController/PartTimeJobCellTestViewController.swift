@@ -20,8 +20,8 @@ final class PartTimeJobCellTestViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         return collectionView
     }()
-    private let dummyModel = PartTimeJobModel.partTimeJobdummyData()
-    private let serverModel = PartTimeServerModel.partTimeJobServerData()
+    private let dummyModel = PartTimeJobModel.fetchPartTimeJobdummyData()
+    private let serverModel = PartTimeServerModel.fetchPartTimeJobServerData()
     
     // MARK: - Properties
     

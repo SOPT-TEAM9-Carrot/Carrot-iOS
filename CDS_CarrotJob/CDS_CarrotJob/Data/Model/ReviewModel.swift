@@ -21,7 +21,7 @@ struct ReviewModel {
 
 extension ReviewServerModel {
     
-    static func reviewServerData() -> [ReviewServerModel] {
+    static func fetchReviewServerData() -> [ReviewServerModel] {
         return [
             ReviewServerModel(profileImage: "https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202203/24/6cff806a-82ef-4a54-a7ba-acd0ced51ba6.jpg", nickName: "착한 당근이", comment: "바쁘지만 시간이 금방 가고 좋아요 !!"),
             ReviewServerModel(profileImage: "https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202203/24/6cff806a-82ef-4a54-a7ba-acd0ced51ba6.jpg", nickName: "착한 규보오빠", comment: "머싯는 규보 오빠 화이텡 ~~!!"),
@@ -34,7 +34,7 @@ extension ReviewServerModel {
 
 extension ReviewModel {
     
-    static func reviewModelDummyData() -> [ReviewModel] {
+    static func fetchReviewModelDummyData() -> [ReviewModel] {
         return [
             ReviewModel(certificationCount: "인계동 인증 29회  •", monthAgo: "2개월 전", jobTitle: "[알바급구] 인계동 단기 오늘!! 금(10) 홀"),
             ReviewModel(certificationCount: "인계동 인증 29회  •", monthAgo: "2개월 전", jobTitle: "[알바급구] 인계동 단기 오늘!! 금(10) 홀"),
