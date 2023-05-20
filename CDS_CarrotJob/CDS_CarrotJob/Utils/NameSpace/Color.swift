@@ -28,5 +28,5 @@ public enum Color {
     
     public static let mainColor1 = UIColor(named: "mainColor1")!
     public static let mainColor2 = UIColor(named: "mainColor2")!
-    public static let mainColor3 = UIColor(named: "mainColor2")!
+    public static let mainColor3 = UIColor(named: "mainColor3")!
 }
