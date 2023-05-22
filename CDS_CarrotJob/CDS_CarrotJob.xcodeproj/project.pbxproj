@@ -10,6 +10,7 @@
 		035F4DE32A151FE4005E8BBA /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F4DE22A151FE4005E8BBA /* ReviewTableViewCell.swift */; };
 		03641A852A1B86DD0053B6C7 /* HomeNearJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03641A842A1B86DD0053B6C7 /* HomeNearJobView.swift */; };
 		03641A882A1B8B590053B6C7 /* JobLabelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03641A872A1B8B590053B6C7 /* JobLabelCollectionViewCell.swift */; };
+		03641A8C2A1B8E070053B6C7 /* JobLabelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03641A8B2A1B8E070053B6C7 /* JobLabelModel.swift */; };
 		037C35DF2A121B8600FAC78B /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35DE2A121B8600FAC78B /* NetworkResult.swift */; };
 		037C35E12A121E2400FAC78B /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35E02A121E2400FAC78B /* NSObject+.swift */; };
 		037C35E32A121E6200FAC78B /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35E22A121E6200FAC78B /* UIView+.swift */; };
@@ -74,6 +75,7 @@
 		035F4DE22A151FE4005E8BBA /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		03641A842A1B86DD0053B6C7 /* HomeNearJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNearJobView.swift; sourceTree = "<group>"; };
 		03641A872A1B8B590053B6C7 /* JobLabelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobLabelCollectionViewCell.swift; sourceTree = "<group>"; };
+		03641A8B2A1B8E070053B6C7 /* JobLabelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobLabelModel.swift; sourceTree = "<group>"; };
 		037C35DE2A121B8600FAC78B /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		037C35E02A121E2400FAC78B /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 		037C35E22A121E6200FAC78B /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
@@ -170,6 +172,14 @@
 				03641A872A1B8B590053B6C7 /* JobLabelCollectionViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		03641A8A2A1B8DE80053B6C7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				03641A8B2A1B8E070053B6C7 /* JobLabelModel.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		037C35DD2A121B7400FAC78B /* Network */ = {
@@ -367,6 +377,7 @@
 		037C36342A13B98D00FAC78B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				03641A8A2A1B8DE80053B6C7 /* Home */,
 				037C36352A13B99A00FAC78B /* PartTimeJobModel.swift */,
 				03F59DF72A1640D100942002 /* ReviewModel.swift */,
 			);
@@ -642,6 +653,7 @@
 				58ACBD532A1474AC005EF7A4 /* OrangeUIButton.swift in Sources */,
 				5896403B2A17717300DC8C3E /* EmployerProfileStackView.swift in Sources */,
 				589640312A176D8700DC8C3E /* JobStatisticsView.swift in Sources */,
+				03641A8C2A1B8E070053B6C7 /* JobLabelModel.swift in Sources */,
 				037C36162A122EB700FAC78B /* Image.swift in Sources */,
 				037C35ED2A121F3300FAC78B /* String+.swift in Sources */,
 				589640352A176D9700DC8C3E /* LabelWithImage.swift in Sources */,
