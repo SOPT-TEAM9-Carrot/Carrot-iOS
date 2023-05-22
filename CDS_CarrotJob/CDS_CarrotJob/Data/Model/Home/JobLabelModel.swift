@@ -21,4 +21,8 @@ extension JobLabelModel {
             JobLabelModel(title: "요일")
         ]
     }
+    
+    private func setJobLabelTitle() {
+    
+    }
 }

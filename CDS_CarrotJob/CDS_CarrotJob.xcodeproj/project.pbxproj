@@ -11,6 +11,7 @@
 		03641A852A1B86DD0053B6C7 /* HomeNearJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03641A842A1B86DD0053B6C7 /* HomeNearJobView.swift */; };
 		03641A882A1B8B590053B6C7 /* JobLabelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03641A872A1B8B590053B6C7 /* JobLabelCollectionViewCell.swift */; };
 		03641A8C2A1B8E070053B6C7 /* JobLabelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03641A8B2A1B8E070053B6C7 /* JobLabelModel.swift */; };
+		03641A8E2A1B905F0053B6C7 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03641A8D2A1B905F0053B6C7 /* UILabel+.swift */; };
 		037C35DF2A121B8600FAC78B /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35DE2A121B8600FAC78B /* NetworkResult.swift */; };
 		037C35E12A121E2400FAC78B /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35E02A121E2400FAC78B /* NSObject+.swift */; };
 		037C35E32A121E6200FAC78B /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35E22A121E6200FAC78B /* UIView+.swift */; };
@@ -76,6 +77,7 @@
 		03641A842A1B86DD0053B6C7 /* HomeNearJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNearJobView.swift; sourceTree = "<group>"; };
 		03641A872A1B8B590053B6C7 /* JobLabelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobLabelCollectionViewCell.swift; sourceTree = "<group>"; };
 		03641A8B2A1B8E070053B6C7 /* JobLabelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobLabelModel.swift; sourceTree = "<group>"; };
+		03641A8D2A1B905F0053B6C7 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 		037C35DE2A121B8600FAC78B /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		037C35E02A121E2400FAC78B /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 		037C35E22A121E6200FAC78B /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
@@ -523,6 +525,7 @@
 				037C35EC2A121F3300FAC78B /* String+.swift */,
 				037C35EE2A121F5B00FAC78B /* UIImageView+.swift */,
 				589640262A176A4800DC8C3E /* Int+.swift */,
+				03641A8D2A1B905F0053B6C7 /* UILabel+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -649,6 +652,7 @@
 				037C36022A122C6700FAC78B /* HomeViewController.swift in Sources */,
 				037C35E52A121E7C00FAC78B /* UITextField+.swift in Sources */,
 				D3A53EC02A137CF6008EDC52 /* HomeLocalJobView.swift in Sources */,
+				03641A8E2A1B905F0053B6C7 /* UILabel+.swift in Sources */,
 				D3A53ECE2A138D94008EDC52 /* HomeLocalJobCollectionViewCell.swift in Sources */,
 				58ACBD532A1474AC005EF7A4 /* OrangeUIButton.swift in Sources */,
 				5896403B2A17717300DC8C3E /* EmployerProfileStackView.swift in Sources */,
