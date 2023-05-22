@@ -52,14 +52,20 @@ extension JobLabelCollectionViewCell {
         titleLabel.do {
             $0.font = .notoSansFont(weightOf: .Medium, sizeOf: .font14)
             $0.textColor = Color.gray1
+            $0.textAlignment = .center
         }
-        
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
         
+        contentView.addSubviews(titleLabel)
+        
+        titleLabel.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.centerY.equalToSuperview()
+        }
     }
     
     // MARK: - Methods
