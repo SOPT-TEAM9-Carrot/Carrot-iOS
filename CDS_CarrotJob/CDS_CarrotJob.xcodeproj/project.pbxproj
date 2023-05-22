@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		035F4DE32A151FE4005E8BBA /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F4DE22A151FE4005E8BBA /* ReviewTableViewCell.swift */; };
+		03641A852A1B86DD0053B6C7 /* HomeNearJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03641A842A1B86DD0053B6C7 /* HomeNearJobView.swift */; };
 		037C35DF2A121B8600FAC78B /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35DE2A121B8600FAC78B /* NetworkResult.swift */; };
 		037C35E12A121E2400FAC78B /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35E02A121E2400FAC78B /* NSObject+.swift */; };
 		037C35E32A121E6200FAC78B /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35E22A121E6200FAC78B /* UIView+.swift */; };
@@ -56,8 +57,6 @@
 		58D304E12A11F174005E04CB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 58D304E02A11F174005E04CB /* .swiftlint.yml */; };
 		D3A53EC02A137CF6008EDC52 /* HomeLocalJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A53EBF2A137CF6008EDC52 /* HomeLocalJobView.swift */; };
 		D3A53EC22A138315008EDC52 /* HomeLoaclJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A53EC12A138315008EDC52 /* HomeLoaclJobViewController.swift */; };
-		D3A53EC42A138C1A008EDC52 /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D3A53EC32A138C19008EDC52 /* NotoSansKR-Bold.otf */; };
-		D3A53EC62A138C23008EDC52 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D3A53EC52A138C23008EDC52 /* NotoSansKR-Medium.otf */; };
 		D3A53ECE2A138D94008EDC52 /* HomeLocalJobCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A53ECD2A138D94008EDC52 /* HomeLocalJobCollectionViewCell.swift */; };
 		D3A53ED02A139F1F008EDC52 /* jobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A53ECF2A139F1F008EDC52 /* jobModel.swift */; };
 		D3D03F762A10D9B9005AEE77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D03F752A10D9B9005AEE77 /* AppDelegate.swift */; };
@@ -72,6 +71,7 @@
 
 /* Begin PBXFileReference section */
 		035F4DE22A151FE4005E8BBA /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
+		03641A842A1B86DD0053B6C7 /* HomeNearJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNearJobView.swift; sourceTree = "<group>"; };
 		037C35DE2A121B8600FAC78B /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		037C35E02A121E2400FAC78B /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 		037C35E22A121E6200FAC78B /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
@@ -120,8 +120,6 @@
 		58D304E02A11F174005E04CB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		D3A53EBF2A137CF6008EDC52 /* HomeLocalJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLocalJobView.swift; sourceTree = "<group>"; };
 		D3A53EC12A138315008EDC52 /* HomeLoaclJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLoaclJobViewController.swift; sourceTree = "<group>"; };
-		D3A53EC32A138C19008EDC52 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
-		D3A53EC52A138C23008EDC52 /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
 		D3A53ECD2A138D94008EDC52 /* HomeLocalJobCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLocalJobCollectionViewCell.swift; sourceTree = "<group>"; };
 		D3A53ECF2A139F1F008EDC52 /* jobModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jobModel.swift; sourceTree = "<group>"; };
 		D3D03F722A10D9B9005AEE77 /* CDS_CarrotJob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CDS_CarrotJob.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +151,14 @@
 				035F4DE22A151FE4005E8BBA /* ReviewTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		03641A832A1B86B70053B6C7 /* Near */ = {
+			isa = PBXGroup;
+			children = (
+				03641A842A1B86DD0053B6C7 /* HomeNearJobView.swift */,
+			);
+			path = Near;
 			sourceTree = "<group>";
 		};
 		037C35DD2A121B7400FAC78B /* Network */ = {
@@ -234,6 +240,7 @@
 		037C36032A122CC000FAC78B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				03641A832A1B86B70053B6C7 /* Near */,
 				037C361A2A13790500FAC78B /* Home.swift */,
 				D3A53EBF2A137CF6008EDC52 /* HomeLocalJobView.swift */,
 				D3A53ECD2A138D94008EDC52 /* HomeLocalJobCollectionViewCell.swift */,
@@ -630,6 +637,7 @@
 				037C36082A122D2500FAC78B /* JobDetailViewController.swift in Sources */,
 				037C35FE2A122BCB00FAC78B /* BaseViewController.swift in Sources */,
 				589640272A176A4800DC8C3E /* Int+.swift in Sources */,
+				03641A852A1B86DD0053B6C7 /* HomeNearJobView.swift in Sources */,
 				589640332A176D9000DC8C3E /* JobTitleStackView.swift in Sources */,
 				037C35EB2A121EBD00FAC78B /* UICollectionView+.swift in Sources */,
 				037C35F52A1226C100FAC78B /* Color.swift in Sources */,
