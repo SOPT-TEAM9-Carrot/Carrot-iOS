@@ -7,14 +7,31 @@
 
 import UIKit
 
-class DetailReviewEmptyView: UIView {
+import SnapKit
+import Then
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+final class DetailReviewEmptyView: UIView {
+
+    private let emptyLabel = UILabel()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = .clear
+        
+        emptyLabel.do {
+            $0.text = "아직 추가 알바가 없어요."
+            $0.font = .notoSansFont(weightOf: .Medium, sizeOf: .font14)
+            $0.textColor = Color.gray4
+        }
+        
+        self.addSubview(emptyLabel)
+        
+        emptyLabel.snp.makeConstraints {
+            $0.center.equalToSuperview()
+        }
     }
-    */
-
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
