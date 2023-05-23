@@ -12,6 +12,9 @@
 		03641A882A1B8B590053B6C7 /* JobLabelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03641A872A1B8B590053B6C7 /* JobLabelCollectionViewCell.swift */; };
 		03641A8C2A1B8E070053B6C7 /* JobLabelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03641A8B2A1B8E070053B6C7 /* JobLabelModel.swift */; };
 		03641A8E2A1B905F0053B6C7 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03641A8D2A1B905F0053B6C7 /* UILabel+.swift */; };
+		03641A912A1CD04D0053B6C7 /* JobLabelFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03641A902A1CD04D0053B6C7 /* JobLabelFooterView.swift */; };
+		03641A932A1CD9E20053B6C7 /* TodayPopularHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03641A922A1CD9E20053B6C7 /* TodayPopularHeaderView.swift */; };
+		03641A952A1CDB3C0053B6C7 /* TodayPopularFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03641A942A1CDB3C0053B6C7 /* TodayPopularFooterView.swift */; };
 		037C35DF2A121B8600FAC78B /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35DE2A121B8600FAC78B /* NetworkResult.swift */; };
 		037C35E12A121E2400FAC78B /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35E02A121E2400FAC78B /* NSObject+.swift */; };
 		037C35E32A121E6200FAC78B /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35E22A121E6200FAC78B /* UIView+.swift */; };
@@ -78,6 +81,9 @@
 		03641A872A1B8B590053B6C7 /* JobLabelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobLabelCollectionViewCell.swift; sourceTree = "<group>"; };
 		03641A8B2A1B8E070053B6C7 /* JobLabelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobLabelModel.swift; sourceTree = "<group>"; };
 		03641A8D2A1B905F0053B6C7 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		03641A902A1CD04D0053B6C7 /* JobLabelFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobLabelFooterView.swift; sourceTree = "<group>"; };
+		03641A922A1CD9E20053B6C7 /* TodayPopularHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayPopularHeaderView.swift; sourceTree = "<group>"; };
+		03641A942A1CDB3C0053B6C7 /* TodayPopularFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayPopularFooterView.swift; sourceTree = "<group>"; };
 		037C35DE2A121B8600FAC78B /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		037C35E02A121E2400FAC78B /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 		037C35E22A121E6200FAC78B /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
@@ -162,6 +168,7 @@
 		03641A832A1B86B70053B6C7 /* Near */ = {
 			isa = PBXGroup;
 			children = (
+				03641A8F2A1CD0110053B6C7 /* View */,
 				03641A892A1B8B860053B6C7 /* Cell */,
 				03641A842A1B86DD0053B6C7 /* HomeNearJobView.swift */,
 			);
@@ -182,6 +189,16 @@
 				03641A8B2A1B8E070053B6C7 /* JobLabelModel.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		03641A8F2A1CD0110053B6C7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				03641A902A1CD04D0053B6C7 /* JobLabelFooterView.swift */,
+				03641A922A1CD9E20053B6C7 /* TodayPopularHeaderView.swift */,
+				03641A942A1CDB3C0053B6C7 /* TodayPopularFooterView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		037C35DD2A121B7400FAC78B /* Network */ = {
@@ -645,6 +662,7 @@
 				037C36382A13BC3400FAC78B /* PartTimeJobCellTestViewController.swift in Sources */,
 				037C360D2A122D5800FAC78B /* ReviewViewController.swift in Sources */,
 				5896402D2A176D7700DC8C3E /* JobInformationStackView.swift in Sources */,
+				03641A912A1CD04D0053B6C7 /* JobLabelFooterView.swift in Sources */,
 				037C35E12A121E2400FAC78B /* NSObject+.swift in Sources */,
 				037C35DF2A121B8600FAC78B /* NetworkResult.swift in Sources */,
 				037C36302A13A56300FAC78B /* AdvertisingButton.swift in Sources */,
@@ -674,12 +692,14 @@
 				03F59DF82A1640D100942002 /* ReviewModel.swift in Sources */,
 				037C35E72A121E9800FAC78B /* UIStackView+.swift in Sources */,
 				5896402B2A176D5C00DC8C3E /* MainDetailView.swift in Sources */,
+				03641A932A1CD9E20053B6C7 /* TodayPopularHeaderView.swift in Sources */,
 				5896402F2A176D8000DC8C3E /* JobLocalInformingView.swift in Sources */,
 				037C361B2A13790500FAC78B /* Home.swift in Sources */,
 				037C35EF2A121F5B00FAC78B /* UIImageView+.swift in Sources */,
 				03641A882A1B8B590053B6C7 /* JobLabelCollectionViewCell.swift in Sources */,
 				037C361F2A13792100FAC78B /* Review.swift in Sources */,
 				037C36212A13792800FAC78B /* Apply.swift in Sources */,
+				03641A952A1CDB3C0053B6C7 /* TodayPopularFooterView.swift in Sources */,
 				037C35E32A121E6200FAC78B /* UIView+.swift in Sources */,
 				586BF3022A114204002AD443 /* UIFont+.swift in Sources */,
 				D3A53EC22A138315008EDC52 /* HomeLoaclJobViewController.swift in Sources */,
