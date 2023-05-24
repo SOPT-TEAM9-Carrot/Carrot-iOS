@@ -13,14 +13,8 @@ import Then
 final class JobLabelCollectionViewCell: UICollectionViewCell {
     
     override var isSelected: Bool {
-        willSet {
-            if newValue {
-                titleLabel.textColor = Color.white
-                backgroundColor = Color.mainColor1
-            } else {
-                titleLabel.textColor = Color.gray1
-                backgroundColor = Color.gray1
-            }
+        didSet {
+            updateCellColor(isSelected)
         }
     }
     
@@ -34,6 +28,7 @@ final class JobLabelCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         setUI()
         setLayout()
+        self.updateCellColor(false)
     }
     
     required init?(coder: NSCoder) {
@@ -77,5 +72,17 @@ extension JobLabelCollectionViewCell {
     
     func setDataBind(model: JobLabelModel) {
         titleLabel.text = model.title
+    }
+    
+    func updateCellColor(_ isSelected: Bool) {
+        if isSelected {
+            contentView.backgroundColor = Color.mainColor1
+            titleLabel.textColor = Color.white
+            print("sele")
+        } else {
+            contentView.backgroundColor = Color.white
+            titleLabel.textColor = Color.gray1
+            print("de")
+        }
     }
 }

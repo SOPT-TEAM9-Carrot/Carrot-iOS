@@ -305,4 +305,38 @@ extension HomeNearJobView: UICollectionViewDelegateFlowLayout {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return HomeNearJobSection.allCases.count
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let sectionType = SectionType.allCases[indexPath.section]
+        switch sectionType {
+        case .jobLabel:
+            guard let cell = collectionView.cellForItem(at: indexPath) as? JobLabelCollectionViewCell else { return }
+            if cell.isSelected == false {
+                cell.updateCellColor(true)
+            }
+        case .firstPartTime:
+            break
+        case .todayPopular:
+            break
+        case .secondPartTime:
+            break
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let sectionType = SectionType.allCases[indexPath.section]
+        switch sectionType {
+        case .jobLabel:
+            guard let cell = collectionView.cellForItem(at: indexPath) as? JobLabelCollectionViewCell else { return }
+            if cell.isSelected == true {
+                cell.updateCellColor(false)
+            }
+        case .firstPartTime:
+            break
+        case .todayPopular:
+            break
+        case .secondPartTime:
+            break
+        }
+    }
 }
