@@ -53,7 +53,6 @@ extension HomeNearJobView {
         backgroundColor = .clear
         
         homeNearJobCollectionView.do {
-//            $0.showsVerticalIndicator = false
             $0.isScrollEnabled = true
             $0.backgroundColor = Color.white
             $0.clipsToBounds = true
@@ -86,7 +85,13 @@ extension HomeNearJobView {
         homeNearJobCollectionView.registerCell(TodayPopularCollectionViewCell.self)
         homeNearJobCollectionView.registerFooter(JobLabelFooterView.self)
         homeNearJobCollectionView.registerHeader(TodayPopularHeaderView.self)
-        homeNearJobCollectionView.registerFooter(TodayPopularFooterView.self)
+        homeNearJobCollectionView.registerHeader(TodayPopularFooterView.self)
+    }
+    
+    func labelWidthSize(index: Int) -> Int {
+        let size = jobLabelModel[index].title.size(
+            withAttributes: [NSAttributedString.Key.font : UIFont.notoSansFont(weightOf: .Medium, sizeOf: .font14)!]).width
+        return Int(size)
     }
     
     private func setSectionLayout() -> UICollectionViewLayout {
@@ -107,39 +112,60 @@ extension HomeNearJobView {
     
     private func getLayoutJobLabelSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalHeight(1.0)
+            widthDimension: .estimated(123),
+            heightDimension: .absolute(38)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0)
         
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(600)
+            widthDimension: .absolute(500),
+            heightDimension: .absolute(38)
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
             subitems: [item]
         )
+        group.interItemSpacing = .fixed(4)
+        
+        let footerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(164)
+        )
+        
+        let footer = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: footerSize,
+            elementKind: UICollectionView.elementKindSectionFooter,
+            alignment: .bottom
+        )
+        
+        footer.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: -16, bottom: 0, trailing: -16)
+        
+        let config = UICollectionViewCompositionalLayoutConfiguration()
+        config.scrollDirection = .vertical
         
         let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .paging
+        section.interGroupSpacing = 4
+        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 16, bottom: 12, trailing: 16)
+        section.orthogonalScrollingBehavior = .continuous
+        section.boundarySupplementaryItems = [footer]
+        
         return section
     }
     
     private func getLayoutFirstPartTimeSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalHeight(1.0)
+            heightDimension: .absolute(137)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(600)
+            heightDimension: .absolute(414)
         )
-        let group = NSCollectionLayoutGroup.horizontal(
+        let group = NSCollectionLayoutGroup.vertical(
             layoutSize: groupSize,
             subitems: [item]
         )
@@ -151,45 +177,67 @@ extension HomeNearJobView {
     
     private func getLayoutTodayPopularSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalHeight(1.0)
+            widthDimension: .absolute(160),
+            heightDimension: .absolute(144)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 1, leading: 0, bottom: 1, trailing: 12)
         
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(600)
+            widthDimension: .estimated(500),
+            heightDimension: .absolute(144)
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
             subitems: [item]
         )
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(58)
+        )
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top
+        )
+        header.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: -16, bottom: 0, trailing: -16)
         
         let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .paging
+        section.orthogonalScrollingBehavior = .continuous
+        section.boundarySupplementaryItems = [header]
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 12, trailing: 4)
         return section
     }
     
     private func getLayoutSecondPartTimeSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalHeight(1.0)
+            heightDimension: .absolute(137)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(600)
+            heightDimension: .absolute(825)
         )
-        let group = NSCollectionLayoutGroup.horizontal(
+        let group = NSCollectionLayoutGroup.vertical(
             layoutSize: groupSize,
             subitems: [item]
+        )
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(2)
+        )
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top
         )
         
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .paging
+        section.boundarySupplementaryItems = [header]
         return section
     }
     

@@ -41,11 +41,20 @@ extension TodayPopularCollectionViewCell {
     private func setUI() {
         
         backgroundColor = Color.white
+        self.layer.cornerRadius = 8
+        self.layer.shadowColor = Color.gray1.cgColor
+        self.layer.shadowOpacity = 0.2
+        self.layer.shadowOffset = CGSize.zero
+        self.layer.shadowRadius = 4
+        self.layer.masksToBounds = false
+//        self.clipsToBounds = true
         
         titleLabel.do {
-            $0.text = "1위 카페운영및관리.\n광고홍보.멀티되..."
+            $0.text = "1위  카페운영및관리.\n광고홍보.멀티되..."
             $0.font = .notoSansFont(weightOf: .Bold, sizeOf: .font14)
             $0.textColor = Color.gray1
+            $0.numberOfLines = 2
+            $0.partColorChange(targetString: "1위", textColor: Color.mainColor1)
         }
         
         jobNameLabel.do {

@@ -47,7 +47,11 @@ extension JobLabelCollectionViewCell {
     
     private func setUI() {
         
-        backgroundColor = Color.white
+        contentView.backgroundColor = Color.white
+        self.layer.cornerRadius = 15
+        self.layer.borderColor = Color.gray6.cgColor
+        self.layer.borderWidth = 1
+        self.clipsToBounds = true
         
         titleLabel.do {
             $0.font = .notoSansFont(weightOf: .Medium, sizeOf: .font14)
@@ -63,8 +67,9 @@ extension JobLabelCollectionViewCell {
         contentView.addSubviews(titleLabel)
         
         titleLabel.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
             $0.centerY.equalToSuperview()
+            $0.leading.trailing.equalToSuperview().inset(12)
+            $0.height.equalTo(20)
         }
     }
     

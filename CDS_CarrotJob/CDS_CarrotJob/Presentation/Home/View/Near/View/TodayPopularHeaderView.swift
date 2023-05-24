@@ -60,13 +60,13 @@ extension TodayPopularHeaderView {
         addSubviews(starIcon, todayPopularLabel)
         
         starIcon.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.leading.equalToSuperview().inset(13)
+            $0.centerY.equalToSuperview()
+            $0.leading.equalToSuperview()
         }
         
         todayPopularLabel.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.leading.equalTo(starIcon.snp.trailing).offset(11)
+            $0.centerY.equalToSuperview()
+            $0.leading.equalTo(starIcon.snp.trailing)
             $0.height.equalTo(26)
         }
     }

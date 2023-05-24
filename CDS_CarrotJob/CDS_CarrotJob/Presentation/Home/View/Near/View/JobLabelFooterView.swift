@@ -58,6 +58,8 @@ extension JobLabelFooterView {
         
         alarmView.do {
             $0.backgroundColor = Color.gray7
+            $0.layer.cornerRadius = 8
+            $0.clipsToBounds = true
         }
         
         applyImageView.do {
