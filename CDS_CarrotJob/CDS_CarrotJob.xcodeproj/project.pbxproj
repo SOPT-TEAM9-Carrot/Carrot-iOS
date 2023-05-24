@@ -15,6 +15,7 @@
 		03641A912A1CD04D0053B6C7 /* JobLabelFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03641A902A1CD04D0053B6C7 /* JobLabelFooterView.swift */; };
 		03641A932A1CD9E20053B6C7 /* TodayPopularHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03641A922A1CD9E20053B6C7 /* TodayPopularHeaderView.swift */; };
 		03641A952A1CDB3C0053B6C7 /* TodayPopularFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03641A942A1CDB3C0053B6C7 /* TodayPopularFooterView.swift */; };
+		03641A972A1CDC410053B6C7 /* TodayPopularCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03641A962A1CDC410053B6C7 /* TodayPopularCollectionViewCell.swift */; };
 		037C35DF2A121B8600FAC78B /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35DE2A121B8600FAC78B /* NetworkResult.swift */; };
 		037C35E12A121E2400FAC78B /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35E02A121E2400FAC78B /* NSObject+.swift */; };
 		037C35E32A121E6200FAC78B /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35E22A121E6200FAC78B /* UIView+.swift */; };
@@ -84,6 +85,7 @@
 		03641A902A1CD04D0053B6C7 /* JobLabelFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobLabelFooterView.swift; sourceTree = "<group>"; };
 		03641A922A1CD9E20053B6C7 /* TodayPopularHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayPopularHeaderView.swift; sourceTree = "<group>"; };
 		03641A942A1CDB3C0053B6C7 /* TodayPopularFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayPopularFooterView.swift; sourceTree = "<group>"; };
+		03641A962A1CDC410053B6C7 /* TodayPopularCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayPopularCollectionViewCell.swift; sourceTree = "<group>"; };
 		037C35DE2A121B8600FAC78B /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		037C35E02A121E2400FAC78B /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 		037C35E22A121E6200FAC78B /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
@@ -170,7 +172,6 @@
 			children = (
 				03641A8F2A1CD0110053B6C7 /* View */,
 				03641A892A1B8B860053B6C7 /* Cell */,
-				03641A842A1B86DD0053B6C7 /* HomeNearJobView.swift */,
 			);
 			path = Near;
 			sourceTree = "<group>";
@@ -179,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				03641A872A1B8B590053B6C7 /* JobLabelCollectionViewCell.swift */,
+				03641A962A1CDC410053B6C7 /* TodayPopularCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -194,6 +196,7 @@
 		03641A8F2A1CD0110053B6C7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				03641A842A1B86DD0053B6C7 /* HomeNearJobView.swift */,
 				03641A902A1CD04D0053B6C7 /* JobLabelFooterView.swift */,
 				03641A922A1CD9E20053B6C7 /* TodayPopularHeaderView.swift */,
 				03641A942A1CDB3C0053B6C7 /* TodayPopularFooterView.swift */,
@@ -699,6 +702,7 @@
 				03641A882A1B8B590053B6C7 /* JobLabelCollectionViewCell.swift in Sources */,
 				037C361F2A13792100FAC78B /* Review.swift in Sources */,
 				037C36212A13792800FAC78B /* Apply.swift in Sources */,
+				03641A972A1CDC410053B6C7 /* TodayPopularCollectionViewCell.swift in Sources */,
 				03641A952A1CDB3C0053B6C7 /* TodayPopularFooterView.swift in Sources */,
 				037C35E32A121E6200FAC78B /* UIView+.swift in Sources */,
 				586BF3022A114204002AD443 /* UIFont+.swift in Sources */,

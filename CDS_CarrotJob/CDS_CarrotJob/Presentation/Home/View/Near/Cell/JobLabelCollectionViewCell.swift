@@ -69,5 +69,8 @@ extension JobLabelCollectionViewCell {
     }
     
     // MARK: - Methods
-
+    
+    func setDataBind(model: JobLabelModel) {
+        titleLabel.text = model.title
+    }
 }
