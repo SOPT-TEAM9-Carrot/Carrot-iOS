@@ -16,7 +16,7 @@ final class ReviewViewController: UIViewController {
     // MARK: - UI Components
     
     private lazy var reviewTableView = UITableView(frame: .zero, style: .plain)
-    private let serverModel = ReviewServerModel.fetchReviewServerData()
+    private var serverModel: [ReviewServerModel] = []
     private let reviewModel = ReviewModel.fetchReviewModelDummyData()
     
     // MARK: - Properties
@@ -36,6 +36,7 @@ final class ReviewViewController: UIViewController {
         setNavigationBar()
         setRegister()
         setDelegate()
+        fetchResponse()
     }
 }
 
@@ -116,7 +117,12 @@ extension ReviewViewController {
 extension ReviewViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
+        let commentString = serverModel[indexPath.row].comment
+        if commentString.count > 52 {
+            return 180
+        } else if commentString.count > 27 && commentString.count <= 51 {
+            return 160
+        } else { return 140 }
     }
 }
 
@@ -129,6 +135,32 @@ extension ReviewViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueCell(type: ReviewTableViewCell.self, indexPath: indexPath)
         cell.setDataBind(serverModel: serverModel[indexPath.row], dummyModel: reviewModel[indexPath.row])
+        cell.selectionStyle = .none
         return cell
+    }
+}
+
+extension ReviewViewController {
+    
+    private func fetchResponse() {
+        ReviewService.shared.review { response in
+            switch response {
+            case .success(let data):
+                guard let data = data as? ReviewResponse else { return }
+                print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
+                dump(data)
+                print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
+                self.serverModel = data.convertToReview()
+                self.reviewTableView.reloadData()
+            case .serverErr:
+                print("🔥🔥🔥🔥🔥서버 이상 서버 이상🔥🔥🔥🔥🔥")
+            case .pathErr:
+                print("-----------경로이상-------------")
+            case .networkErr:
+                print("💧💧💧💧💧네트워크에런데 뭔ㄹ지머름💧💧💧💧💧")
+            default:
+                return
+            }
+        }
     }
 }
