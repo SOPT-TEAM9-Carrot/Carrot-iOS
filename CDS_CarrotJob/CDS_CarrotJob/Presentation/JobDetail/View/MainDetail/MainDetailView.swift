@@ -108,7 +108,7 @@ extension MainDetailView {
         
         localInfoView.snp.makeConstraints {
             $0.horizontalEdges.equalToSuperview().inset(16)
-            $0.top.equalTo(describingTextView.snp.bottom).offset(25)
+            $0.top.equalTo(describingTextView.snp.bottom).offset(40)
             $0.height.equalTo(60)
         }
         

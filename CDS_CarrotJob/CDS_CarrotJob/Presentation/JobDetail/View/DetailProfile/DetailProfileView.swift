@@ -89,7 +89,7 @@ extension DetailProfileView {
         employerStackView.snp.makeConstraints {
             $0.horizontalEdges.equalToSuperview().inset(16)
             $0.height.equalTo(46)
-            $0.top.equalTo(employerProfileView.snp.bottom).offset(15)
+            $0.top.equalTo(employerProfileView.snp.bottom).offset(30)
         }
         
         employerResponseRatioLabel.snp.makeConstraints {

@@ -96,6 +96,9 @@ extension DetailLocalListView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(type: PartTimeJobCollectionViewCell.self, indexPath: indexPath)
+//        if indexPath.item == 2 {
+//            cell.
+//        }
         
         cell.setDataBind(serverModel: dummyServerData[indexPath.item], dummyModel: dummyJobData[indexPath.item])
         

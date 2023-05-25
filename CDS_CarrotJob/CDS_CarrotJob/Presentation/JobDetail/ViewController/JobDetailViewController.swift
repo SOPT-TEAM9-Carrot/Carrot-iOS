@@ -11,6 +11,10 @@ import Alamofire
 import SnapKit
 import Then
 
+protocol JobDetailContstraintChangeDelegate: AnyObject {
+    func modifyConstraintTo(heightOf: CGFloat)
+}
+
 final class JobDetailViewController: UIViewController {
     
     // MARK: - UI Components
@@ -19,12 +23,14 @@ final class JobDetailViewController: UIViewController {
     private let contentView = UIView()
     private let mainDetailView = MainDetailView()
     private let detailProfileView = DetailProfileView()
+    private let detailReviewView = DetailReviewListView()
     private let detailLocalListView = DetailLocalListView()
     
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setDelegate()
         setUI()
         setLayout()
     }
@@ -33,6 +39,10 @@ final class JobDetailViewController: UIViewController {
 extension JobDetailViewController {
     
     // MARK: - UI Components Property
+    
+    private func setDelegate() {
+        detailReviewView.delegate = self
+    }
     
     private func setUI() {
         view.backgroundColor = .white
@@ -57,7 +67,7 @@ extension JobDetailViewController {
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         
-        contentView.addSubviews(mainDetailView, detailProfileView, detailLocalListView)
+        contentView.addSubviews(mainDetailView, detailProfileView, detailReviewView, detailLocalListView)
         
         scrollView.snp.makeConstraints {
             $0.top.equalToSuperview().inset(40)
@@ -81,11 +91,25 @@ extension JobDetailViewController {
             $0.height.equalTo(380)
         }
         
-        detailLocalListView.snp.makeConstraints {
+        detailReviewView.snp.makeConstraints {
             $0.horizontalEdges.equalToSuperview()
             $0.top.equalTo(detailProfileView.snp.bottom)
+            $0.height.equalTo(735)
+        }
+        
+        detailLocalListView.snp.makeConstraints {
+            $0.horizontalEdges.equalToSuperview()
+            $0.top.equalTo(detailReviewView.snp.bottom)
             $0.height.equalTo(540)
             $0.bottom.equalToSuperview()
+        }
+    }
+}
+
+extension JobDetailViewController: JobDetailContstraintChangeDelegate {
+    func modifyConstraintTo(heightOf: CGFloat) {
+        detailReviewView.snp.updateConstraints {
+            $0.height.equalTo(heightOf)
         }
     }
 }
