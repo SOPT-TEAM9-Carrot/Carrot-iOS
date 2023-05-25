@@ -23,6 +23,6 @@ extension JobLabelModel {
     }
     
     private func setJobLabelTitle() {
-    
+        
     }
 }

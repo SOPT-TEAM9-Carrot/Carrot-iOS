@@ -21,6 +21,7 @@ final class JobLabelCollectionViewCell: UICollectionViewCell {
     // MARK: - UI Components
     
     private let titleLabel = UILabel()
+    private let titleImage = NSTextAttachment()
     
     // MARK: - View Life Cycle
     
@@ -53,6 +54,10 @@ extension JobLabelCollectionViewCell {
             $0.textColor = Color.gray1
             $0.textAlignment = .center
         }
+        
+        titleImage.do {
+            $0.image = Image.blackArrow
+        }
     }
     
     // MARK: - Layout Helper
@@ -71,18 +76,32 @@ extension JobLabelCollectionViewCell {
     // MARK: - Methods
     
     func setDataBind(model: JobLabelModel) {
-        titleLabel.text = model.title
+        let string = NSMutableAttributedString(string: model.title + "  ")
+        setImageColor(isSelected)
+        let img = NSAttributedString(attachment: titleImage)
+        // 도데체 왜 이 spacing이 적용이안되는지 도무지도무지 정말 모르겠어여
+        titleLabel.labelWithImg(composition: string, img, spacing: 6)
+    }
+    
+    private func setImageColor(_ isSelected: Bool) {
+        if isSelected {
+            titleImage.image = Image.whiteArrow
+        } else {
+            titleImage.image = Image.blackArrow
+        }
     }
     
     func updateCellColor(_ isSelected: Bool) {
         if isSelected {
             contentView.backgroundColor = Color.mainColor1
             titleLabel.textColor = Color.white
-            print("sele")
+            layer.borderWidth = 0
+            setImageColor(isSelected)
         } else {
             contentView.backgroundColor = Color.white
             titleLabel.textColor = Color.gray1
-            print("de")
+            layer.borderWidth = 1
+            setImageColor(isSelected)
         }
     }
 }

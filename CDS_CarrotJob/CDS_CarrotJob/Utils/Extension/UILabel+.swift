@@ -11,15 +11,18 @@ extension UILabel {
     
     // string과 이미지합쳐주고 줄 간격 주는 익스텐션
     func labelWithImg(composition: NSAttributedString..., spacing: CGFloat) {
-            let attributedString = NSMutableAttributedString()
-            for count in composition {
+        let attributedString = NSMutableAttributedString()
+        for count in composition {
             attributedString.append(count)
-            }
-        let style = NSMutableParagraphStyle()
-        style.lineSpacing = spacing
-        attributedString.addAttribute(.paragraphStyle,
-                                      value: style,
+        }
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = spacing
+        
+        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle,
+                                      value: paragraphStyle,
                                       range: NSRange(location: 0, length: attributedString.length))
+        
         self.attributedText = attributedString
     }
     
