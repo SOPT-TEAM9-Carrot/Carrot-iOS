@@ -193,7 +193,7 @@ extension HomeNearJobView {
         )
         let headerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(58)
+            heightDimension: .absolute(60)
         )
         let header = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
@@ -270,6 +270,9 @@ extension HomeNearJobView: UICollectionViewDataSource {
         case .firstPartTime:
             let cell = collectionView.dequeueCell(type: PartTimeJobCollectionViewCell.self, indexPath: indexPath)
             cell.setDataBind(serverModel: partTimeServerModel[indexPath.row], dummyModel: partTimeModel[indexPath.row])
+            if indexPath.row == 2 {
+                cell.setUnderLineHidden()
+            }
             return cell
         case .todayPopular:
             let cell = collectionView.dequeueCell(type: TodayPopularCollectionViewCell.self, indexPath: indexPath)

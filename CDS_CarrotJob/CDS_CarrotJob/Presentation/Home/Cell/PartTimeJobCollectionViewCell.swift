@@ -29,6 +29,7 @@ final class PartTimeJobCollectionViewCell: UICollectionViewCell {
     private let jobImage = UIImageView()
     private let jobHourlyWageLabel = UILabel()
     private let underLineView = UIView()
+    private let sectionLineView = UIView()
     
     // MARK: - View Life Cycle
     
@@ -111,6 +112,11 @@ extension PartTimeJobCollectionViewCell {
         underLineView.do {
             $0.backgroundColor = Color.gray6
         }
+        
+        sectionLineView.do {
+            $0.isHidden = true
+            $0.backgroundColor = Color.gray7
+        }
     }
     
     // MARK: - Layout Helper
@@ -118,7 +124,7 @@ extension PartTimeJobCollectionViewCell {
     private func setLayout() {
         
         addSubviews(jobNameLabel, jobLocationLabel, reviewStackView, advertisingButton,
-                    jobTimeStackView, jobImage, jobHourlyWageLabel, underLineView)
+                    jobTimeStackView, jobImage, jobHourlyWageLabel, underLineView, sectionLineView)
         reviewStackView.addArrangedSubviews(reviewCountLabel, contactStatusView, distanceTimeStatusView)
         jobTimeStackView.addArrangedSubviews(jobDayWeekLabel, lineView, jobTimeLabel)
         
@@ -196,6 +202,12 @@ extension PartTimeJobCollectionViewCell {
             $0.leading.trailing.equalToSuperview().inset(17)
             $0.height.equalTo(1)
         }
+        
+        sectionLineView.snp.makeConstraints {
+            $0.bottom.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(6)
+        }
     }
     
     // MARK: - Methods
@@ -217,5 +229,10 @@ extension PartTimeJobCollectionViewCell {
     
     func setUnderLineHidden() {
         underLineView.isHidden = true
+    }
+    
+    func setUnderLineSection() {
+        underLineView.isHidden = true
+        sectionLineView.isHidden = false
     }
 }

@@ -62,8 +62,8 @@ extension HomeScrollView {
         homeNearJobView.snp.makeConstraints {
             $0.top.equalTo(firstSectionLine.snp.bottom)
             $0.leading.trailing.equalTo(safeAreaLayoutGuide)
-            $0.height.equalTo(1724)
-            $0.bottom.equalToSuperview().inset(10)
+            $0.height.equalTo(1704)
+            $0.bottom.equalToSuperview()
         }
     }
     

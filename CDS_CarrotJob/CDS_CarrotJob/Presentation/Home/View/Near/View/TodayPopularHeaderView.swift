@@ -14,6 +14,7 @@ final class TodayPopularHeaderView: UICollectionReusableView {
     
     // MARK: - UI Components
     
+    private let sectionLineView = UIView()
     private let starIcon = UIImageView()
     private let todayPopularLabel = UILabel()
     
@@ -42,6 +43,10 @@ extension TodayPopularHeaderView {
         
         backgroundColor = Color.white
         
+        sectionLineView.do {
+            $0.backgroundColor = Color.gray7
+        }
+        
         starIcon.do {
             $0.image = Image.carrotStar
         }
@@ -57,15 +62,21 @@ extension TodayPopularHeaderView {
     
     private func setLayout() {
         
-        addSubviews(starIcon, todayPopularLabel)
+        addSubviews(sectionLineView, starIcon, todayPopularLabel)
+        
+        sectionLineView.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(6)
+        }
         
         starIcon.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
+            $0.top.equalTo(sectionLineView.snp.bottom).offset(9)
             $0.leading.equalToSuperview()
         }
         
         todayPopularLabel.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
+            $0.top.equalTo(sectionLineView.snp.bottom).offset(18)
             $0.leading.equalTo(starIcon.snp.trailing)
             $0.height.equalTo(26)
         }
