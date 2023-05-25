@@ -12,9 +12,8 @@ import Then
 
 final class DetailReviewPagingView: UIView {
     
-    private let serverModel = ReviewServerModel.fetchReviewServerData()
-    private let reviewModel = ReviewModel.fetchReviewModelDummyData()
-
+    var reviewData: [CustomReviewModel] = []
+    
     private let applicantsReview = UILabel()
     private let reviewBoxOne = ApplicantsCommentsBox()
     private let reviewBoxTwo = ApplicantsCommentsBox()
@@ -74,6 +73,7 @@ extension DetailReviewPagingView {
             $0.isScrollEnabled = false
             $0.isUserInteractionEnabled = false
             $0.separatorStyle = .none
+            $0.sizeToFit()
         }
         
         loadMoreReviewsButton.do {
@@ -133,13 +133,31 @@ extension DetailReviewPagingView {
 
 extension DetailReviewPagingView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return reviewData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueCell(type: ReviewTableViewCell.self, indexPath: indexPath)
-        cell.setDataBind(serverModel: serverModel[indexPath.row], dummyModel: reviewModel[indexPath.row])
+        print(reviewData.count)
+        cell.configureCell(imageUrl: reviewData[indexPath.row].imageURL, reviewerName: reviewData[indexPath.row].reviewerName, comment: reviewData[indexPath.row].comment, jobTitle: reviewData[indexPath.row].jobTitle)
         
         return cell
+    }
+}
+
+extension DetailReviewPagingView {
+    func passData(serverData: [DetailReviewModel], jobTitle: String) {
+        let dataCount = serverData.count
+        
+        (0...dataCount-1).forEach { index in
+            let data = serverData[index]
+            let reviewData: CustomReviewModel = .init(jobTitle: jobTitle, reviewerName: data.reviewerName, comment: data.comment, imageURL: data.imageURL)
+            
+            self.reviewData.append(reviewData)
+        }
+        self.reviewTableView.reloadData()
+        reviewTableView.snp.updateConstraints {
+            $0.height.equalTo(150 * dataCount)
+        }
     }
 }

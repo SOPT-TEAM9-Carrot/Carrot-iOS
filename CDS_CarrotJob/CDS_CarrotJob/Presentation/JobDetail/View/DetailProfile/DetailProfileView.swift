@@ -11,10 +11,9 @@ import SnapKit
 import Then
 
 final class DetailProfileView: UIView {
-
-    private let kakaoMapView = KaKaoMapView()
-    private let profileMainTitle = UILabel()
-    private let employerProfileView = EmployerProfileStackView()
+    
+    let kakaoMapView = KaKaoMapView()
+    let employerProfileView = EmployerProfileStackView()
     
     private let employerResponseRatioLabel = LabelWithImage()
     private let employerUsedSinceLabel = LabelWithImage()
@@ -36,12 +35,6 @@ extension DetailProfileView {
     private func setUI() {
         kakaoMapView.do {
             $0.passAddress(address: "서울 종로구 창경궁로 230")
-        }
-        
-        profileMainTitle.do {
-            $0.text = "솝트님이 구인 중이에요"
-            $0.font = .notoSansFont(weightOf: .Bold, sizeOf: .font16)
-            $0.textColor = Color.gray1
         }
         
         employerProfileView.do {
@@ -66,7 +59,7 @@ extension DetailProfileView {
     }
     
     private func setLayout() {
-        self.addSubviews(kakaoMapView, profileMainTitle, employerProfileView, employerStackView)
+        self.addSubviews(kakaoMapView, employerProfileView, employerStackView)
         employerStackView.addArrangedSubviews(employerResponseRatioLabel, employerUsedSinceLabel)
         
         kakaoMapView.snp.makeConstraints {
@@ -75,15 +68,10 @@ extension DetailProfileView {
             $0.height.equalTo(170)
         }
         
-        profileMainTitle.snp.makeConstraints {
-            $0.top.equalTo(kakaoMapView.snp.bottom).offset(20)
-            $0.leading.equalToSuperview().inset(16)
-        }
-        
         employerProfileView.snp.makeConstraints {
             $0.horizontalEdges.equalToSuperview().inset(16)
-            $0.top.equalTo(profileMainTitle.snp.bottom).offset(22)
-            $0.height.equalTo(50)
+            $0.top.equalTo(kakaoMapView.snp.bottom).offset(22)
+            $0.height.equalTo(90)
         }
         
         employerStackView.snp.makeConstraints {
