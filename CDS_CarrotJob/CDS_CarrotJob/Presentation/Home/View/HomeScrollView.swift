@@ -12,6 +12,7 @@ final class HomeScrollView: UIScrollView {
     // MARK: - UI Components
 
     private let homeLocalJobView = HomeLocalJobView()
+    private let firstSectionLine = UIView()
     private let homeNearJobView = HomeNearJobView()
     
     // MARK: - View Life Cycle
@@ -34,22 +35,32 @@ extension HomeScrollView {
     private func setUI() {
         
         backgroundColor = .clear
+        
+        firstSectionLine.do {
+            $0.backgroundColor = Color.gray7
+        }
     }
     
     // MARK: - Layout Helper
     
     private func setLayout() {
         
-        addSubviews(homeLocalJobView, homeNearJobView)
+        addSubviews(homeLocalJobView, firstSectionLine, homeNearJobView)
         
         homeLocalJobView.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.leading.trailing.equalTo(safeAreaLayoutGuide)
-            $0.height.equalTo(723)
+            $0.height.equalTo(600)
+        }
+        
+        firstSectionLine.snp.makeConstraints {
+            $0.top.equalTo(homeLocalJobView.snp.bottom)
+            $0.leading.trailing.equalTo(safeAreaLayoutGuide)
+            $0.height.equalTo(6)
         }
         
         homeNearJobView.snp.makeConstraints {
-            $0.top.equalTo(homeLocalJobView.snp.bottom)
+            $0.top.equalTo(firstSectionLine.snp.bottom)
             $0.leading.trailing.equalTo(safeAreaLayoutGuide)
             $0.height.equalTo(1724)
             $0.bottom.equalToSuperview().inset(10)

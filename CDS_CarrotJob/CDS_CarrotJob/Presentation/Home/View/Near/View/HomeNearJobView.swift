@@ -146,7 +146,7 @@ extension HomeNearJobView {
         
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 4
-        section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 16, bottom: 12, trailing: 16)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 16, bottom: 12, trailing: 16)
         section.orthogonalScrollingBehavior = .continuous
         section.boundarySupplementaryItems = [footer]
         
