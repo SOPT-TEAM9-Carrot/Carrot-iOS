@@ -14,7 +14,7 @@ final class ReviewService {
     
     private init() {}
     
-    let url = "http://3.34.46.183:8080/employer/3/reviews?size=6"
+    let url = "http://3.34.46.183:8080/posts/list?size=6"
     
     func review(completion: @escaping (NetworkResult<Any>) -> Void) {
         

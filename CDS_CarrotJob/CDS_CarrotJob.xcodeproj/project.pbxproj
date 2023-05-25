@@ -48,6 +48,8 @@
 		037C36382A13BC3400FAC78B /* PartTimeJobCellTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36372A13BC3400FAC78B /* PartTimeJobCellTestViewController.swift */; };
 		03A586DC2A1F4BEC000A1E66 /* ReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A586DB2A1F4BEC000A1E66 /* ReviewService.swift */; };
 		03A586DE2A1F4C16000A1E66 /* ReviewResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A586DD2A1F4C16000A1E66 /* ReviewResponse.swift */; };
+		03A586E22A1F657E000A1E66 /* HomePartTimeJobService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A586E12A1F657E000A1E66 /* HomePartTimeJobService.swift */; };
+		03A586E42A1F6646000A1E66 /* HomePartTimeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A586E32A1F6646000A1E66 /* HomePartTimeResponse.swift */; };
 		03F59DF82A1640D100942002 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59DF72A1640D100942002 /* ReviewModel.swift */; };
 		586BF3002A113B08002AD443 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF2FF2A113B08002AD443 /* UIImage+.swift */; };
 		586BF3022A114204002AD443 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF3012A114204002AD443 /* UIFont+.swift */; };
@@ -131,6 +133,8 @@
 		037C36372A13BC3400FAC78B /* PartTimeJobCellTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartTimeJobCellTestViewController.swift; sourceTree = "<group>"; };
 		03A586DB2A1F4BEC000A1E66 /* ReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewService.swift; sourceTree = "<group>"; };
 		03A586DD2A1F4C16000A1E66 /* ReviewResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewResponse.swift; sourceTree = "<group>"; };
+		03A586E12A1F657E000A1E66 /* HomePartTimeJobService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePartTimeJobService.swift; sourceTree = "<group>"; };
+		03A586E32A1F6646000A1E66 /* HomePartTimeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePartTimeResponse.swift; sourceTree = "<group>"; };
 		03F59DF72A1640D100942002 /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
 		586BF2FF2A113B08002AD443 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		586BF3012A114204002AD443 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
@@ -451,7 +455,8 @@
 		03A586D92A1F4BC2000A1E66 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
-				03A586DD2A1F4C16000A1E66 /* ReviewResponse.swift */,
+				03A586E62A1F66A1000A1E66 /* Home */,
+				03A586E52A1F669B000A1E66 /* Review */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -459,9 +464,42 @@
 		03A586DA2A1F4BCC000A1E66 /* APIService */ = {
 			isa = PBXGroup;
 			children = (
-				03A586DB2A1F4BEC000A1E66 /* ReviewService.swift */,
+				03A586E72A1F6A8D000A1E66 /* Home */,
+				03A586E82A1F6A95000A1E66 /* Review */,
 			);
 			path = APIService;
+			sourceTree = "<group>";
+		};
+		03A586E52A1F669B000A1E66 /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				03A586DD2A1F4C16000A1E66 /* ReviewResponse.swift */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
+		03A586E62A1F66A1000A1E66 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				03A586E32A1F6646000A1E66 /* HomePartTimeResponse.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		03A586E72A1F6A8D000A1E66 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				03A586E12A1F657E000A1E66 /* HomePartTimeJobService.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		03A586E82A1F6A95000A1E66 /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				03A586DB2A1F4BEC000A1E66 /* ReviewService.swift */,
+			);
+			path = Review;
 			sourceTree = "<group>";
 		};
 		5880650C2A189F2800FEEA88 /* DetailReviewList */ = {
@@ -781,6 +819,7 @@
 				589640272A176A4800DC8C3E /* Int+.swift in Sources */,
 				03641A852A1B86DD0053B6C7 /* HomeNearJobView.swift in Sources */,
 				589640332A176D9000DC8C3E /* JobTitleStackView.swift in Sources */,
+				03A586E42A1F6646000A1E66 /* HomePartTimeResponse.swift in Sources */,
 				037C35EB2A121EBD00FAC78B /* UICollectionView+.swift in Sources */,
 				58C054592A1B3B70008E5CE6 /* ApplicantsCommentsBox.swift in Sources */,
 				037C35F52A1226C100FAC78B /* Color.swift in Sources */,
@@ -789,6 +828,7 @@
 				037C36322A13B0B300FAC78B /* PartTimeLabel.swift in Sources */,
 				589640392A17715F00DC8C3E /* DetailProfileView.swift in Sources */,
 				03F59DF82A1640D100942002 /* ReviewModel.swift in Sources */,
+				03A586E22A1F657E000A1E66 /* HomePartTimeJobService.swift in Sources */,
 				037C35E72A121E9800FAC78B /* UIStackView+.swift in Sources */,
 				03A586DE2A1F4C16000A1E66 /* ReviewResponse.swift in Sources */,
 				588065122A18A4C900FEEA88 /* DetailReviewSegmentView.swift in Sources */,
