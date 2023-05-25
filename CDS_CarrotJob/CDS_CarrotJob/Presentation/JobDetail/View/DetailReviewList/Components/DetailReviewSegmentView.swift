@@ -118,7 +118,7 @@ extension DetailReviewSegmentView {
             UIView.animate(withDuration: 0.15) {
                 self.layoutIfNeeded()
             }
-            // delegate
+            
             self.delegate?.changePage(toNumber: 0)
         }
     }
@@ -137,7 +137,7 @@ extension DetailReviewSegmentView {
             UIView.animate(withDuration: 0.15) {
                 self.layoutIfNeeded()
             }
-            // deleate
+            
             self.delegate?.changePage(toNumber: 1)
         }
     }

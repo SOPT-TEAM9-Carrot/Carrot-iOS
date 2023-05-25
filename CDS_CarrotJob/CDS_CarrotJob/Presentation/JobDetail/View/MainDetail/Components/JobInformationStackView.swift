@@ -14,7 +14,7 @@ final class JobInformationStackView: UIView {
     
     // MARK: - UI Components
     
-    private let hourlyWageLabel = LabelWithImage()
+    let hourlyWageLabel = LabelWithImage()
     private let workingDaysLabel = LabelWithImage()
     private let workingHoursLabel = LabelWithImage()
     
@@ -39,7 +39,6 @@ extension JobInformationStackView {
         self.backgroundColor = .clear
         
         hourlyWageLabel.do {
-            $0.configureTexts(textColor: Color.mainColor1, textWeight: .Bold, text: "시급 \(10000.toPriceFormatString) 원" ) // 10000 을 바로 쓰지는 않습니다. 더비 데이터를 간단하게 표현한 것이기 때문에 수정이 있을겁니다.
             $0.configureSymbolImage(image: UIImage.loadImageOf(carrotImageName: .carrotCoin))
         }
         

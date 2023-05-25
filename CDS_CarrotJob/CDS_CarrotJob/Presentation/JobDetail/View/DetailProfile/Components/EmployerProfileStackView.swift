@@ -12,8 +12,10 @@ import Then
 
 final class EmployerProfileStackView: UIView {
     
-    private let employerProfileImageView = UIImageView()
+    private var temperature: CGFloat = 0.0
     
+    private let mainLabel = UILabel()
+    private let employerProfileImageView = UIImageView()
     private let employerNameLabel = UILabel()
     private let employerPlaceCertifiedCountLabel = UILabel()
     private let labelStackView = UIStackView()
@@ -37,6 +39,8 @@ final class EmployerProfileStackView: UIView {
             $0.layer.masksToBounds = true
             $0.layer.cornerRadius = 2
         }
+        
+        employerProfileImageView.layer.cornerRadius = self.employerProfileImageView.frame.width / 2
     }
     
     required init?(coder: NSCoder) {
@@ -47,12 +51,18 @@ final class EmployerProfileStackView: UIView {
 extension EmployerProfileStackView {
 
     private func setUI() {
+        mainLabel.do {
+            $0.font = .notoSansFont(weightOf: .Bold, sizeOf: .font16)
+            $0.textColor = Color.gray1
+        }
+        
         employerProfileImageView.do {
             $0.image = UIImage.loadImageOf(carrotImageName: .employerProfile)
+            $0.contentMode = .scaleAspectFill
+            $0.layer.masksToBounds = true
         }
         
         employerNameLabel.do {
-            $0.text = "솝트"
             $0.textColor = Color.gray1
             $0.font = .notoSansFont(weightOf: .Bold, sizeOf: .font14)
         }
@@ -100,26 +110,33 @@ extension EmployerProfileStackView {
     }
     
     private func setLayout() {
-        self.addSubviews(employerProfileImageView, labelStackView, faceImageView, temperatureLabel, temperatureProgressView, mannerLabel, mannerUnderLineView)
+        self.addSubviews(mainLabel, employerProfileImageView, labelStackView, faceImageView, temperatureLabel, temperatureProgressView, mannerLabel, mannerUnderLineView)
+        
         labelStackView.addArrangedSubviews(employerNameLabel, employerPlaceCertifiedCountLabel)
         
-        employerProfileImageView.snp.makeConstraints {
+        mainLabel.snp.makeConstraints {
             $0.top.leading.equalToSuperview()
+        }
+        
+        employerProfileImageView.snp.makeConstraints {
+            $0.top.equalTo(mainLabel.snp.bottom).offset(22)
+            $0.leading.equalToSuperview()
             $0.size.equalTo(40)
         }
         
         labelStackView.snp.makeConstraints {
-            $0.leading.equalTo(employerProfileImageView.snp.trailing).offset(16)
+            $0.leading.equalTo(employerProfileImageView.snp.trailing).offset(14)
             $0.centerY.equalTo(employerProfileImageView.snp.centerY)
         }
         
         faceImageView.snp.makeConstraints {
-            $0.top.trailing.equalToSuperview().inset(2)
+            $0.trailing.equalToSuperview()
+            $0.top.equalTo(labelStackView.snp.top).offset(-2)
             $0.size.equalTo(22)
         }
         
         temperatureLabel.snp.makeConstraints {
-            $0.top.equalToSuperview()
+            $0.top.equalTo(labelStackView.snp.top).offset(-2)
             $0.trailing.equalTo(faceImageView.snp.leading).offset(-7)
         }
         
@@ -152,7 +169,21 @@ extension EmployerProfileStackView {
     private func progressAnimation() {
         self.temperatureProgressView.setProgress(0, animated: false)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.temperatureProgressView.setProgress(0.368, animated: true)
+            self.temperatureProgressView.setProgress(Float(self.temperature), animated: true)
         }
+    }
+}
+
+extension EmployerProfileStackView {
+    func configureView(imageString: String, employerName: String, temperature: CGFloat) {
+        guard let url = URL(string: imageString) else { return }
+        let degree: CGFloat = temperature / 100
+        
+        employerProfileImageView.load(url: url)
+        employerNameLabel.text = employerName
+        temperatureLabel.text = "\(temperature)°C"
+        self.temperature = degree
+        temperatureProgressView.setProgress(Float(degree), animated: true)
+        mainLabel.text = "\(employerName)님이 구인 중이에요"
     }
 }

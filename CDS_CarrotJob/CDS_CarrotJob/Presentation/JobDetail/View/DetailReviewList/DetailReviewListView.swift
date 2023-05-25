@@ -21,7 +21,7 @@ final class DetailReviewListView: UIView {
     weak var delegate: JobDetailContstraintChangeDelegate?
     
     private let segmentView = DetailReviewSegmentView()
-    private let reviewPageView = DetailReviewPagingView()
+    let reviewPageView = DetailReviewPagingView()
     private let emptyPage = DetailReviewEmptyView()
     
     override init(frame: CGRect) {
@@ -78,7 +78,9 @@ extension DetailReviewListView: JobDetailPagingDelegate {
                     $0.height.equalTo(600)
                 }
                 
-                self.delegate?.modifyConstraintTo(heightOf: 735)
+                let cellCount = reviewPageView.reviewData.count
+                
+                self.delegate?.modifyConstraintTo(heightOf: CGFloat(290 + 150 * cellCount))
             }
         case 1:
             if isOnFirstPage == true {
