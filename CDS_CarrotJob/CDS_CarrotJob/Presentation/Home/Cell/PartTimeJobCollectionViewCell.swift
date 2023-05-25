@@ -125,6 +125,7 @@ extension PartTimeJobCollectionViewCell {
         jobNameLabel.snp.makeConstraints {
             $0.top.equalToSuperview().inset(12)
             $0.leading.equalToSuperview().inset(16)
+            $0.trailing.equalTo(jobImage.snp.leading).offset(-10)
             $0.height.equalTo(18)
         }
         
@@ -200,6 +201,27 @@ extension PartTimeJobCollectionViewCell {
     
     // MARK: - Methods
     
+    private func getRandomWorkingDays() -> String {
+        let itemExamples: [String] = ["월~일", "월~금", "토~일", "화~토"]
+        guard let randomItem = itemExamples.randomElement() else { return "" }
+        
+        return randomItem
+    }
+    
+    private func getRandomWorkingTime() -> String {
+        let itemExamples: [String] = ["07:00 ~ 14:30", "18:00 ~ 00:30 협의", "09:00 ~ 17:30", "11:30 ~ 16:30", "19:00 ~ 23:50 협의"]
+        guard let randomItem = itemExamples.randomElement() else { return "" }
+        
+        return randomItem
+    }
+    
+    private func getRandomCount() -> String {
+        let itemExamples: [String] = ["후기 1", "후기 2", "후기 3", "후기 4"]
+        guard let randomItem = itemExamples.randomElement() else { return "" }
+        
+        return randomItem
+    }
+    
     func setDataBind(serverModel: PartTimeServerModel, dummyModel: PartTimeJobModel) {
         jobNameLabel.text = serverModel.jobName
         jobLocationLabel.text = dummyModel.jobLocation
@@ -215,7 +237,19 @@ extension PartTimeJobCollectionViewCell {
         jobHourlyWageLabel.text = "시급 " + "\(hourlyWage)" + "원"
     }
     
+    func configureCell(imageUrl: String, jobTitle: String, wage: Int, location: String) {
+        guard let url = URL(string: imageUrl) else { return }
+        jobImage.kf.setImage(with: url)
+        jobNameLabel.text = jobTitle
+        jobHourlyWageLabel.text = "시급 \(wage.toPriceFormatString)원"
+        jobLocationLabel.text = location
+        reviewCountLabel.text = getRandomCount()
+        jobDayWeekLabel.text = getRandomWorkingDays()
+        jobTimeLabel.text = getRandomWorkingTime()
+    }
+    
     func setUnderLineHidden() {
         underLineView.isHidden = true
     }
+    
 }
