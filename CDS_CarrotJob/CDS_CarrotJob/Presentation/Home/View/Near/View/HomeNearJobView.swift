@@ -90,7 +90,7 @@ extension HomeNearJobView {
     
     func labelWidthSize(index: Int) -> Int {
         let size = jobLabelModel[index].title.size(
-            withAttributes: [NSAttributedString.Key.font : UIFont.notoSansFont(weightOf: .Medium, sizeOf: .font14)!]).width
+            withAttributes: [NSAttributedString.Key.font: UIFont.notoSansFont(weightOf: .Medium, sizeOf: .font14)!]).width
         return Int(size)
     }
     
