@@ -16,6 +16,7 @@ final class HomeViewController: UIViewController {
     // MARK: - UI Components
     
     private let navigationView = HomeNavigationView()
+    private let homeScrollView = HomeScrollView()
     
     // MARK: - Properties
     
@@ -48,12 +49,18 @@ extension HomeViewController {
     
     private func setLayout() {
         
-        view.addSubviews(navigationView)
+        view.addSubviews(navigationView, homeScrollView)
         
         navigationView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.height.equalTo(96)
+        }
+        
+        homeScrollView.snp.makeConstraints {
+            $0.top.equalTo(navigationView.snp.bottom)
+            $0.leading.trailing.bottom.equalTo(view.safeAreaLayoutGuide)
+            $0.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
     

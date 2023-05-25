@@ -31,4 +31,7 @@ public enum Image {
     public static let carrotStar = UIImage(named: "carrotStar")!
     public static let carrotTalkBubble = UIImage(named: "carrotTalkBubble")!
     public static let carrotXMark = UIImage(named: "carrotXMark")!
+    public static let carrotApplyImage = UIImage(named: "applyImage")!
+    public static let blackArrow = UIImage(named: "blackArrow")!
+    public static let whiteArrow = UIImage(named: "whiteArrow")!
 }
