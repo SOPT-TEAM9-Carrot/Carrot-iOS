@@ -12,8 +12,8 @@ import Then
 
 final class DetailLocalListView: UIView {
     
-    private let dummyJobData = PartTimeJobModel.partTimeJobdummyData()
-    private let dummyServerData = PartTimeServerModel.partTimeJobServerData()
+    private let dummyJobData = PartTimeJobModel.fetchPartTimeJobdummyData()
+    private let dummyServerData = PartTimeServerModel.fetchPartTimeJobServerData()
     
     private let localMainTitleLabel = UILabel()
     private lazy var localJobCollectionView = UICollectionView(frame: .zero, collectionViewLayout: self.setFlowLayout())
@@ -41,7 +41,7 @@ extension DetailLocalListView {
     private func setRegister() {
         localJobCollectionView.registerCell(PartTimeJobCollectionViewCell.self)
     }
-
+    
     private func setUI() {
         localMainTitleLabel.do {
             $0.font = .notoSansFont(weightOf: .Bold, sizeOf: .font16)

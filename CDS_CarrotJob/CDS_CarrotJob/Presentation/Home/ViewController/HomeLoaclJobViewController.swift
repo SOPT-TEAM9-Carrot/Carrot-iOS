@@ -40,4 +40,3 @@ final class HomeLocalJobViewController: BaseViewController {
         }
     }
 }
-

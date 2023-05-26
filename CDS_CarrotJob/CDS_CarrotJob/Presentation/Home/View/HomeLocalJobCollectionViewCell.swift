@@ -5,8 +5,6 @@
 //  Created by 김동현 on 2023/05/16.
 //
 
-
-
 import UIKit
 
 import Alamofire
@@ -55,7 +53,7 @@ class HomeLocalJobCollectionViewCell: UICollectionViewCell {
     }
     
     func setLayout() {
-        contentView.addSubviews(jobImageView, mainInfoLabel, subInfoLabel,moneyInfoLabel)
+        contentView.addSubviews(jobImageView, mainInfoLabel, subInfoLabel, moneyInfoLabel)
         
         jobImageView.snp.makeConstraints {
             $0.top.horizontalEdges.equalToSuperview()
