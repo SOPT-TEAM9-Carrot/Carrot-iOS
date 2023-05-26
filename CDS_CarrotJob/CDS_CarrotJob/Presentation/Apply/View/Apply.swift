@@ -198,6 +198,7 @@ extension ApplyView {
         }
         applyButton.do {
             $0.setUIOfButtonFor(type: .apply)
+            $0.addTarget(self, action: #selector(appllyButtonTapped), for: .touchUpInside)
         }
     }
     
@@ -317,6 +318,16 @@ extension ApplyView {
         }
     }
     
+    func appllyButton() {
+        fetchProfile()
+    }
+    
+    @objc
+    func appllyButtonTapped() {
+        appllyButton()
+    }
+    
+    
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == introduceTextViewPlaceholder {
             textView.text = nil
@@ -347,4 +358,27 @@ extension ApplyView {
                 textView.deleteBackward()
             }
         }
+}
+
+extension ApplyView {
+    
+    private func fetchProfile() {
+        ProfileService.shared.profile(name: nameTextField.text!, phoneNumber: phoneNumberTextField.text!, gender: 1, birthYear: 2001, introduction: introduceTextView.text) { response in
+            switch response {
+            case .success(let data):
+                guard let data = data as? HomePartTimeResponse else { return }
+                print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
+                dump(data)
+                print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
+            case .serverErr:
+                print("🔥🔥🔥🔥🔥서버 이상 서버 이상🔥🔥🔥🔥🔥")
+            case .pathErr:
+                print("—————경로이상——————")
+            case .networkErr:
+                print("💧💧💧💧💧네트워크에런데 뭔ㄹ지머름💧💧💧💧💧")
+            default:
+                return
+            }
+        }
+    }
 }
