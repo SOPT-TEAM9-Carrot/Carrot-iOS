@@ -14,10 +14,9 @@ final class ReviewService {
     
     private init() {}
     
-    let url = "http://3.34.46.183:8080/employer/3/reviews?size=6"
-    
-    func review(completion: @escaping (NetworkResult<Any>) -> Void) {
+    func review(userId: Int, completion: @escaping (NetworkResult<Any>) -> Void) {
         
+        let url = "http://3.34.46.183:8080/employer/\(userId)/reviews?size=6"
         let header: HTTPHeaders = ["Content-Type": "application/json", "Authorization": "2"]
         let dataRequest = AF.request(url,
                                      method: .get,

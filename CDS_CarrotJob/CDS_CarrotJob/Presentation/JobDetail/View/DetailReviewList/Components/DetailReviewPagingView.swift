@@ -22,7 +22,7 @@ final class DetailReviewPagingView: UIView {
     
     private let reviewTableView = UITableView()
     
-    private let loadMoreReviewsButton = GrayUIButton(type: .system)
+    let loadMoreReviewsButton = GrayUIButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -77,7 +77,7 @@ extension DetailReviewPagingView {
         }
         
         loadMoreReviewsButton.do {
-            $0.setUIOfButtonFor(type: .bringMoreReviews)
+            $0.setUIOfButtonFor(type: .lookForOtherJobs)
         }
     }
     
