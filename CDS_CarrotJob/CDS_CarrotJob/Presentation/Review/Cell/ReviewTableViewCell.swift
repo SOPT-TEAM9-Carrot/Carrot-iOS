@@ -78,6 +78,7 @@ extension ReviewTableViewCell {
         commentLabel.do {
             $0.font = .notoSansFont(weightOf: .Medium, sizeOf: .font14)
             $0.textColor = Color.gray1
+            $0.numberOfLines = 0
         }
         
         jobLabel.do {
