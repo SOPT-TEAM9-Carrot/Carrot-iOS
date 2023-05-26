@@ -68,7 +68,7 @@ extension ApplyView {
             $0.textColor = Color.gray1
         }
         photoButton.do {
-            $0.setImage(UIImage(named: "image"), for: .normal)
+            $0.setImage(UIImage(named: "camera"), for: .normal)
         }
         nameLabel.do {
             $0.text = "이름 (선택)"
