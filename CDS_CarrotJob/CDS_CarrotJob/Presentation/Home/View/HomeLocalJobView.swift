@@ -10,7 +10,13 @@ import UIKit
 import SnapKit
 import Then
 
+protocol HomeLocalJobDataSourceDelegate: AnyObject {
+    func passId(postId: Int)
+}
+
 final class HomeLocalJobView: UIView {
+    
+    weak var delegate: HomeLocalJobDataSourceDelegate?
     
     var jobLocalModel: [JobLocalModel] = []
     
@@ -50,10 +56,11 @@ extension HomeLocalJobView {
             $0.font = .notoSansFont(weightOf: .Bold, sizeOf: .font16)
             $0.text = "상도동 떡잎방법대님을 찾고 있어요!"
         }
-    
+        
         homeLocalJobCollectionView.do {
             $0.isScrollEnabled = false
             $0.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
+            $0.backgroundColor = .white
         }
         
         reloadButton.do {
@@ -104,41 +111,47 @@ extension HomeLocalJobView {
     
     private func setDelegate() {
         homeLocalJobCollectionView.dataSource = self
+        homeLocalJobCollectionView.delegate = self
     }
 }
 
-extension HomeLocalJobView: UICollectionViewDataSource {
+extension HomeLocalJobView: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.jobLocalModel.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(type: HomeLocalJobCollectionViewCell.self, indexPath: indexPath)
         cell.configureCell(model: jobLocalModel[indexPath.row])
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let passingId = jobLocalModel[indexPath.item].postId
+        self.delegate?.passId(postId: passingId)
+    }
 }
 
 extension HomeLocalJobView {
     private func fetchLocalJob() {
-            HomeRecommendService.shared.homeRecommend { response in
-                switch response {
-                case .success(let data):
-                    guard let data = data as? RecommendResponse else { return }
-                    print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
-                    dump(data)
-                    print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
-                    self.jobLocalModel = data.convertToJob()
-                    self.homeLocalJobCollectionView.reloadData()
-                case .serverErr:
-                    print("🔥🔥🔥🔥🔥서버 이상 서버 이상🔥🔥🔥🔥🔥")
-                case .pathErr:
-                    print("—————경로이상——————")
-                case .networkErr:
-                    print("💧💧💧💧💧네트워크에런데 뭔ㄹ지머름💧💧💧💧💧")
-                default:
-                    return
-                }
+        HomeRecommendService.shared.homeRecommend { response in
+            switch response {
+            case .success(let data):
+                guard let data = data as? RecommendResponse else { return }
+                print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
+                dump(data)
+                print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
+                self.jobLocalModel = data.convertToJob()
+                self.homeLocalJobCollectionView.reloadData()
+            case .serverErr:
+                print("🔥🔥🔥🔥🔥서버 이상 서버 이상🔥🔥🔥🔥🔥")
+            case .pathErr:
+                print("—————경로이상——————")
+            case .networkErr:
+                print("💧💧💧💧💧네트워크에런데 뭔ㄹ지머름💧💧💧💧💧")
+            default:
+                return
             }
         }
     }
+}

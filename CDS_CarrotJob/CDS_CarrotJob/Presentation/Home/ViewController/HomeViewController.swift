@@ -30,6 +30,7 @@ final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setDelegate()
         setUI()
         setLayout()
     }
@@ -39,7 +40,11 @@ extension HomeViewController {
     
     // MARK: - UI Components Property
     
-    func setUI() {
+    private func setDelegate() {
+        homeScrollView.homeLocalJobView.delegate = self
+    }
+    
+    private func setUI() {
         
         view.backgroundColor = Color.white
         
@@ -67,4 +72,13 @@ extension HomeViewController {
     // MARK: - Methods
     
     // MARK: - @objc Methods
+}
+
+extension HomeViewController: HomeLocalJobDataSourceDelegate {
+    func passId(postId: Int) {
+        let jobDetailVC = JobDetailViewController()
+        jobDetailVC.passPostId(postId: postId)
+        
+        self.navigationController?.pushViewController(jobDetailVC, animated: true)
+    }
 }

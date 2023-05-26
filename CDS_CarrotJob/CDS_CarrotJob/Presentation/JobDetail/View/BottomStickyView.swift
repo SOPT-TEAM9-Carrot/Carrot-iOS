@@ -25,7 +25,7 @@ final class BottomStickyView: UIView {
     private let dividerView = UIView()
     private let heartButton = UIButton()
     private let callButton = OrangeUIButton()
-    private let applyButton = OrangeUIButton()
+    let applyButton = OrangeUIButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
