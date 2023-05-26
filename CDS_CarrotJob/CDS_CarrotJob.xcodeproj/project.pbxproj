@@ -93,6 +93,7 @@
 		D3D03F8E2A10D9EF005AEE77 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = D3D03F8D2A10D9EF005AEE77 /* Then */; };
 		D3D03F912A10D9F9005AEE77 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D3D03F902A10D9F9005AEE77 /* Alamofire */; };
 		D3D03F942A10DB6B005AEE77 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D3D03F932A10DB6B005AEE77 /* Kingfisher */; };
+		D3DCDC6A2A209C3500674EC1 /* ApplyNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DCDC692A209C3500674EC1 /* ApplyNavigation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -180,6 +181,7 @@
 		D3D03F7E2A10D9BA005AEE77 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 		D3D03F812A10D9BA005AEE77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3D03F832A10D9BA005AEE77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3DCDC692A209C3500674EC1 /* ApplyNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyNavigation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -411,6 +413,7 @@
 			isa = PBXGroup;
 			children = (
 				037C36202A13792800FAC78B /* Apply.swift */,
+				D3DCDC692A209C3500674EC1 /* ApplyNavigation.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -852,6 +855,7 @@
 				03A586E42A1F6646000A1E66 /* HomePartTimeResponse.swift in Sources */,
 				037C35EB2A121EBD00FAC78B /* UICollectionView+.swift in Sources */,
 				58C054592A1B3B70008E5CE6 /* ApplicantsCommentsBox.swift in Sources */,
+				D3DCDC6A2A209C3500674EC1 /* ApplyNavigation.swift in Sources */,
 				D36C3EB82A2089E000C042D5 /* ProfileRegisterResponse.swift in Sources */,
 				037C35F52A1226C100FAC78B /* Color.swift in Sources */,
 				5896403D2A17718400DC8C3E /* KaKaoMapView.swift in Sources */,

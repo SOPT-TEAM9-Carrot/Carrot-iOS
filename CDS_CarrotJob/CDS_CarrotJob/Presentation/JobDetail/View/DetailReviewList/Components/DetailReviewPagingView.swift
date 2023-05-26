@@ -77,7 +77,7 @@ extension DetailReviewPagingView {
         }
         
         loadMoreReviewsButton.do {
-            $0.setUIOfButtonFor(type: .lookForOtherJobs)
+            $0.setUIOfButtonFor(type: .bringMoreReviews)
         }
     }
     
