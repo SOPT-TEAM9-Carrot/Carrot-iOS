@@ -17,7 +17,7 @@ struct ReviewResponse: Codable {
     let status: Int
     let success: Bool
     let message: String
-    let data: DataClass
+    let data: ReviewDataClass
     
     func convertToReview() -> [ReviewServerModel] {
         return data.reviews.map { ReviewServerModel(profileImage: $0.imageURL, nickName: $0.reviewerName, comment: $0.comment)}
@@ -25,7 +25,7 @@ struct ReviewResponse: Codable {
 }
 
 // MARK: - DataClass
-struct DataClass: Codable {
+struct ReviewDataClass: Codable {
     let userId: Int
     let nickname: String
     let imageURL: String

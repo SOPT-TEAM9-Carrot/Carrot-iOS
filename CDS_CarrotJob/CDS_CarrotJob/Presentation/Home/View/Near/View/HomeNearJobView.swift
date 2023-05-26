@@ -23,7 +23,7 @@ final class HomeNearJobView: UIView {
     private lazy var homeNearJobCollectionView = UICollectionView(frame: .zero, collectionViewLayout: self.setSectionLayout())
     private let jobLabelModel: [JobLabelModel] = JobLabelModel.setJobLabelModel()
     private let partTimeModel: [PartTimeJobModel] = PartTimeJobModel.fetchPartTimeJobdummyData()
-    private let partTimeServerModel: [PartTimeServerModel] = PartTimeServerModel.fetchPartTimeJobServerData()
+    private var partTimeServerModel: [PartTimeServerModel] = PartTimeServerModel.fetchPartTimeJobServerData()
     
     // MARK: - Properties
     
@@ -37,6 +37,7 @@ final class HomeNearJobView: UIView {
         setLayout()
         setDelegate()
         setRegister()
+        fetchPartTime()
     }
     
     required init?(coder: NSCoder) {
@@ -256,7 +257,7 @@ extension HomeNearJobView: UICollectionViewDataSource {
         case .todayPopular:
             return 4
         case .secondPartTime:
-            return partTimeModel.count
+            return partTimeServerModel.count
         }
     }
     
@@ -340,6 +341,31 @@ extension HomeNearJobView: UICollectionViewDelegateFlowLayout {
             break
         case .secondPartTime:
             break
+        }
+    }
+}
+
+extension HomeNearJobView {
+    
+    private func fetchPartTime() {
+        HomePartTimeJobService.shared.homePartTime { response in
+            switch response {
+            case .success(let data):
+                guard let data = data as? HomePartTimeResponse else { return }
+                print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
+                dump(data)
+                print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
+                self.partTimeServerModel = data.convertToPartTime()
+                self.homeNearJobCollectionView.reloadData()
+            case .serverErr:
+                print("🔥🔥🔥🔥🔥서버 이상 서버 이상🔥🔥🔥🔥🔥")
+            case .pathErr:
+                print("-----------경로이상-------------")
+            case .networkErr:
+                print("💧💧💧💧💧네트워크에런데 뭔ㄹ지머름💧💧💧💧💧")
+            default:
+                return
+            }
         }
     }
 }
