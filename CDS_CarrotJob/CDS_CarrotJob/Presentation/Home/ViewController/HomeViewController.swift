@@ -18,10 +18,6 @@ final class HomeViewController: UIViewController {
     private let navigationView = HomeNavigationView()
     private let homeScrollView = HomeScrollView()
     
-    // MARK: - Properties
-    
-    // MARK: - Initializer
-    
     // MARK: - View Life Cycle
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,10 +64,6 @@ extension HomeViewController {
             $0.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
-    
-    // MARK: - Methods
-    
-    // MARK: - @objc Methods
 }
 
 extension HomeViewController: HomeLocalJobDataSourceDelegate {

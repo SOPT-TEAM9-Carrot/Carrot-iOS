@@ -23,7 +23,7 @@ final class HomeNearJobView: UIView {
     private lazy var homeNearJobCollectionView = UICollectionView(frame: .zero, collectionViewLayout: self.setSectionLayout())
     private let jobLabelModel: [JobLabelModel] = JobLabelModel.setJobLabelModel()
     private let partTimeModel: [PartTimeJobModel] = PartTimeJobModel.fetchPartTimeJobdummyData()
-    private var partTimeServerModel: [PartTimeServerModel] = PartTimeServerModel.fetchPartTimeJobServerData()
+    private var partTimeServerModel: [PartTimeServerModel] = []
     
     // MARK: - Properties
     
@@ -253,7 +253,7 @@ extension HomeNearJobView: UICollectionViewDataSource {
         case .jobLabel:
             return jobLabelModel.count
         case .firstPartTime:
-            return 3
+            return partTimeServerModel.count
         case .todayPopular:
             return 4
         case .secondPartTime:
