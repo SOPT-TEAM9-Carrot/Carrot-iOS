@@ -87,7 +87,12 @@ extension ApplyViewController {
     
     // MARK: - Methods
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     // MARK: - @objc Methods
+    
     @objc
     private func popTapped() {
         self.navigationController?.popViewController(animated: true)

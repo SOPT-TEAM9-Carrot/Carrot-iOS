@@ -35,9 +35,7 @@
 		037C360D2A122D5800FAC78B /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C360C2A122D5800FAC78B /* ReviewViewController.swift */; };
 		037C36132A122DA100FAC78B /* ApplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36122A122DA100FAC78B /* ApplyViewController.swift */; };
 		037C36162A122EB700FAC78B /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36152A122EB700FAC78B /* Image.swift */; };
-		037C361B2A13790500FAC78B /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C361A2A13790500FAC78B /* Home.swift */; };
-		037C361F2A13792100FAC78B /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C361E2A13792100FAC78B /* Review.swift */; };
-		037C36212A13792800FAC78B /* Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36202A13792800FAC78B /* Apply.swift */; };
+		037C36212A13792800FAC78B /* ApplyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36202A13792800FAC78B /* ApplyView.swift */; };
 		037C36232A137DC300FAC78B /* HomeNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36222A137DC300FAC78B /* HomeNavigationView.swift */; };
 		037C36262A138C0600FAC78B /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 037C36242A138C0600FAC78B /* NotoSansKR-Bold.otf */; };
 		037C36272A138C0600FAC78B /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 037C36252A138C0600FAC78B /* NotoSansKR-Medium.otf */; };
@@ -45,7 +43,6 @@
 		037C36302A13A56300FAC78B /* AdvertisingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C362F2A13A56300FAC78B /* AdvertisingButton.swift */; };
 		037C36322A13B0B300FAC78B /* PartTimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36312A13B0B300FAC78B /* PartTimeLabel.swift */; };
 		037C36362A13B99A00FAC78B /* PartTimeJobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36352A13B99A00FAC78B /* PartTimeJobModel.swift */; };
-		037C36382A13BC3400FAC78B /* PartTimeJobCellTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36372A13BC3400FAC78B /* PartTimeJobCellTestViewController.swift */; };
 		03A586DC2A1F4BEC000A1E66 /* ReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A586DB2A1F4BEC000A1E66 /* ReviewService.swift */; };
 		03A586DE2A1F4C16000A1E66 /* ReviewResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A586DD2A1F4C16000A1E66 /* ReviewResponse.swift */; };
 		03A586E22A1F657E000A1E66 /* HomePartTimeJobService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A586E12A1F657E000A1E66 /* HomePartTimeJobService.swift */; };
@@ -82,9 +79,8 @@
 		D36C3EB32A20898200C042D5 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C3EB22A20898200C042D5 /* ProfileService.swift */; };
 		D36C3EB82A2089E000C042D5 /* ProfileRegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36C3EB72A2089E000C042D5 /* ProfileRegisterResponse.swift */; };
 		D3A53EC02A137CF6008EDC52 /* HomeLocalJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A53EBF2A137CF6008EDC52 /* HomeLocalJobView.swift */; };
-		D3A53EC22A138315008EDC52 /* HomeLoaclJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A53EC12A138315008EDC52 /* HomeLoaclJobViewController.swift */; };
 		D3A53ECE2A138D94008EDC52 /* HomeLocalJobCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A53ECD2A138D94008EDC52 /* HomeLocalJobCollectionViewCell.swift */; };
-		D3A53ED02A139F1F008EDC52 /* jobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A53ECF2A139F1F008EDC52 /* jobModel.swift */; };
+		D3A53ED02A139F1F008EDC52 /* JobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A53ECF2A139F1F008EDC52 /* JobModel.swift */; };
 		D3D03F762A10D9B9005AEE77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D03F752A10D9B9005AEE77 /* AppDelegate.swift */; };
 		D3D03F782A10D9B9005AEE77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D03F772A10D9B9005AEE77 /* SceneDelegate.swift */; };
 		D3D03F7F2A10D9BA005AEE77 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3D03F7E2A10D9BA005AEE77 /* Image.xcassets */; };
@@ -125,9 +121,7 @@
 		037C360C2A122D5800FAC78B /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		037C36122A122DA100FAC78B /* ApplyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyViewController.swift; sourceTree = "<group>"; };
 		037C36152A122EB700FAC78B /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
-		037C361A2A13790500FAC78B /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
-		037C361E2A13792100FAC78B /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
-		037C36202A13792800FAC78B /* Apply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apply.swift; sourceTree = "<group>"; };
+		037C36202A13792800FAC78B /* ApplyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyView.swift; sourceTree = "<group>"; };
 		037C36222A137DC300FAC78B /* HomeNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationView.swift; sourceTree = "<group>"; };
 		037C36242A138C0600FAC78B /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		037C36252A138C0600FAC78B /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
@@ -135,7 +129,6 @@
 		037C362F2A13A56300FAC78B /* AdvertisingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisingButton.swift; sourceTree = "<group>"; };
 		037C36312A13B0B300FAC78B /* PartTimeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartTimeLabel.swift; sourceTree = "<group>"; };
 		037C36352A13B99A00FAC78B /* PartTimeJobModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartTimeJobModel.swift; sourceTree = "<group>"; };
-		037C36372A13BC3400FAC78B /* PartTimeJobCellTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartTimeJobCellTestViewController.swift; sourceTree = "<group>"; };
 		03A586DB2A1F4BEC000A1E66 /* ReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewService.swift; sourceTree = "<group>"; };
 		03A586DD2A1F4C16000A1E66 /* ReviewResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewResponse.swift; sourceTree = "<group>"; };
 		03A586E12A1F657E000A1E66 /* HomePartTimeJobService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePartTimeJobService.swift; sourceTree = "<group>"; };
@@ -172,9 +165,8 @@
 		D36C3EB22A20898200C042D5 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		D36C3EB72A2089E000C042D5 /* ProfileRegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRegisterResponse.swift; sourceTree = "<group>"; };
 		D3A53EBF2A137CF6008EDC52 /* HomeLocalJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLocalJobView.swift; sourceTree = "<group>"; };
-		D3A53EC12A138315008EDC52 /* HomeLoaclJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLoaclJobViewController.swift; sourceTree = "<group>"; };
 		D3A53ECD2A138D94008EDC52 /* HomeLocalJobCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLocalJobCollectionViewCell.swift; sourceTree = "<group>"; };
-		D3A53ECF2A139F1F008EDC52 /* jobModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jobModel.swift; sourceTree = "<group>"; };
+		D3A53ECF2A139F1F008EDC52 /* JobModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobModel.swift; sourceTree = "<group>"; };
 		D3D03F722A10D9B9005AEE77 /* CDS_CarrotJob.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CDS_CarrotJob.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3D03F752A10D9B9005AEE77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3D03F772A10D9B9005AEE77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -199,6 +191,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		034181402A20ABC200147772 /* Review */ = {
+			isa = PBXGroup;
+			children = (
+				03F59DF72A1640D100942002 /* ReviewModel.swift */,
+			);
+			path = Review;
+			sourceTree = "<group>";
+		};
+		034181412A20AC9900147772 /* LocalJob */ = {
+			isa = PBXGroup;
+			children = (
+				034181422A20ACAA00147772 /* View */,
+				034181432A20ACB300147772 /* Cell */,
+			);
+			path = LocalJob;
+			sourceTree = "<group>";
+		};
+		034181422A20ACAA00147772 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D3A53EBF2A137CF6008EDC52 /* HomeLocalJobView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		034181432A20ACB300147772 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D3A53ECD2A138D94008EDC52 /* HomeLocalJobCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		034181442A20AD4B00147772 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				037C36222A137DC300FAC78B /* HomeNavigationView.swift */,
+				03641A9A2A1F35680053B6C7 /* HomeScrollView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		035F4DE12A151FC9005E8BBA /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +253,7 @@
 		03641A892A1B8B860053B6C7 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				037C362A2A139BD800FAC78B /* PartTimeJobCollectionViewCell.swift */,
 				03641A872A1B8B590053B6C7 /* JobLabelCollectionViewCell.swift */,
 				03641A962A1CDC410053B6C7 /* TodayPopularCollectionViewCell.swift */,
 			);
@@ -228,7 +263,9 @@
 		03641A8A2A1B8DE80053B6C7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				037C36352A13B99A00FAC78B /* PartTimeJobModel.swift */,
 				03641A8B2A1B8E070053B6C7 /* JobLabelModel.swift */,
+				D3A53ECF2A139F1F008EDC52 /* JobModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -306,7 +343,6 @@
 			children = (
 				037C36002A122C5700FAC78B /* ViewController */,
 				037C36032A122CC000FAC78B /* View */,
-				037C36292A139BA700FAC78B /* Cell */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -315,8 +351,6 @@
 			isa = PBXGroup;
 			children = (
 				037C36012A122C6700FAC78B /* HomeViewController.swift */,
-				D3A53EC12A138315008EDC52 /* HomeLoaclJobViewController.swift */,
-				037C36372A13BC3400FAC78B /* PartTimeJobCellTestViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -324,13 +358,9 @@
 		037C36032A122CC000FAC78B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				034181442A20AD4B00147772 /* Home */,
+				034181412A20AC9900147772 /* LocalJob */,
 				03641A832A1B86B70053B6C7 /* Near */,
-				037C361A2A13790500FAC78B /* Home.swift */,
-				D3A53EBF2A137CF6008EDC52 /* HomeLocalJobView.swift */,
-				D3A53ECD2A138D94008EDC52 /* HomeLocalJobCollectionViewCell.swift */,
-				D3A53ECF2A139F1F008EDC52 /* jobModel.swift */,
-				037C36222A137DC300FAC78B /* HomeNavigationView.swift */,
-				03641A9A2A1F35680053B6C7 /* HomeScrollView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -370,7 +400,6 @@
 			isa = PBXGroup;
 			children = (
 				037C360B2A122D4E00FAC78B /* ViewController */,
-				037C360F2A122D8400FAC78B /* View */,
 				035F4DE12A151FC9005E8BBA /* Cell */,
 			);
 			path = Review;
@@ -382,14 +411,6 @@
 				037C360C2A122D5800FAC78B /* ReviewViewController.swift */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		037C360F2A122D8400FAC78B /* View */ = {
-			isa = PBXGroup;
-			children = (
-				037C361E2A13792100FAC78B /* Review.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		037C36102A122D8C00FAC78B /* Apply */ = {
@@ -412,18 +433,10 @@
 		037C36142A122DBA00FAC78B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				037C36202A13792800FAC78B /* Apply.swift */,
+				037C36202A13792800FAC78B /* ApplyView.swift */,
 				D3DCDC692A209C3500674EC1 /* ApplyNavigation.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		037C36292A139BA700FAC78B /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				037C362A2A139BD800FAC78B /* PartTimeJobCollectionViewCell.swift */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		037C362E2A13A55300FAC78B /* CustomClass */ = {
@@ -448,9 +461,8 @@
 			isa = PBXGroup;
 			children = (
 				03641A8A2A1B8DE80053B6C7 /* Home */,
-				037C36352A13B99A00FAC78B /* PartTimeJobModel.swift */,
-				03F59DF72A1640D100942002 /* ReviewModel.swift */,
-				5871EB862A1C6B0200F25E24 /* JobDetailNetworkManager.swift */,
+				03A586E92A20A899000A1E66 /* JobDetail */,
+				034181402A20ABC200147772 /* Review */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -467,8 +479,8 @@
 			isa = PBXGroup;
 			children = (
 				03A586E62A1F66A1000A1E66 /* Home */,
-				03A586E52A1F669B000A1E66 /* Review */,
 				D36C3EB52A2089BF00C042D5 /* Profile */,
+				03A586E52A1F669B000A1E66 /* Review */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -477,8 +489,8 @@
 			isa = PBXGroup;
 			children = (
 				03A586E72A1F6A8D000A1E66 /* Home */,
-				03A586E82A1F6A95000A1E66 /* Review */,
 				D36C3EB12A20896300C042D5 /* Profile */,
+				03A586E82A1F6A95000A1E66 /* Review */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -515,6 +527,14 @@
 				03A586DB2A1F4BEC000A1E66 /* ReviewService.swift */,
 			);
 			path = Review;
+			sourceTree = "<group>";
+		};
+		03A586E92A20A899000A1E66 /* JobDetail */ = {
+			isa = PBXGroup;
+			children = (
+				5871EB862A1C6B0200F25E24 /* JobDetailNetworkManager.swift */,
+			);
+			path = JobDetail;
 			sourceTree = "<group>";
 		};
 		5880650C2A189F2800FEEA88 /* DetailReviewList */ = {
@@ -821,7 +841,6 @@
 				037C362B2A139BD800FAC78B /* PartTimeJobCollectionViewCell.swift in Sources */,
 				D3D03F782A10D9B9005AEE77 /* SceneDelegate.swift in Sources */,
 				58C054612A1BB5B7008E5CE6 /* JobDetailToastView.swift in Sources */,
-				037C36382A13BC3400FAC78B /* PartTimeJobCellTestViewController.swift in Sources */,
 				037C360D2A122D5800FAC78B /* ReviewViewController.swift in Sources */,
 				5896402D2A176D7700DC8C3E /* JobInformationStackView.swift in Sources */,
 				03641A912A1CD04D0053B6C7 /* JobLabelFooterView.swift in Sources */,
@@ -871,21 +890,18 @@
 				5896402B2A176D5C00DC8C3E /* MainDetailView.swift in Sources */,
 				03641A932A1CD9E20053B6C7 /* TodayPopularHeaderView.swift in Sources */,
 				5896402F2A176D8000DC8C3E /* JobLocalInformingView.swift in Sources */,
-				037C361B2A13790500FAC78B /* Home.swift in Sources */,
 				037C35EF2A121F5B00FAC78B /* UIImageView+.swift in Sources */,
 				03641A9B2A1F35680053B6C7 /* HomeScrollView.swift in Sources */,
 				03641A882A1B8B590053B6C7 /* JobLabelCollectionViewCell.swift in Sources */,
 				58C0545B2A1B9965008E5CE6 /* DetailReviewEmptyView.swift in Sources */,
-				037C361F2A13792100FAC78B /* Review.swift in Sources */,
-				037C36212A13792800FAC78B /* Apply.swift in Sources */,
+				037C36212A13792800FAC78B /* ApplyView.swift in Sources */,
 				03641A972A1CDC410053B6C7 /* TodayPopularCollectionViewCell.swift in Sources */,
 				03641A952A1CDB3C0053B6C7 /* TodayPopularFooterView.swift in Sources */,
 				037C35E32A121E6200FAC78B /* UIView+.swift in Sources */,
 				586BF3022A114204002AD443 /* UIFont+.swift in Sources */,
-				D3A53EC22A138315008EDC52 /* HomeLoaclJobViewController.swift in Sources */,
 				037C35E92A121EAD00FAC78B /* UITableView+.swift in Sources */,
 				037C36132A122DA100FAC78B /* ApplyViewController.swift in Sources */,
-				D3A53ED02A139F1F008EDC52 /* jobModel.swift in Sources */,
+				D3A53ED02A139F1F008EDC52 /* JobModel.swift in Sources */,
 				037C36362A13B99A00FAC78B /* PartTimeJobModel.swift in Sources */,
 				035F4DE32A151FE4005E8BBA /* ReviewTableViewCell.swift in Sources */,
 				586BF3002A113B08002AD443 /* UIImage+.swift in Sources */,
