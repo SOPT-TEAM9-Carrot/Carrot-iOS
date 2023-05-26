@@ -12,7 +12,7 @@ import Then
 
 final class ApplyNavigaitionBarView: UIView {
     
-    private let popButton = UIButton()
+    let popButton = UIButton()
     private let profileRegister = UILabel()
     private let dividerView = UIView()
     
@@ -45,7 +45,7 @@ extension ApplyNavigaitionBarView {
     }
     
     private func setLayout() {
-        addSubviews(popButton,profileRegister,dividerView)
+        addSubviews(popButton, profileRegister, dividerView)
         
         popButton.snp.makeConstraints {
             $0.top.leading.equalToSuperview()

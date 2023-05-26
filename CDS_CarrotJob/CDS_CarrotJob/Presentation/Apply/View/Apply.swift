@@ -37,7 +37,7 @@ final class ApplyView: UIView, UITextViewDelegate {
     private let borderView = UIView()
     private let check1Label = UILabel()
     private let check2Label = UILabel()
-    private let applyButton = OrangeUIButton()
+    let applyButton = OrangeUIButton()
     private let introduceView = UIView()
     
     // MARK: - View Life Cycle

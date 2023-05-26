@@ -46,6 +46,14 @@ extension ApplyViewController {
             $0.isScrollEnabled = true
             $0.showsVerticalScrollIndicator = true
         }
+        
+        applyView.do {
+            $0.applyButton.addTarget(self, action: #selector(applyTapped), for: .touchUpInside)
+        }
+        
+        navigationView.do {
+            $0.popButton.addTarget(self, action: #selector(popTapped), for: .touchUpInside)
+        }
     }
     
     // MARK: - Layout Helper
@@ -80,5 +88,16 @@ extension ApplyViewController {
     // MARK: - Methods
     
     // MARK: - @objc Methods
+    @objc
+    private func popTapped() {
+        self.navigationController?.popViewController(animated: true)
+    }
     
+    @objc
+    private func applyTapped() {
+        // post -> Alert창 -> Yes 를 누르면 그때 포스트를 하면서 popToRootView 를 하자.
+        print("Post 안된채로 PopToRootView!")
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+
 }
