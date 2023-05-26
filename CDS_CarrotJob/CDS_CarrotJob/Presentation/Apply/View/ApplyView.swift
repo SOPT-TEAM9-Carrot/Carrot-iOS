@@ -296,7 +296,7 @@ extension ApplyView {
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(172)
         }
-        introduceNumberLabel.snp.makeConstraints{
+        introduceNumberLabel.snp.makeConstraints {
             $0.trailing.equalToSuperview().inset(16)
             $0.bottom.equalToSuperview().inset(11)
         }
@@ -349,7 +349,7 @@ extension ApplyView {
             }
             checkMaxLength(textView)
             let count = textView.text.count
-            introduceNumberLabel.text = "(count)/2000자"
+            introduceNumberLabel.text = "\(count)2000자"
         }
 
         func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
