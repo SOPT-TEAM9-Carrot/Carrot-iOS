@@ -46,6 +46,8 @@
 		037C36322A13B0B300FAC78B /* PartTimeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36312A13B0B300FAC78B /* PartTimeLabel.swift */; };
 		037C36362A13B99A00FAC78B /* PartTimeJobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36352A13B99A00FAC78B /* PartTimeJobModel.swift */; };
 		037C36382A13BC3400FAC78B /* PartTimeJobCellTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C36372A13BC3400FAC78B /* PartTimeJobCellTestViewController.swift */; };
+		03A586DC2A1F4BEC000A1E66 /* ReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A586DB2A1F4BEC000A1E66 /* ReviewService.swift */; };
+		03A586DE2A1F4C16000A1E66 /* ReviewResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A586DD2A1F4C16000A1E66 /* ReviewResponse.swift */; };
 		03F59DF82A1640D100942002 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F59DF72A1640D100942002 /* ReviewModel.swift */; };
 		586BF3002A113B08002AD443 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF2FF2A113B08002AD443 /* UIImage+.swift */; };
 		586BF3022A114204002AD443 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586BF3012A114204002AD443 /* UIFont+.swift */; };
@@ -127,6 +129,8 @@
 		037C36312A13B0B300FAC78B /* PartTimeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartTimeLabel.swift; sourceTree = "<group>"; };
 		037C36352A13B99A00FAC78B /* PartTimeJobModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartTimeJobModel.swift; sourceTree = "<group>"; };
 		037C36372A13BC3400FAC78B /* PartTimeJobCellTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartTimeJobCellTestViewController.swift; sourceTree = "<group>"; };
+		03A586DB2A1F4BEC000A1E66 /* ReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewService.swift; sourceTree = "<group>"; };
+		03A586DD2A1F4C16000A1E66 /* ReviewResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewResponse.swift; sourceTree = "<group>"; };
 		03F59DF72A1640D100942002 /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
 		586BF2FF2A113B08002AD443 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		586BF3012A114204002AD443 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
@@ -229,7 +233,8 @@
 		037C35DD2A121B7400FAC78B /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				037C35DE2A121B8600FAC78B /* NetworkResult.swift */,
+				03A586DA2A1F4BCC000A1E66 /* APIService */,
+				03A586D82A1F4BB2000A1E66 /* Foundation */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -419,6 +424,7 @@
 			isa = PBXGroup;
 			children = (
 				037C36342A13B98D00FAC78B /* Model */,
+				03A586D92A1F4BC2000A1E66 /* DTO */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -432,6 +438,30 @@
 				5871EB862A1C6B0200F25E24 /* JobDetailNetworkManager.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		03A586D82A1F4BB2000A1E66 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				037C35DE2A121B8600FAC78B /* NetworkResult.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		03A586D92A1F4BC2000A1E66 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				03A586DD2A1F4C16000A1E66 /* ReviewResponse.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		03A586DA2A1F4BCC000A1E66 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				03A586DB2A1F4BEC000A1E66 /* ReviewService.swift */,
+			);
+			path = APIService;
 			sourceTree = "<group>";
 		};
 		5880650C2A189F2800FEEA88 /* DetailReviewList */ = {
@@ -715,6 +745,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58D519EB2A1E6D3B00D6A1E5 /* CategoryCollectionViewCell.swift in Sources */,
+				03A586DC2A1F4BEC000A1E66 /* ReviewService.swift in Sources */,
 				589640412A178A1F00DC8C3E /* DetailLocalListView.swift in Sources */,
 				58ACBD512A1474A2005EF7A4 /* GrayUIButton.swift in Sources */,
 				D3D03F762A10D9B9005AEE77 /* AppDelegate.swift in Sources */,
@@ -759,6 +790,7 @@
 				589640392A17715F00DC8C3E /* DetailProfileView.swift in Sources */,
 				03F59DF82A1640D100942002 /* ReviewModel.swift in Sources */,
 				037C35E72A121E9800FAC78B /* UIStackView+.swift in Sources */,
+				03A586DE2A1F4C16000A1E66 /* ReviewResponse.swift in Sources */,
 				588065122A18A4C900FEEA88 /* DetailReviewSegmentView.swift in Sources */,
 				5896402B2A176D5C00DC8C3E /* MainDetailView.swift in Sources */,
 				03641A932A1CD9E20053B6C7 /* TodayPopularHeaderView.swift in Sources */,
