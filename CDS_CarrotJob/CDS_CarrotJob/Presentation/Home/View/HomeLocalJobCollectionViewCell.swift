@@ -36,6 +36,7 @@ class HomeLocalJobCollectionViewCell: UICollectionViewCell {
         layer.borderWidth = 1
         layer.cornerRadius = 8
         layer.borderColor = Color.gray7.cgColor
+        layer.masksToBounds = true
         
         mainInfoLabel.do {
             $0.textColor = Color.gray1
@@ -49,6 +50,10 @@ class HomeLocalJobCollectionViewCell: UICollectionViewCell {
         moneyInfoLabel.do {
             $0.textColor = .orange
             $0.font = .notoSansFont(weightOf: .Bold, sizeOf: .font12)
+        }
+        jobImageView.do {
+            $0.contentMode = .scaleAspectFill
+            $0.layer.masksToBounds = true
         }
     }
     
@@ -80,9 +85,10 @@ class HomeLocalJobCollectionViewCell: UICollectionViewCell {
 
 extension HomeLocalJobCollectionViewCell {
     func configureCell(model: JobLocalModel) {
-        self.jobImageView.image = model.jobImage
+        guard let url = URL(string: model.jobImage) else { return }
+        self.jobImageView.kf.setImage(with: url)
         self.mainInfoLabel.text = model.mainInfo
         self.subInfoLabel.text = model.subInfo
-        self.moneyInfoLabel.text = model.moneyInfo
+        self.moneyInfoLabel.text = "월급 \(model.moneyInfo)만원"
     }
 }

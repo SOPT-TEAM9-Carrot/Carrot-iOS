@@ -41,7 +41,7 @@ extension DetailLocalListView {
     private func setRegister() {
         localJobCollectionView.registerCell(PartTimeJobCollectionViewCell.self)
     }
-
+    
     private func setUI() {
         localMainTitleLabel.do {
             $0.font = .notoSansFont(weightOf: .Bold, sizeOf: .font16)
