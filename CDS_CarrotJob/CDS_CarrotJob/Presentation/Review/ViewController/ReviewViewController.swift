@@ -20,10 +20,6 @@ final class ReviewViewController: UIViewController {
     private let reviewModel = ReviewModel.fetchReviewModelDummyData()
     private var userId: Int = 0
     
-    // MARK: - Properties
-    
-    // MARK: - Initializer
-    
     // MARK: - View Life Cycle
     
     override func viewWillAppear(_ animated: Bool) {
@@ -140,6 +136,8 @@ extension ReviewViewController: UITableViewDataSource {
         return cell
     }
 }
+
+// MARK: - Network
 
 extension ReviewViewController {
     

@@ -102,6 +102,7 @@ extension PartTimeJobCollectionViewCell {
         jobImage.do {
             $0.layer.cornerRadius = 6
             $0.clipsToBounds = true
+            $0.contentMode = .scaleAspectFill
         }
         
         jobHourlyWageLabel.do {
@@ -242,11 +243,7 @@ extension PartTimeJobCollectionViewCell {
         jobTimeLabel.text = dummyModel.jobTime
         guard let url = URL(string: serverModel.jobImage) else { return }
         jobImage.kf.setImage(with: url)
-        var hourlyWage = String(serverModel.jobHourlyWage)
-        if hourlyWage.count > 3 {
-            hourlyWage.insert(",", at: hourlyWage.index(hourlyWage.endIndex, offsetBy: -3))
-        }
-        jobHourlyWageLabel.text = "시급 " + "\(hourlyWage)" + "원"
+        jobHourlyWageLabel.text = "시급 \(serverModel.jobHourlyWage.toPriceFormatString)원"
     }
     
     func configureCell(imageUrl: String, jobTitle: String, wage: Int, location: String) {
