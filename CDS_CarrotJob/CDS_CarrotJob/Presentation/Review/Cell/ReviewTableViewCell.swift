@@ -49,6 +49,7 @@ extension ReviewTableViewCell {
         profileImage.do {
             $0.layer.cornerRadius = 17
             $0.clipsToBounds = true
+            $0.contentMode = .scaleAspectFill
         }
         
         nickNameLabel.do {
@@ -65,11 +66,13 @@ extension ReviewTableViewCell {
         certificationsCountLabel.do {
             $0.font = .notoSansFont(weightOf: .Medium, sizeOf: .font12)
             $0.textColor = Color.gray3
+            $0.text = "인계동 인증 29회  •"
         }
         
         monthAgoLabel.do {
             $0.font = .notoSansFont(weightOf: .Medium, sizeOf: .font12)
             $0.textColor = Color.gray3
+            $0.text = "2개월 전"
         }
         
         commentLabel.do {
@@ -145,11 +148,13 @@ extension ReviewTableViewCell {
             $0.bottom.equalToSuperview().inset(16)
             $0.leading.equalTo(jobLabel.snp.trailing).offset(4)
             $0.height.equalTo(20)
+            $0.trailing.equalToSuperview().inset(20)
         }
         
         commentLabel.snp.makeConstraints {
             $0.bottom.equalTo(jobTitle.snp.top)
             $0.leading.equalTo(nickNameLabel)
+            $0.trailing.equalToSuperview().inset(20)
         }
         
         underLineView.snp.makeConstraints {
@@ -169,5 +174,13 @@ extension ReviewTableViewCell {
         certificationsCountLabel.text = dummyModel.certificationCount
         monthAgoLabel.text = dummyModel.monthAgo
         jobTitle.text = dummyModel.jobTitle
+    }
+    
+    func configureCell(imageUrl: String, reviewerName: String, comment: String, jobTitle: String) {
+        guard let url = URL(string: imageUrl) else { return }
+        self.profileImage.kf.setImage(with: url)
+        self.nickNameLabel.text = reviewerName
+        self.commentLabel.text = comment
+        self.jobTitle.text = jobTitle
     }
 }

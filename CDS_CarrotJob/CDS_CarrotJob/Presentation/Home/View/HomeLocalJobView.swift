@@ -64,12 +64,14 @@ extension HomeLocalJobView {
         self.addSubviews(title1Label, title2Label, reloadButton)
         self.addSubview(homeLocalJobCollectionView)
         title1Label.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(157)
+            $0.top.equalToSuperview().inset(14)
             $0.leading.equalToSuperview().inset(17)
+            $0.height.equalTo(26)
         }
         title2Label.snp.makeConstraints {
             $0.top.equalTo(title1Label.snp.bottom).offset(3)
             $0.leading.equalToSuperview().inset(17)
+            $0.height.equalTo(26)
         }
         // MARK: - CollectionView Cell 위치 잡는 부분
         homeLocalJobCollectionView.snp.makeConstraints {
@@ -80,7 +82,6 @@ extension HomeLocalJobView {
         reloadButton.snp.makeConstraints {
             $0.top.equalTo(homeLocalJobCollectionView.snp.bottom).offset(16)
             $0.leading.trailing.equalToSuperview().inset(16)
-            $0.bottom.equalToSuperview()
             $0.height.equalTo(32)
         }
     }

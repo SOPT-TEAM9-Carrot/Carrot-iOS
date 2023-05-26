@@ -12,8 +12,8 @@ import Then
 
 final class DetailLocalListView: UIView {
     
-    private let dummyJobData = PartTimeJobModel.fetchPartTimeJobdummyData()
-    private let dummyServerData = PartTimeServerModel.fetchPartTimeJobServerData()
+    private var jobLists: [PostModel] = []
+    private let jobLocationLists: [String] = ["계양 칼국수 • 살라리로2번길 15 •", "부천 재능교육 • 부일로 224-9 •", "쭝식대장 계양 • 계산새로 71 •"]
     
     private let localMainTitleLabel = UILabel()
     private lazy var localJobCollectionView = UICollectionView(frame: .zero, collectionViewLayout: self.setFlowLayout())
@@ -76,7 +76,7 @@ extension DetailLocalListView {
         fetchMoreJobButton.snp.makeConstraints {
             $0.horizontalEdges.equalToSuperview().inset(16)
             $0.height.equalTo(32)
-            $0.top.equalTo(localJobCollectionView.snp.bottom)
+            $0.top.equalTo(localJobCollectionView.snp.bottom).offset(15)
         }
     }
     
@@ -91,14 +91,24 @@ extension DetailLocalListView {
 
 extension DetailLocalListView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return jobLists.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(type: PartTimeJobCollectionViewCell.self, indexPath: indexPath)
+        if indexPath.item == 2 {
+            cell.setUnderLineHidden()
+        }
         
-        cell.setDataBind(serverModel: dummyServerData[indexPath.item], dummyModel: dummyJobData[indexPath.item])
+        cell.configureCell(imageUrl: jobLists[indexPath.row].image, jobTitle: jobLists[indexPath.row].title, wage: jobLists[indexPath.row].hourlyWage, location: jobLocationLists[indexPath.row])
         
         return cell
+    }
+}
+
+extension DetailLocalListView {
+    func passData(data: [PostModel]) {
+        self.jobLists = data
+        self.localJobCollectionView.reloadData()
     }
 }

@@ -11,22 +11,67 @@ import Alamofire
 import SnapKit
 import Then
 
+protocol JobDetailContstraintChangeDelegate: AnyObject {
+    func modifyConstraintTo(heightOf: CGFloat)
+}
+
 final class JobDetailViewController: UIViewController {
     
     // MARK: - UI Components
+    private let networkManager = JobDetailNetworkManager.shared
+    private var mainDetailData = JobDetailModel(userId: 0, image: "", categories: [], title: "", hourlyWage: 0, content: "", address: "")
+    private var mainDetailReviewData = ReviewsListModel(userID: 0, nickname: "", imageURL: "", degree: 0.0, reviews: [])
+    private var jobPostsData: [PostModel] = []
+    
+    private var postId: Int = 2
+    
+    private let customNavigationBar = JobDetailNavigationBarView()
     
     private let scrollView = UIScrollView()
     private let contentView = UIView()
     private let mainDetailView = MainDetailView()
     private let detailProfileView = DetailProfileView()
+    private let detailReviewView = DetailReviewListView()
     private let detailLocalListView = DetailLocalListView()
+    
+    private let bottomStickyView = BottomStickyView()
+    private let toastView = JobDetailToastView()
     
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setDelegate()
         setUI()
         setLayout()
+
+        fetchMainDetailData(postId: self.postId) {
+            self.mainDetailView.passTextOfJobDetail(imageUrl: self.mainDetailData.image, titleText: self.mainDetailData.title, contentText: self.mainDetailData.content, wage: self.mainDetailData.hourlyWage)
+            self.mainDetailView.passData(categories: self.mainDetailData.categories)
+            
+            self.fetchEmployerInformation(userId: self.mainDetailData.userId) {
+                self.detailProfileView.employerProfileView.configureView(imageString: self.mainDetailReviewData.imageURL, employerName: self.mainDetailReviewData.nickname, temperature: self.mainDetailReviewData.degree)
+                self.detailReviewView.reviewPageView.passData(serverData: self.mainDetailReviewData.reviews, jobTitle: self.mainDetailData.title)
+                let cellCount = self.mainDetailReviewData.reviews.count
+                self.detailReviewView.snp.updateConstraints {
+                    $0.height.equalTo(290 + 150 * cellCount)
+                }
+            }
+            
+            self.detailProfileView.kakaoMapView.passAddress(address: self.mainDetailData.address)
+            
+            let textViewHeight: CGFloat = self.mainDetailView.describingTextView.intrinsicContentSize.height
+            self.makeDetailViewDynamicHegihtOf(textViewHeight)
+        }
+        
+        fetchOtherJobsData {
+            self.detailLocalListView.passData(data: self.jobPostsData)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 }
 
@@ -34,16 +79,17 @@ extension JobDetailViewController {
     
     // MARK: - UI Components Property
     
+    private func setDelegate() {
+        detailReviewView.delegate = self
+        detailProfileView.kakaoMapView.delegate = self
+    }
+    
     private func setUI() {
         view.backgroundColor = .white
         
         scrollView.do {
             $0.isScrollEnabled = true
             $0.showsVerticalScrollIndicator = true
-        }
-        
-        mainDetailView.do {
-            $0.passTextOfJobDetail(image: UIImage.loadImageOf(carrotImageName: .carrotHeartFill), text: "월,금,토 3일도 가능합니다.\n근무시간 토요일만 17시까지 출근\n초보분도 가능합니다^^\n고기자르는 일 크게 어려운건 없어요~\n잘 못해도 서비스 마인드 가지신 분\n성실하게 일해주실 분이면 환영합니다!\n일하실 분 지원해주세요!")
         }
         
         detailProfileView.do {
@@ -54,13 +100,19 @@ extension JobDetailViewController {
     // MARK: - Layout Helper
     
     private func setLayout() {
-        view.addSubview(scrollView)
+        view.addSubviews(customNavigationBar, scrollView, bottomStickyView)
         scrollView.addSubview(contentView)
         
-        contentView.addSubviews(mainDetailView, detailProfileView, detailLocalListView)
+        contentView.addSubviews(mainDetailView, detailProfileView, detailReviewView, detailLocalListView)
+        
+        customNavigationBar.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.horizontalEdges.equalToSuperview()
+            $0.height.equalTo(48)
+        }
         
         scrollView.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(40)
+            $0.top.equalTo(customNavigationBar.snp.bottom)
             $0.horizontalEdges.equalToSuperview()
             $0.bottom.equalToSuperview()
         }
@@ -72,7 +124,7 @@ extension JobDetailViewController {
         
         mainDetailView.snp.makeConstraints {
             $0.horizontalEdges.top.equalToSuperview()
-            $0.height.equalTo(770)
+            $0.height.equalTo(700)
         }
         
         detailProfileView.snp.makeConstraints {
@@ -81,11 +133,127 @@ extension JobDetailViewController {
             $0.height.equalTo(380)
         }
         
-        detailLocalListView.snp.makeConstraints {
+        detailReviewView.snp.makeConstraints {
             $0.horizontalEdges.equalToSuperview()
             $0.top.equalTo(detailProfileView.snp.bottom)
-            $0.height.equalTo(540)
+            $0.height.equalTo(735)
+        }
+        
+        detailLocalListView.snp.makeConstraints {
+            $0.horizontalEdges.equalToSuperview()
+            $0.top.equalTo(detailReviewView.snp.bottom)
+            $0.height.equalTo(630)
             $0.bottom.equalToSuperview()
+        }
+        
+        bottomStickyView.snp.makeConstraints {
+            $0.height.equalTo(110)
+            $0.horizontalEdges.bottom.equalToSuperview()
+        }
+    }
+}
+
+extension JobDetailViewController {
+    private func fetchMainDetailData(postId: Int, completion: @escaping () -> Void) {
+        networkManager.fetchDetailData(postId: postId) { response in
+            switch response {
+            case .success(let data):
+                guard let data = data as? JobDetailListModel else { return }
+                let currentData = data.data
+                self.mainDetailData.address = currentData.address
+                self.mainDetailData.image = currentData.image
+                self.mainDetailData.title = currentData.title
+                self.mainDetailData.categories = currentData.categories
+                self.mainDetailData.hourlyWage = currentData.hourlyWage
+                self.mainDetailData.content = currentData.content
+                self.mainDetailData.userId = currentData.userId
+                completion()
+            default:
+                print("Network Failed - Main")
+                completion()
+            }
+        }
+    }
+    
+    private func fetchEmployerInformation(userId: Int, completion: @escaping () -> Void) {
+        networkManager.fetchReviews(employerID: userId, postCount: 3) { response in
+            switch response {
+            case .success(let data):
+                guard let data = data as? JobReviewListModel else { return }
+                let currentData = data.data
+                self.mainDetailReviewData.degree = currentData.degree
+                self.mainDetailReviewData.imageURL = currentData.imageURL
+                self.mainDetailReviewData.nickname = currentData.nickname
+                self.mainDetailReviewData.userID = currentData.userID
+                self.mainDetailReviewData.reviews = currentData.reviews
+                completion()
+            default:
+                print("Network Failed - Employer")
+                completion()
+            }
+        }
+    }
+    
+    private func fetchOtherJobsData(completion: @escaping () -> Void) {
+        networkManager.fetchOtherJobs(postCount: 3) { response in
+            switch response {
+            case .success(let data):
+                guard let data = data as? JobListsModel else { return }
+                self.jobPostsData = data.data.posts
+                
+                completion()
+            default:
+                print("Network Failed - OtherJobs")
+                completion()
+            }
+        }
+    }
+    
+    /// Get changed height of TextView and Update the layout
+    private func makeDetailViewDynamicHegihtOf(_ height: CGFloat) {
+        mainDetailView.snp.updateConstraints {
+            $0.height.equalTo(650 + height)
+        }
+    }
+}
+
+extension JobDetailViewController: JobDetailContstraintChangeDelegate {
+    func modifyConstraintTo(heightOf height: CGFloat) {
+        detailReviewView.snp.updateConstraints {
+            $0.height.equalTo(height)
+        }
+    }
+}
+
+extension JobDetailViewController: JobDetailToastDelegate {
+    func copySuccessed() {
+        view.addSubview(toastView)
+        
+        toastView.snp.makeConstraints {
+            $0.horizontalEdges.equalToSuperview().inset(20)
+            $0.height.equalTo(40)
+            $0.bottom.equalToSuperview().inset(100)
+        }
+        
+        UIView.animate(withDuration: 0.05) { [weak self] in
+            self?.toastView.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+        }
+        
+        UIView.animate(withDuration: 0.08) { [weak self] in
+            self?.toastView.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+        }
+        
+        UIView.animate(withDuration: 0.05) { [weak self] in
+            self?.toastView.transform = CGAffineTransform(scaleX: 0.98, y: 0.98)
+        }
+        
+        UIView.animate(withDuration: 0.1) { [weak self] in
+            self?.toastView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak self] in
+            self?.toastView.snp.removeConstraints()
+            self?.toastView.removeFromSuperview()
         }
     }
 }

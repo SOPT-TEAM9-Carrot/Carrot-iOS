@@ -10,7 +10,13 @@ import UIKit
 import SnapKit
 import Then
 
+protocol JobDetailToastDelegate: AnyObject {
+    func copySuccessed()
+}
+
 final class KaKaoMapView: UIView {
+
+    weak var delegate: JobDetailToastDelegate?
 
     private var address: String?
     
@@ -74,7 +80,9 @@ extension KaKaoMapView {
     
     @objc
     private func copyTapped() {
-        print("Address Copied")
+        self.delegate?.copySuccessed()
+        UIPasteboard.general.string = address
+        print("Copied!")
     }
 }
 

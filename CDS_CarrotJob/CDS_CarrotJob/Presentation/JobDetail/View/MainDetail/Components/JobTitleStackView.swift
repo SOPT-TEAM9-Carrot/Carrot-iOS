@@ -14,9 +14,7 @@ final class JobTitleStackView: UIView {
     
     // MARK: - UI Components
     
-    private let jobPartDescribingBoxView = UIView()
-    private let jobPartDescribingLabel = UILabel()
-    private let jobTitleLabel = UILabel()
+    let jobTitleLabel = UILabel()
     private let placeTimeLabel = UILabel()
     
     // MARK: - Initializer
@@ -39,21 +37,8 @@ extension JobTitleStackView {
     private func setUI() {
         self.backgroundColor = .clear
         
-        jobPartDescribingBoxView.do {
-            $0.layer.cornerRadius = 2
-            $0.backgroundColor = Color.gray7
-        }
-        
-        jobPartDescribingLabel.do {
-            $0.font = UIFont.notoSansFont(weightOf: .Medium, sizeOf: .font10)
-            $0.text = "서빙" // 네트워크에서 받아오나?
-            $0.textColor = Color.gray2
-            $0.textAlignment = .center
-        }
-        
         jobTitleLabel.do {
             $0.font = UIFont.notoSansFont(weightOf: .Bold, sizeOf: .font18)
-            // $0.text = "어쩌고... 서빙 한명 구합니다..." // 네트워크에서 받아오나?
             $0.textColor = Color.gray1
             $0.textAlignment = .left
             $0.numberOfLines = 1
@@ -61,7 +46,7 @@ extension JobTitleStackView {
         
         placeTimeLabel.do {
             $0.font = UIFont.notoSansFont(weightOf: .Medium, sizeOf: .font11)
-            $0.text = "솝트 서울역점 · 12시간 전" // 네트워크에서 받아오나?
+            $0.text = ""
             $0.textColor = Color.gray3
             $0.textAlignment = .left
             $0.numberOfLines = 1
@@ -71,21 +56,10 @@ extension JobTitleStackView {
     // MARK: - Layout Helper
     
     private func setLayout() {
-        self.addSubviews(jobPartDescribingBoxView, jobPartDescribingLabel, jobTitleLabel, placeTimeLabel)
-        
-        jobPartDescribingBoxView.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(28)
-            $0.leading.equalToSuperview()
-            $0.width.equalTo(35)
-            $0.height.equalTo(28)
-        }
-        
-        jobPartDescribingLabel.snp.makeConstraints {
-            $0.center.equalTo(jobPartDescribingBoxView.snp.center)
-        }
+        self.addSubviews(jobTitleLabel, placeTimeLabel)
         
         jobTitleLabel.snp.makeConstraints {
-            $0.top.equalTo(jobPartDescribingBoxView.snp.bottom).offset(6)
+            $0.top.equalToSuperview()
             $0.horizontalEdges.equalToSuperview()
         }
         
@@ -94,7 +68,6 @@ extension JobTitleStackView {
             $0.top.equalTo(jobTitleLabel.snp.bottom).offset(4)
         }
     }
-    
 }
 
 extension JobTitleStackView {
@@ -102,7 +75,6 @@ extension JobTitleStackView {
     // MARK: - Methods
     
     func configureView(part: String, title: String, placeTime: String) {
-        self.jobPartDescribingLabel.text = part
         self.jobTitleLabel.text = title
         self.placeTimeLabel.text = placeTime
     }

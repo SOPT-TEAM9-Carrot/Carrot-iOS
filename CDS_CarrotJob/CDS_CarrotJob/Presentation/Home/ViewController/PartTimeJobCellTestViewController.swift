@@ -22,6 +22,7 @@ final class PartTimeJobCellTestViewController: UIViewController {
     }()
     private let dummyModel = PartTimeJobModel.fetchPartTimeJobdummyData()
     private let serverModel = PartTimeServerModel.fetchPartTimeJobServerData()
+    private let homeNearJobView = HomeNearJobView()
     
     // MARK: - Properties
     
@@ -59,9 +60,9 @@ extension PartTimeJobCellTestViewController {
     
     private func setLayout() {
         
-        view.addSubview(collectionView)
+        view.addSubviews(collectionView, homeNearJobView)
         
-        collectionView.snp.makeConstraints {
+        homeNearJobView.snp.makeConstraints {
             $0.edges.equalTo(view.safeAreaLayoutGuide)
         }
     }
