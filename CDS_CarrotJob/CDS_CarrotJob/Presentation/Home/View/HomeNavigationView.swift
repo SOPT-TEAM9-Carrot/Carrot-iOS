@@ -71,19 +71,6 @@ extension HomeNavigationView {
                $0.setLeftPaddingPoints(10)
         }
         
-//        searchBar.do {
-//            let placeholder = "'어린이날 알바' 찾아보기"
-//            let attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [
-//                NSAttributedString.Key.font: UIFont.notoSansFont(weightOf: .Medium, sizeOf: .font14)!, // 원하는 폰트 설정
-//                NSAttributedString.Key.foregroundColor: Color.gray5 // 원하는 색상 설정
-//            ])
-//            if let textField = searchBar.value(forKey: "searchField") as? UITextField {
-//                textField.attributedPlaceholder = attributedPlaceholder
-//            }
-//            $0.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
-//            $0.layer.cornerRadius = 6
-//        }
-        
         lineView.do {
             $0.backgroundColor = Color.gray7
         }

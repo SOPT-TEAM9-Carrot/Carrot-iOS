@@ -66,6 +66,4 @@ extension HomeScrollView {
             $0.bottom.equalToSuperview()
         }
     }
-    
-    // MARK: - Methods
 }
