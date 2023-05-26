@@ -44,16 +44,17 @@ class HomeLocalJobCollectionViewCell: UICollectionViewCell {
             $0.font = .notoSansFont(weightOf: .Bold, sizeOf: .font14)
         }
         subInfoLabel.do {
-            $0.textColor = .gray
+            $0.textColor = Color.gray3
             $0.font = .notoSansFont(weightOf: .Medium, sizeOf: .font12)
         }
         moneyInfoLabel.do {
-            $0.textColor = .orange
+            $0.textColor = Color.mainColor1
             $0.font = .notoSansFont(weightOf: .Bold, sizeOf: .font12)
         }
         jobImageView.do {
             $0.contentMode = .scaleAspectFill
             $0.layer.masksToBounds = true
+            $0.backgroundColor = Color.gray6
         }
     }
     

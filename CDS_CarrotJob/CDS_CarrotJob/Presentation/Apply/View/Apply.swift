@@ -175,6 +175,7 @@ extension ApplyView {
             $0.layer.cornerRadius = 6
             $0.layer.borderWidth = 1
             $0.layer.borderColor = Color.gray5.cgColor
+            $0.layer.backgroundColor = UIColor.white.cgColor
         }
         introduceNumberLabel.do {
             $0.text = "0/2000"
@@ -213,7 +214,7 @@ extension ApplyView {
         //        introduceTextView.addSubview(introduceNumberLabel)
         
         photoLabel.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(60)
+            $0.top.equalToSuperview().inset(20)
             $0.leading.equalToSuperview().inset(15)
         }
         photoButton.snp.makeConstraints {
