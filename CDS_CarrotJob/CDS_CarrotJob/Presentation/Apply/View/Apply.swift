@@ -29,7 +29,7 @@ final class ApplyView: UIView, UITextViewDelegate {
     private let birthDayLabelTextField = UITextField()
     private let birthDayWarningLabel = UILabel()
     private let careerLabel = UILabel()
-    private let careerButton = UIButton()
+    private let careerButton = GrayUIButton()
     private let introduceLabel = UILabel()
     private let introduceTextView = UITextView()
     let introduceTextViewPlaceholder = "본인이 일햇던 경험과 할 수 있는 업무에 대해 소개해주세요."
@@ -84,7 +84,7 @@ extension ApplyView {
             $0.setLeftPaddingPoints(8)
             $0.attributedPlaceholder = NSAttributedString(
                 string: "당근마켓",
-                attributes: [NSAttributedString.Key.foregroundColor: UIColor .black])
+                attributes: [NSAttributedString.Key.foregroundColor: Color.gray5])
         }
         
         phoneNumberLabel.do {
@@ -107,7 +107,7 @@ extension ApplyView {
             $0.setLeftPaddingPoints(8)
             $0.attributedPlaceholder = NSAttributedString(
                 string: "010 6686 5237",
-                attributes: [NSAttributedString.Key.foregroundColor: UIColor .black])
+                attributes: [NSAttributedString.Key.foregroundColor: Color.gray5])
             $0.keyboardType = .numberPad
         }
         genderLabel.do {
@@ -144,7 +144,7 @@ extension ApplyView {
             $0.setLeftPaddingPoints(8)
             $0.attributedPlaceholder = NSAttributedString(
                 string: "오이마켓",
-                attributes: [NSAttributedString.Key.foregroundColor: UIColor .black])
+                attributes: [NSAttributedString.Key.foregroundColor: Color.gray5])
             $0.keyboardType = .numberPad
         }
         birthDayWarningLabel.do {
@@ -160,7 +160,8 @@ extension ApplyView {
             $0.textColor = Color.gray1
         }
         careerButton.do {
-            $0.setImage(UIImage(named: "register"), for: .normal)
+//            $0.setImage(UIImage(named: "register"), for: .normal)
+            $0.setUIOfButtonFor(type: .registerCareer)
         }
         introduceLabel.do {
             $0.text = "자기소개 (선택)"
@@ -174,7 +175,7 @@ extension ApplyView {
             $0.text = introduceTextViewPlaceholder
             $0.layer.cornerRadius = 6
             $0.layer.borderWidth = 1
-            $0.layer.borderColor = Color.gray6.cgColor
+            $0.layer.borderColor = Color.gray5.cgColor
         }
         introduceNumberLabel.do {
             $0.text = "0/2000"
@@ -199,6 +200,7 @@ extension ApplyView {
         }
         applyButton.do {
             $0.setUIOfButtonFor(type: .apply)
+            $0.addTarget(self, action: #selector(appllyButtonTapped), for: .touchUpInside)
         }
     }
     
@@ -276,7 +278,7 @@ extension ApplyView {
         }
         careerButton.snp.makeConstraints {
             $0.top.equalTo(careerLabel.snp.bottom).offset(8)
-            $0.leading.trailing.equalToSuperview().inset(-5)
+            $0.leading.trailing.equalToSuperview().inset(15)
         }
         introduceLabel.snp.makeConstraints {
             $0.top.equalTo(careerButton.snp.bottom).offset(24)
@@ -318,6 +320,15 @@ extension ApplyView {
         }
     }
     
+    func appllyButton() {
+        fetchProfile()
+    }
+    
+    @objc
+    func appllyButtonTapped() {
+        appllyButton()
+    }
+    
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.text == introduceTextViewPlaceholder {
             textView.text = nil
@@ -348,4 +359,31 @@ extension ApplyView {
                 textView.deleteBackward()
             }
         }
+}
+
+extension ApplyView {
+    
+    private func fetchProfile() {
+        guard let name = nameTextField.text else { return }
+        guard let phoneNumber = phoneNumberTextField.text else { return }
+        guard let introduction = introduceTextView.text else { return }
+        ProfileService.shared.profile(name: name, phoneNumber: phoneNumber, gender: 1, birthYear: 2001, introduction: introduction) { response in
+            switch response {
+            case .success(let data):
+                guard let data = data as? ProfileRegisterResponese else { return }
+                print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
+                dump(data)
+                print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
+            case .serverErr:
+                print("🔥🔥🔥🔥🔥서버 이상 서버 이상🔥🔥🔥🔥🔥")
+            case .pathErr:
+                print("—————경로이상——————")
+            case .networkErr:
+                print("💧💧💧💧💧네트워크에런데 뭔ㄹ지머름💧💧💧💧💧")
+            default:
+                print("alsdj;alfj;l;dj;ifja;ij")
+                return
+            }
+        }
+    }
 }
