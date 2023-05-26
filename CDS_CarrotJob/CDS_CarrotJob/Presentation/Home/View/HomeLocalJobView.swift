@@ -12,7 +12,7 @@ import Then
 
 final class HomeLocalJobView: UIView {
     
-    var dataArray: [JobLocalModel] = JobLocalModel.dummy()
+    var jobLocalModel: [JobLocalModel] = []
     
     // MARK: - 상단 라벨
     private let title1Label = UILabel()
@@ -26,6 +26,7 @@ final class HomeLocalJobView: UIView {
         setLayout()
         setRegister()
         setDelegate()
+        fetchLocalJob()
     }
     
     required init?(coder: NSCoder) {
@@ -108,12 +109,36 @@ extension HomeLocalJobView {
 
 extension HomeLocalJobView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.dataArray.count
+        return self.jobLocalModel.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(type: HomeLocalJobCollectionViewCell.self, indexPath: indexPath)
-        cell.configureCell(model: dataArray[indexPath.row])
+        cell.configureCell(model: jobLocalModel[indexPath.row])
         return cell
     }
 }
+
+extension HomeLocalJobView {
+    private func fetchLocalJob() {
+            HomeRecommendService.shared.homeRecommend { response in
+                switch response {
+                case .success(let data):
+                    guard let data = data as? RecommendResponse else { return }
+                    print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
+                    dump(data)
+                    print("💚💚💚💚💚💚💚💚💚💚성공💚💚💚💚💚💚💚💚💚💚")
+                    self.jobLocalModel = data.convertToJob()
+                    self.homeLocalJobCollectionView.reloadData()
+                case .serverErr:
+                    print("🔥🔥🔥🔥🔥서버 이상 서버 이상🔥🔥🔥🔥🔥")
+                case .pathErr:
+                    print("—————경로이상——————")
+                case .networkErr:
+                    print("💧💧💧💧💧네트워크에런데 뭔ㄹ지머름💧💧💧💧💧")
+                default:
+                    return
+                }
+            }
+        }
+    }
