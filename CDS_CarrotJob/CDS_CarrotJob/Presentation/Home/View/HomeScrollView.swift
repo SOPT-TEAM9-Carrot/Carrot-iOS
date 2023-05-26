@@ -11,7 +11,7 @@ final class HomeScrollView: UIScrollView {
     
     // MARK: - UI Components
 
-    private let homeLocalJobView = HomeLocalJobView()
+    let homeLocalJobView = HomeLocalJobView()
     private let firstSectionLine = UIView()
     private let homeNearJobView = HomeNearJobView()
     

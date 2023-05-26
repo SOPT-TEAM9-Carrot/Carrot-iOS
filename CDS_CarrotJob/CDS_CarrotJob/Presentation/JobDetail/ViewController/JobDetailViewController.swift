@@ -23,7 +23,7 @@ final class JobDetailViewController: UIViewController {
     private var mainDetailReviewData = ReviewsListModel(userID: 0, nickname: "", imageURL: "", degree: 0.0, reviews: [])
     private var jobPostsData: [PostModel] = []
     
-    private var postId: Int = 2
+    private var postId: Int = 0
     
     private let customNavigationBar = JobDetailNavigationBarView()
     
@@ -56,6 +56,8 @@ final class JobDetailViewController: UIViewController {
                 self.detailReviewView.snp.updateConstraints {
                     $0.height.equalTo(290 + 150 * cellCount)
                 }
+                
+                self.detailReviewView.reLayoutTableView(withCountOf: cellCount)
             }
             
             self.detailProfileView.kakaoMapView.passAddress(address: self.mainDetailData.address)
@@ -94,6 +96,18 @@ extension JobDetailViewController {
         
         detailProfileView.do {
             $0.backgroundColor = .clear
+        }
+        
+        customNavigationBar.do {
+            $0.popButton.addTarget(self, action: #selector(popTapped), for: .touchUpInside)
+        }
+        
+        detailReviewView.do {
+            $0.reviewPageView.loadMoreReviewsButton.addTarget(self, action: #selector(loadMoreButtonTapped), for: .touchUpInside)
+        }
+        
+        bottomStickyView.do {
+            $0.applyButton.addTarget(self, action: #selector(applyTapped), for: .touchUpInside)
         }
     }
     
@@ -255,5 +269,32 @@ extension JobDetailViewController: JobDetailToastDelegate {
             self?.toastView.snp.removeConstraints()
             self?.toastView.removeFromSuperview()
         }
+    }
+}
+
+extension JobDetailViewController {
+    @objc
+    private func popTapped() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc
+    private func loadMoreButtonTapped() {
+        print("dsfsdfdsf")
+        let userId = self.mainDetailData.userId
+        let detailReviewVC = ReviewViewController()
+        detailReviewVC.passUserId(userId: userId)
+        
+        self.navigationController?.pushViewController(detailReviewVC, animated: true)
+    }
+    
+    @objc
+    private func applyTapped() {
+        let applyVC = ApplyViewController()
+        self.navigationController?.pushViewController(applyVC, animated: true)
+    }
+    
+    func passPostId(postId: Int) {
+        self.postId = postId
     }
 }

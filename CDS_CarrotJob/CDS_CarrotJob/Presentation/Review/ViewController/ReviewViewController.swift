@@ -18,6 +18,7 @@ final class ReviewViewController: UIViewController {
     private lazy var reviewTableView = UITableView(frame: .zero, style: .plain)
     private var serverModel: [ReviewServerModel] = []
     private let reviewModel = ReviewModel.fetchReviewModelDummyData()
+    private var userId: Int = 0
     
     // MARK: - View Life Cycle
     
@@ -74,7 +75,7 @@ extension ReviewViewController {
     }
     
     private func popToJobDetail() {
-        print("popToJobDetail")
+        self.navigationController?.popViewController(animated: true)
     }
     
     private func setNavigationBar() {
@@ -141,7 +142,7 @@ extension ReviewViewController: UITableViewDataSource {
 extension ReviewViewController {
     
     private func fetchResponse() {
-        ReviewService.shared.review { response in
+        ReviewService.shared.review(userId: userId) { response in
             switch response {
             case .success(let data):
                 guard let data = data as? ReviewResponse else { return }
@@ -160,5 +161,11 @@ extension ReviewViewController {
                 return
             }
         }
+    }
+}
+
+extension ReviewViewController {
+    func passUserId(userId: Int) {
+        self.userId = userId
     }
 }
