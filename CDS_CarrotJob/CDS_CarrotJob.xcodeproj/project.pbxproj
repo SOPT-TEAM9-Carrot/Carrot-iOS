@@ -226,6 +226,7 @@
 		03641A8A2A1B8DE80053B6C7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				037C36352A13B99A00FAC78B /* PartTimeJobModel.swift */,
 				03641A8B2A1B8E070053B6C7 /* JobLabelModel.swift */,
 			);
 			path = Home;
@@ -444,8 +445,8 @@
 		037C36342A13B98D00FAC78B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				03A586E92A20A899000A1E66 /* JobDetail */,
 				03641A8A2A1B8DE80053B6C7 /* Home */,
-				037C36352A13B99A00FAC78B /* PartTimeJobModel.swift */,
 				03F59DF72A1640D100942002 /* ReviewModel.swift */,
 				5871EB862A1C6B0200F25E24 /* JobDetailNetworkManager.swift */,
 			);
@@ -512,6 +513,13 @@
 				03A586DB2A1F4BEC000A1E66 /* ReviewService.swift */,
 			);
 			path = Review;
+			sourceTree = "<group>";
+		};
+		03A586E92A20A899000A1E66 /* JobDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = JobDetail;
 			sourceTree = "<group>";
 		};
 		5880650C2A189F2800FEEA88 /* DetailReviewList */ = {
