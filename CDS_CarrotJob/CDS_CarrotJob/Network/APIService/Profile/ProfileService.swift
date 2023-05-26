@@ -27,16 +27,17 @@ final class ProfileService {
             let header: HTTPHeaders = ["Content-Type": "application/json", "Authorization": "2"]
             
             let body: Parameters = [
-                "name" : name,
-                "phoneNumber" : phoneNumber,
-                "gender" : gender,
-                "birthYear" : birthYear,
-                "introduction" : introduction
+                "name": name,
+                "phoneNumber": phoneNumber,
+                "gender": gender,
+                "birthYear": birthYear,
+                "introduction": introduction
             ]
             
             let dataRequest = AF.request(url,
                                          method: .post,
                                          parameters: body,
+                                         encoding: JSONEncoding.default,
                                          headers: header)
             
             dataRequest.responseData { response in
@@ -53,6 +54,7 @@ final class ProfileService {
         }
     
     private func judgeStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
+        print(statusCode)
         switch statusCode {
         case 200..<300: return isValidData(data: data)
         case 400, 409: return isValidData(data: data)
@@ -67,4 +69,3 @@ final class ProfileService {
         return .success(decodedData as Any)
     }
 }
-
