@@ -48,6 +48,7 @@ final class ApplyView: UIView, UITextViewDelegate {
         setLayout()
         introduceTextView.delegate = self
     }
+    
     required init?(coder: NSCoder) {
         fatalError("ApplyView has not been implemented")
     }

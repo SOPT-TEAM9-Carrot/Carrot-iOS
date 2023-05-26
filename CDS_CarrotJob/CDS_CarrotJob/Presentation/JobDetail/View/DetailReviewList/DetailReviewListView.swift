@@ -14,9 +14,14 @@ protocol JobDetailPagingDelegate: AnyObject {
     func changePage(toNumber: Int)
 }
 
+protocol JobDetailReviewHeightDelegate: AnyObject {
+    func reLayoutTableView(withCountOf: Int)
+}
+
 final class DetailReviewListView: UIView {
     
     private var isOnFirstPage = true
+    private var reviewPageViewHeight: Int = 0
     
     weak var delegate: JobDetailContstraintChangeDelegate?
     
@@ -58,12 +63,24 @@ extension DetailReviewListView {
         reviewPageView.snp.makeConstraints {
             $0.horizontalEdges.equalToSuperview()
             $0.top.equalTo(segmentView.snp.bottom).offset(4)
-            $0.height.equalTo(600)
+            $0.height.equalTo(700)
+        }
+    }
+}
+
+extension DetailReviewListView {
+    func reLayoutTableView(withCountOf count: Int) {
+        let heightOfReviewPageView: Int = count * 150 + 290
+        self.reviewPageViewHeight = heightOfReviewPageView
+        
+        reviewPageView.snp.updateConstraints {
+            $0.height.equalTo(heightOfReviewPageView)
         }
     }
 }
 
 extension DetailReviewListView: JobDetailPagingDelegate {
+    
     func changePage(toNumber page: Int) {
         switch page {
         case 0:
@@ -75,7 +92,7 @@ extension DetailReviewListView: JobDetailPagingDelegate {
                 reviewPageView.snp.makeConstraints {
                     $0.horizontalEdges.equalToSuperview()
                     $0.top.equalTo(segmentView.snp.bottom).offset(4)
-                    $0.height.equalTo(600)
+                    $0.height.equalTo(self.reviewPageViewHeight)
                 }
                 
                 let cellCount = reviewPageView.reviewData.count

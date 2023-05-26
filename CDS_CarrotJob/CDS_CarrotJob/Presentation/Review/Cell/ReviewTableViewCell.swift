@@ -183,5 +183,6 @@ extension ReviewTableViewCell {
         self.nickNameLabel.text = reviewerName
         self.commentLabel.text = comment
         self.jobTitle.text = jobTitle
+        self.commentLabel.numberOfLines = 1
     }
 }

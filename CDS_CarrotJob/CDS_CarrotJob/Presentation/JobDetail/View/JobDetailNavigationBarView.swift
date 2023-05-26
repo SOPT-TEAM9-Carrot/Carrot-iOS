@@ -14,7 +14,7 @@ final class JobDetailNavigationBarView: UIView {
     
     // MARK: - UI Components
     
-    private let popButton = UIButton()
+    let popButton = UIButton()
     private let shareButton = UIButton()
     private let reportButton = UIButton()
     private let dividerView = UIView()
