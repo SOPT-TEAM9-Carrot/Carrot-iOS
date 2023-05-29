@@ -266,7 +266,13 @@ extension HomeNearJobView: UICollectionViewDataSource {
         switch sectionType {
         case .jobLabel:
             let cell = collectionView.dequeueCell(type: JobLabelCollectionViewCell.self, indexPath: indexPath)
-            cell.setDataBind(model: jobLabelModel[indexPath.row])
+            if indexPath.row == 1 {
+                cell.setCalendarDataBind(model: jobLabelModel[indexPath.row])
+            
+            } else {
+                cell.setDataBind(model: jobLabelModel[indexPath.row])
+            }
+//            cell.setDataBind(model: jobLabelModel[indexPath.row])
             return cell
         case .firstPartTime:
             let cell = collectionView.dequeueCell(type: PartTimeJobCollectionViewCell.self, indexPath: indexPath)

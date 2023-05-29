@@ -17,6 +17,7 @@
 		03641A952A1CDB3C0053B6C7 /* TodayPopularFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03641A942A1CDB3C0053B6C7 /* TodayPopularFooterView.swift */; };
 		03641A972A1CDC410053B6C7 /* TodayPopularCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03641A962A1CDC410053B6C7 /* TodayPopularCollectionViewCell.swift */; };
 		03641A9B2A1F35680053B6C7 /* HomeScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03641A9A2A1F35680053B6C7 /* HomeScrollView.swift */; };
+		037978AE2A24AE6D0097F114 /* NSAttributedString+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037978AD2A24AE6D0097F114 /* NSAttributedString+.swift */; };
 		037C35DF2A121B8600FAC78B /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35DE2A121B8600FAC78B /* NetworkResult.swift */; };
 		037C35E12A121E2400FAC78B /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35E02A121E2400FAC78B /* NSObject+.swift */; };
 		037C35E32A121E6200FAC78B /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C35E22A121E6200FAC78B /* UIView+.swift */; };
@@ -103,6 +104,7 @@
 		03641A942A1CDB3C0053B6C7 /* TodayPopularFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayPopularFooterView.swift; sourceTree = "<group>"; };
 		03641A962A1CDC410053B6C7 /* TodayPopularCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayPopularCollectionViewCell.swift; sourceTree = "<group>"; };
 		03641A9A2A1F35680053B6C7 /* HomeScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScrollView.swift; sourceTree = "<group>"; };
+		037978AD2A24AE6D0097F114 /* NSAttributedString+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+.swift"; sourceTree = "<group>"; };
 		037C35DE2A121B8600FAC78B /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		037C35E02A121E2400FAC78B /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 		037C35E22A121E6200FAC78B /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
@@ -722,6 +724,7 @@
 				037C35EE2A121F5B00FAC78B /* UIImageView+.swift */,
 				589640262A176A4800DC8C3E /* Int+.swift */,
 				03641A8D2A1B905F0053B6C7 /* UILabel+.swift */,
+				037978AD2A24AE6D0097F114 /* NSAttributedString+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -886,6 +889,7 @@
 				03A586E22A1F657E000A1E66 /* HomePartTimeJobService.swift in Sources */,
 				037C35E72A121E9800FAC78B /* UIStackView+.swift in Sources */,
 				03A586DE2A1F4C16000A1E66 /* ReviewResponse.swift in Sources */,
+				037978AE2A24AE6D0097F114 /* NSAttributedString+.swift in Sources */,
 				588065122A18A4C900FEEA88 /* DetailReviewSegmentView.swift in Sources */,
 				5896402B2A176D5C00DC8C3E /* MainDetailView.swift in Sources */,
 				03641A932A1CD9E20053B6C7 /* TodayPopularHeaderView.swift in Sources */,
