@@ -46,6 +46,7 @@ final class ApplyView: UIView, UITextViewDelegate {
         super.init(frame: frame)
         setUI()
         setLayout()
+        setDelegate()
         introduceTextView.delegate = self
     }
     
@@ -321,9 +322,19 @@ extension ApplyView {
         }
     }
     
+    // MARK: - Methods
+    
     func appllyButton() {
         fetchProfile()
     }
+    
+    private func setDelegate() {
+        nameTextField.delegate = self
+        phoneNumberTextField.delegate = self
+        birthDayLabelTextField.delegate = self
+    }
+    
+    // MARK: - @objc Methods
     
     @objc
     func appllyButtonTapped() {
@@ -386,5 +397,31 @@ extension ApplyView {
                 return
             }
         }
+    }
+}
+
+extension ApplyView: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderColor = Color.mainColor1.cgColor
+        textField.textColor = Color.mainColor1
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        textField.layer.borderColor = Color.mainColor1.cgColor
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        textField.layer.borderColor = Color.mainColor1.cgColor
+        return true
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        guard let text = textField.text else { return true }
+        if text.isEmpty {
+            textField.layer.borderColor = Color.gray5.cgColor
+        }
+        return true
     }
 }
