@@ -83,6 +83,7 @@ extension ApplyView {
             $0.layer.borderWidth = 1
             $0.layer.borderColor = Color.gray6.cgColor
             $0.setLeftPaddingPoints(8)
+            $0.font = UIFont.notoSansFont(weightOf: .Medium, sizeOf: .font14)
             $0.attributedPlaceholder = NSAttributedString(
                 string: "당근마켓",
                 attributes: [NSAttributedString.Key.foregroundColor: Color.gray5])
@@ -105,10 +106,12 @@ extension ApplyView {
             $0.layer.cornerRadius = 3
             $0.layer.borderWidth = 1
             $0.layer.borderColor = Color.gray6.cgColor
+            $0.font = UIFont.notoSansFont(weightOf: .Medium, sizeOf: .font14)
             $0.setLeftPaddingPoints(8)
             $0.attributedPlaceholder = NSAttributedString(
                 string: "010 6686 5237",
-                attributes: [NSAttributedString.Key.foregroundColor: Color.gray5])
+                attributes: [NSAttributedString.Key.foregroundColor: Color.gray5]
+            )
             $0.keyboardType = .numberPad
         }
         genderLabel.do {
@@ -143,13 +146,14 @@ extension ApplyView {
             $0.layer.borderWidth = 1
             $0.layer.borderColor = Color.gray6.cgColor
             $0.setLeftPaddingPoints(8)
+            $0.font = UIFont.notoSansFont(weightOf: .Medium, sizeOf: .font14)
             $0.attributedPlaceholder = NSAttributedString(
-                string: "오이마켓",
+                string: "2023",
                 attributes: [NSAttributedString.Key.foregroundColor: Color.gray5])
             $0.keyboardType = .numberPad
         }
         birthDayWarningLabel.do {
-            $0.text = "ex)2023"
+//            $0.text = "ex)2023"
             $0.textAlignment = .center
             $0.font = .notoSansFont(weightOf: .Bold, sizeOf: .font12)
             $0.textColor = Color.errorRed
