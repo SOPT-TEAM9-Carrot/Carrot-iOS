@@ -10,6 +10,10 @@ import UIKit
 import SnapKit
 import Then
 
+protocol TextFieldValueProtocol: AnyObject {
+    func textFieldValue(value: Bool)
+}
+
 final class ApplyView: UIView, UITextViewDelegate {
     
     // MARK: - UI Components
@@ -39,6 +43,11 @@ final class ApplyView: UIView, UITextViewDelegate {
     private let check2Label = UILabel()
     let applyButton = OrangeUIButton()
     private let introduceView = UIView()
+    
+    // MARK: - Properties
+    
+    private var textFieldValue: Bool = false
+    weak var textFieldValueDelegate: TextFieldValueProtocol?
     
     // MARK: - View Life Cycle
     
@@ -338,6 +347,19 @@ extension ApplyView {
         birthDayLabelTextField.delegate = self
     }
     
+    private func isTextFieldValue() {
+        guard let name = nameTextField.text else { return }
+        guard let phoneNumber = phoneNumberTextField.text else { return }
+        guard let birthday = birthDayLabelTextField.text else { return }
+        var text = name + phoneNumber + birthday
+        if text.isEmpty {
+            textFieldValue = false
+        } else {
+            textFieldValue = true
+        }
+        textFieldValueDelegate?.textFieldValue(value: textFieldValue)
+    }
+    
     // MARK: - @objc Methods
     
     @objc
@@ -426,6 +448,8 @@ extension ApplyView: UITextFieldDelegate {
         if text.isEmpty {
             textField.layer.borderColor = Color.gray5.cgColor
         }
+        isTextFieldValue()
+        print(textFieldValue)
         return true
     }
 }
