@@ -68,7 +68,7 @@ extension HomeViewController {
 
 extension HomeViewController: HomeLocalJobDataSourceDelegate {
     func passId(postId: Int) {
-        let jobDetailVC = JobDetailViewController()
+        let jobDetailVC = JobDetailViewController(networks: [])
         jobDetailVC.passPostId(postId: postId)
         
         self.navigationController?.pushViewController(jobDetailVC, animated: true)

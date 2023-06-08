@@ -17,7 +17,6 @@ protocol JobDetailContstraintChangeDelegate: AnyObject {
 
 protocol JobDetailNetworkServiceProtocol: Any {
     associatedtype NetworkCompletion
-//    associatedtype RequestType
     
     func fetchDetailData(requestId: Int, completion: NetworkCompletion)
     
@@ -49,7 +48,7 @@ final class JobDetailViewController: UIViewController {
     
     // MARK: - UI Components
     
-//    private var networkService: [JobDetailNetworkServiceProtocol]
+    private var networkServices: [any JobDetailNetworkServiceProtocol]
     private let networkManager = JobDetailNetworkManager.shared
     private var mainDetailData = JobDetailModel(userId: 0, image: "", categories: [], title: "", hourlyWage: 0, content: "", address: "")
     private var mainDetailReviewData = ReviewsListModel(userID: 0, nickname: "", imageURL: "", degree: 0.0, reviews: [])
@@ -71,14 +70,14 @@ final class JobDetailViewController: UIViewController {
     
     // MARK: - View Life Cycle
     
-//    init(networks: JobDetailNetworkServiceProtocol) {
-//        self.networkServices = networks
-//        super.init(nibName: nil, bundle: nil)
-//    }
+    init(networks: [any JobDetailNetworkServiceProtocol]) {
+        self.networkServices = networks
+        super.init(nibName: nil, bundle: nil)
+    }
     
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
