@@ -15,9 +15,41 @@ protocol JobDetailContstraintChangeDelegate: AnyObject {
     func modifyConstraintTo(heightOf: CGFloat)
 }
 
+protocol JobDetailNetworkServiceProtocol: Any {
+    associatedtype NetworkCompletion
+//    associatedtype RequestType
+    
+    func fetchDetailData(requestId: Int, completion: NetworkCompletion)
+    
+    init()
+}
+
+extension JobDetailNetworkServiceProtocol {
+    private func judgeStatus<T: Codable>(modelType: T.Type, by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
+        print(statusCode)
+        switch statusCode {
+        case 200: return isValidData(modelType: modelType, data: data)
+        case 400, 404: return isValidData(modelType: modelType, data: data)
+        case 500: return .serverErr
+        default: return .networkErr
+        }
+    }
+
+    private func isValidData<T: Codable>(modelType: T.Type, data: Data) -> NetworkResult<Any> {
+        let decoder = JSONDecoder()
+
+        guard let decodedData = try? decoder.decode(modelType.self, from: data) else {
+            return .pathErr}
+
+        return .success(decodedData as Any)
+    }
+}
+
 final class JobDetailViewController: UIViewController {
     
     // MARK: - UI Components
+    
+//    private var networkService: [JobDetailNetworkServiceProtocol]
     private let networkManager = JobDetailNetworkManager.shared
     private var mainDetailData = JobDetailModel(userId: 0, image: "", categories: [], title: "", hourlyWage: 0, content: "", address: "")
     private var mainDetailReviewData = ReviewsListModel(userID: 0, nickname: "", imageURL: "", degree: 0.0, reviews: [])
@@ -38,6 +70,15 @@ final class JobDetailViewController: UIViewController {
     private let toastView = JobDetailToastView()
     
     // MARK: - View Life Cycle
+    
+//    init(networks: JobDetailNetworkServiceProtocol) {
+//        self.networkServices = networks
+//        super.init(nibName: nil, bundle: nil)
+//    }
+    
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
