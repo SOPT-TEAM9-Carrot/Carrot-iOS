@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene) 
         
-        let naviVC = UINavigationController(rootViewController: ApplyViewController())
+        let naviVC = UINavigationController(rootViewController: JobDetailViewController())
         
         window?.rootViewController = naviVC
         window?.makeKeyAndVisible()

@@ -46,7 +46,7 @@ final class ApplyView: UIView, UITextViewDelegate {
     
     // MARK: - Properties
     
-    private var textFieldValue: Bool = false
+    private var textFieldValue: Bool?
     weak var textFieldValueDelegate: TextFieldValueProtocol?
     
     // MARK: - View Life Cycle
@@ -351,12 +351,19 @@ extension ApplyView {
         guard let name = nameTextField.text else { return }
         guard let phoneNumber = phoneNumberTextField.text else { return }
         guard let birthday = birthDayLabelTextField.text else { return }
-        var text = name + phoneNumber + birthday
-        if text.isEmpty {
-            textFieldValue = false
-        } else {
+        let text = name + phoneNumber + birthday
+        print(text)
+        if !text.isEmpty {
             textFieldValue = true
+        } else if text.isEmpty {
+            textFieldValue = false
+            print("Asdfakje;ilfja;liejf;laj")
         }
+    }
+    
+    func sendTextFieldValue() {
+        isTextFieldValue()
+        guard let textFieldValue else { return }
         textFieldValueDelegate?.textFieldValue(value: textFieldValue)
     }
     
@@ -449,7 +456,6 @@ extension ApplyView: UITextFieldDelegate {
             textField.layer.borderColor = Color.gray5.cgColor
         }
         isTextFieldValue()
-        print(textFieldValue)
         return true
     }
 }

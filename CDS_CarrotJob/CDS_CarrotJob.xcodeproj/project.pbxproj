@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0308DA5C2A32F1E100B784B9 /* ExitPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0308DA5B2A32F1E100B784B9 /* ExitPopupView.swift */; };
+		0308DA5E2A32F6FD00B784B9 /* ExitPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0308DA5D2A32F6FD00B784B9 /* ExitPopupViewController.swift */; };
+		0308DA632A33000000B784B9 /* ApplyButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0308DA622A33000000B784B9 /* ApplyButtonType.swift */; };
 		035F4DE32A151FE4005E8BBA /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035F4DE22A151FE4005E8BBA /* ReviewTableViewCell.swift */; };
 		03641A852A1B86DD0053B6C7 /* HomeNearJobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03641A842A1B86DD0053B6C7 /* HomeNearJobView.swift */; };
 		03641A882A1B8B590053B6C7 /* JobLabelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03641A872A1B8B590053B6C7 /* JobLabelCollectionViewCell.swift */; };
@@ -94,6 +97,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0308DA5B2A32F1E100B784B9 /* ExitPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitPopupView.swift; sourceTree = "<group>"; };
+		0308DA5D2A32F6FD00B784B9 /* ExitPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitPopupViewController.swift; sourceTree = "<group>"; };
+		0308DA622A33000000B784B9 /* ApplyButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplyButtonType.swift; sourceTree = "<group>"; };
 		035F4DE22A151FE4005E8BBA /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		03641A842A1B86DD0053B6C7 /* HomeNearJobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNearJobView.swift; sourceTree = "<group>"; };
 		03641A872A1B8B590053B6C7 /* JobLabelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobLabelCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -193,6 +199,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0308DA5F2A32FFBF00B784B9 /* Apply */ = {
+			isa = PBXGroup;
+			children = (
+				0308DA622A33000000B784B9 /* ApplyButtonType.swift */,
+			);
+			path = Apply;
+			sourceTree = "<group>";
+		};
 		034181402A20ABC200147772 /* Review */ = {
 			isa = PBXGroup;
 			children = (
@@ -428,6 +442,7 @@
 			isa = PBXGroup;
 			children = (
 				037C36122A122DA100FAC78B /* ApplyViewController.swift */,
+				0308DA5D2A32F6FD00B784B9 /* ExitPopupViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -437,6 +452,7 @@
 			children = (
 				037C36202A13792800FAC78B /* ApplyView.swift */,
 				D3DCDC692A209C3500674EC1 /* ApplyNavigation.swift */,
+				0308DA5B2A32F1E100B784B9 /* ExitPopupView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -462,6 +478,7 @@
 		037C36342A13B98D00FAC78B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0308DA5F2A32FFBF00B784B9 /* Apply */,
 				03641A8A2A1B8DE80053B6C7 /* Home */,
 				03A586E92A20A899000A1E66 /* JobDetail */,
 				034181402A20ABC200147772 /* Review */,
@@ -861,8 +878,10 @@
 				58C0545D2A1BA56E008E5CE6 /* BottomStickyView.swift in Sources */,
 				58C0545F2A1BA582008E5CE6 /* JobDetailNavigationBarView.swift in Sources */,
 				588065142A18A4E100FEEA88 /* DetailReviewPagingView.swift in Sources */,
+				0308DA5E2A32F6FD00B784B9 /* ExitPopupViewController.swift in Sources */,
 				5896403B2A17717300DC8C3E /* EmployerProfileStackView.swift in Sources */,
 				589640312A176D8700DC8C3E /* JobStatisticsView.swift in Sources */,
+				0308DA5C2A32F1E100B784B9 /* ExitPopupView.swift in Sources */,
 				03641A8C2A1B8E070053B6C7 /* JobLabelModel.swift in Sources */,
 				037C36162A122EB700FAC78B /* Image.swift in Sources */,
 				037C35ED2A121F3300FAC78B /* String+.swift in Sources */,
@@ -895,6 +914,7 @@
 				03641A932A1CD9E20053B6C7 /* TodayPopularHeaderView.swift in Sources */,
 				5896402F2A176D8000DC8C3E /* JobLocalInformingView.swift in Sources */,
 				037C35EF2A121F5B00FAC78B /* UIImageView+.swift in Sources */,
+				0308DA632A33000000B784B9 /* ApplyButtonType.swift in Sources */,
 				03641A9B2A1F35680053B6C7 /* HomeScrollView.swift in Sources */,
 				03641A882A1B8B590053B6C7 /* JobLabelCollectionViewCell.swift in Sources */,
 				58C0545B2A1B9965008E5CE6 /* DetailReviewEmptyView.swift in Sources */,
