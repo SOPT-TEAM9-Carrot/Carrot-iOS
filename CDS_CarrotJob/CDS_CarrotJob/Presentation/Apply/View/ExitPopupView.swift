@@ -113,7 +113,8 @@ extension ExitPopupView {
         
         exitPopupView.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.leading.trailing.equalToSuperview().inset(40)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(280)
             $0.height.equalTo(253)
         }
         

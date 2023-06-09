@@ -57,10 +57,8 @@ extension ExitPopupViewController: ButtonTypeProtocol {
     func buttonType(type: ApplyButtonType) {
         switch type {
         case .cancel:
-//            self.navigationController?.popViewController(animated: true)
             self.dismiss(animated: false)
         case .exit:
-            let applyVC = ApplyViewController()
             self.dismiss(animated: true) {
                 self.delegate?.didExit()
             }

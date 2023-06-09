@@ -18,7 +18,6 @@ final class ApplyViewController: UIViewController, ExitPopupDelegate {
     private let contentView = UIView()
     private let applyView = ApplyView()
     private let navigationView = ApplyNavigaitionBarView()
-    private let exitPopupViewController = ExitPopupViewController()
     
     // MARK: - Initializer
     
@@ -93,7 +92,6 @@ extension ApplyViewController {
     
     func didExit() {
         self.navigationController?.popViewController(animated: true)
-        print("delegate")
     }
     
     // MARK: - @objc Methods
@@ -102,8 +100,7 @@ extension ApplyViewController {
     private func popTapped() {
         let popupVC = ExitPopupViewController()
         popupVC.modalPresentationStyle = .overFullScreen
-        popupVC.delegate = self // 델리게이트 설정
-//        self.navigationController?.pushViewController(popupVC, animated: true)
+        popupVC.delegate = self
         self.present(popupVC, animated: true)
     }
     
