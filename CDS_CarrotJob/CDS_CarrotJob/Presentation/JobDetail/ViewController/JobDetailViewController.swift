@@ -15,16 +15,15 @@ protocol JobDetailContstraintChangeDelegate: AnyObject {
     func modifyConstraintTo(heightOf: CGFloat)
 }
 
-protocol JobDetailNetworkServiceProtocol: Any {
-    associatedtype NetworkCompletion
+protocol JobDetailNetworkServiceProtocol {
     
-    func fetchDetailData(requestId: Int, completion: NetworkCompletion)
+    func fetchDetailData(requestId: Int, completion: @escaping (NetworkResult<Any>) -> Void)
     
     init()
 }
 
 extension JobDetailNetworkServiceProtocol {
-    private func judgeStatus<T: Codable>(modelType: T.Type, by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
+    func judgeStatus<T: Codable>(modelType: T.Type, by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
         print(statusCode)
         switch statusCode {
         case 200: return isValidData(modelType: modelType, data: data)
@@ -34,7 +33,7 @@ extension JobDetailNetworkServiceProtocol {
         }
     }
 
-    private func isValidData<T: Codable>(modelType: T.Type, data: Data) -> NetworkResult<Any> {
+    func isValidData<T: Codable>(modelType: T.Type, data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
 
         guard let decodedData = try? decoder.decode(modelType.self, from: data) else {
@@ -48,8 +47,9 @@ final class JobDetailViewController: UIViewController {
     
     // MARK: - UI Components
     
-    private var networkServices: [any JobDetailNetworkServiceProtocol]
-    private let networkManager = JobDetailNetworkManager.shared
+    private var detailNetworkServices: any JobDetailNetworkServiceProtocol
+    private var localJobsNetworkServices: any JobDetailNetworkServiceProtocol
+    private var reviewNetworkServices: any JobDetailNetworkServiceProtocol
     private var mainDetailData = JobDetailModel(userId: 0, image: "", categories: [], title: "", hourlyWage: 0, content: "", address: "")
     private var mainDetailReviewData = ReviewsListModel(userID: 0, nickname: "", imageURL: "", degree: 0.0, reviews: [])
     private var jobPostsData: [PostModel] = []
@@ -70,8 +70,11 @@ final class JobDetailViewController: UIViewController {
     
     // MARK: - View Life Cycle
     
-    init(networks: [any JobDetailNetworkServiceProtocol]) {
-        self.networkServices = networks
+    init(detailNetworkServices: any JobDetailNetworkServiceProtocol, localJobsNetworkServices: any JobDetailNetworkServiceProtocol, reviewNetworkServices: any JobDetailNetworkServiceProtocol) {
+        self.detailNetworkServices = detailNetworkServices
+        self.localJobsNetworkServices = localJobsNetworkServices
+        self.reviewNetworkServices = reviewNetworkServices
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -84,31 +87,9 @@ final class JobDetailViewController: UIViewController {
         setDelegate()
         setUI()
         setLayout()
-
-        fetchMainDetailData(postId: self.postId) {
-            self.mainDetailView.passTextOfJobDetail(imageUrl: self.mainDetailData.image, titleText: self.mainDetailData.title, contentText: self.mainDetailData.content, wage: self.mainDetailData.hourlyWage)
-            self.mainDetailView.passData(categories: self.mainDetailData.categories)
-            
-            self.fetchEmployerInformation(userId: self.mainDetailData.userId) {
-                self.detailProfileView.employerProfileView.configureView(imageString: self.mainDetailReviewData.imageURL, employerName: self.mainDetailReviewData.nickname, temperature: self.mainDetailReviewData.degree)
-                self.detailReviewView.reviewPageView.passData(serverData: self.mainDetailReviewData.reviews, jobTitle: self.mainDetailData.title)
-                let cellCount = self.mainDetailReviewData.reviews.count
-                self.detailReviewView.snp.updateConstraints {
-                    $0.height.equalTo(290 + 150 * cellCount)
-                }
-                
-                self.detailReviewView.reLayoutTableView(withCountOf: cellCount)
-            }
-            
-            self.detailProfileView.kakaoMapView.passAddress(address: self.mainDetailData.address)
-            
-            let textViewHeight: CGFloat = self.mainDetailView.describingTextView.intrinsicContentSize.height
-            self.makeDetailViewDynamicHegihtOf(textViewHeight)
-        }
-        
-        fetchOtherJobsData {
-            self.detailLocalListView.passData(data: self.jobPostsData)
-        }
+        fetchMainDetailData()
+        fetchEmployerInformation()
+        fetchOtherJobsData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -208,8 +189,8 @@ extension JobDetailViewController {
 }
 
 extension JobDetailViewController {
-    private func fetchMainDetailData(postId: Int, completion: @escaping () -> Void) {
-        networkManager.fetchDetailData(postId: postId) { response in
+    private func fetchMainDetailData() {
+        detailNetworkServices.fetchDetailData(requestId: self.postId) { response in
             switch response {
             case .success(let data):
                 guard let data = data as? JobDetailListModel else { return }
@@ -221,16 +202,24 @@ extension JobDetailViewController {
                 self.mainDetailData.hourlyWage = currentData.hourlyWage
                 self.mainDetailData.content = currentData.content
                 self.mainDetailData.userId = currentData.userId
-                completion()
+                
+                self.mainDetailView.passTextOfJobDetail(imageUrl: self.mainDetailData.image, titleText: self.mainDetailData.title, contentText: self.mainDetailData.content, wage: self.mainDetailData.hourlyWage)
+                self.mainDetailView.passData(categories: self.mainDetailData.categories)
+                
+                self.detailProfileView.kakaoMapView.passAddress(address: self.mainDetailData.address)
+                
+                self.detailProfileView.kakaoMapView.passAddress(address: self.mainDetailData.address)
+                
+                let textViewHeight: CGFloat = self.mainDetailView.describingTextView.intrinsicContentSize.height
+                self.makeDetailViewDynamicHegihtOf(textViewHeight)
             default:
                 print("Network Failed - Main")
-                completion()
             }
         }
     }
     
-    private func fetchEmployerInformation(userId: Int, completion: @escaping () -> Void) {
-        networkManager.fetchReviews(employerID: userId, postCount: 3) { response in
+    private func fetchEmployerInformation() {
+        reviewNetworkServices.fetchDetailData(requestId: self.mainDetailData.userId) { response in
             switch response {
             case .success(let data):
                 guard let data = data as? JobReviewListModel else { return }
@@ -240,25 +229,31 @@ extension JobDetailViewController {
                 self.mainDetailReviewData.nickname = currentData.nickname
                 self.mainDetailReviewData.userID = currentData.userID
                 self.mainDetailReviewData.reviews = currentData.reviews
-                completion()
+                
+                self.detailProfileView.employerProfileView.configureView(imageString: self.mainDetailReviewData.imageURL, employerName: self.mainDetailReviewData.nickname, temperature: self.mainDetailReviewData.degree)
+                self.detailReviewView.reviewPageView.passData(serverData: self.mainDetailReviewData.reviews, jobTitle: self.mainDetailData.title)
+                let cellCount = self.mainDetailReviewData.reviews.count
+                self.detailReviewView.snp.updateConstraints {
+                    $0.height.equalTo(290 + 150 * cellCount)
+                }
+                
+                self.detailReviewView.reLayoutTableView(withCountOf: cellCount)
             default:
                 print("Network Failed - Employer")
-                completion()
             }
         }
     }
     
-    private func fetchOtherJobsData(completion: @escaping () -> Void) {
-        networkManager.fetchOtherJobs(postCount: 3) { response in
+    private func fetchOtherJobsData() {
+        localJobsNetworkServices.fetchDetailData(requestId: 3) { response in
             switch response {
             case .success(let data):
                 guard let data = data as? JobListsModel else { return }
                 self.jobPostsData = data.data.posts
                 
-                completion()
+                self.detailLocalListView.passData(data: self.jobPostsData)
             default:
                 print("Network Failed - OtherJobs")
-                completion()
             }
         }
     }
