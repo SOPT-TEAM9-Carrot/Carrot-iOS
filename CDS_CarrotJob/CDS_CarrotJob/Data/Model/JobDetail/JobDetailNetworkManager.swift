@@ -166,3 +166,75 @@ final class JobDetailNetworkManager {
         return .success(decodedData as Any)
     }
 }
+
+final class JobDetailGeneralDataManager: JobDetailNetworkServiceProtocol {
+    typealias PostId = Int
+    
+    func fetchDetailData(requestId: PostId, completion: @escaping (NetworkResult<Any>) -> Void) {
+        let url = "http://3.34.46.183:8080" + "/posts" + "/\(requestId)"
+        let header: HTTPHeaders = ["Content-Type": "application/json", "Authorization": "2"]
+        let dataRequest = AF.request(url, method: .get, headers: header)
+        
+        dataRequest.responseData { response in
+            switch response.result {
+            case .success:
+                guard let statusCode = response.response?.statusCode else {
+                    return }
+                guard let data = response.value else { return }
+                let networkResult = self.judgeStatus(modelType: JobDetailListModel.self, by: statusCode, data)
+                
+                completion(networkResult)
+            default:
+                completion(.networkErr)
+            }
+        }
+    }
+}
+
+final class JobDetailLocalJobsDataManager: JobDetailNetworkServiceProtocol {
+    
+    typealias PostCount = Int
+    
+    func fetchDetailData(requestId: PostCount, completion: @escaping (NetworkResult<Any>) -> Void) {
+        let url = "http://3.34.46.183:8080" + "/posts" + "/list?size=\(requestId)"
+        let header: HTTPHeaders = ["Content-Type": "application/json", "Authorization": "2"]
+        let dataRequest = AF.request(url, method: .get, headers: header)
+        
+        dataRequest.responseData { response in
+            switch response.result {
+            case .success:
+                guard let statusCode = response.response?.statusCode else { return }
+                guard let data = response.value else { return }
+                
+                let networkResult = self.judgeStatus(modelType: JobListsModel.self, by: statusCode, data)
+                completion(networkResult)
+            default:
+                completion(.networkErr)
+            }
+        }
+    }
+}
+
+final class JobDetailReviewsDataManager: JobDetailNetworkServiceProtocol {
+    
+    typealias EmployerId = Int
+    
+    func fetchDetailData(requestId: EmployerId, completion: @escaping (NetworkResult<Any>) -> Void) {
+        let url = "http://3.34.46.183:8080" + "/employer" + "/\(requestId)" + "/reviews?size=3"
+        let header: HTTPHeaders = ["Content-Type": "application/json", "Authorization": "2"]
+        let dataRequest = AF.request(url, method: .get, headers: header)
+        
+        dataRequest.responseData { response in
+            switch response.result {
+            case .success:
+                guard let statusCode = response.response?.statusCode else { return }
+                guard let data = response.value else { return }
+                
+                let networkResult = self.judgeStatus(modelType: JobReviewListModel.self, by: statusCode, data)
+                completion(networkResult)
+            default:
+                completion(.networkErr)
+            }
+        }
+    }
+}
