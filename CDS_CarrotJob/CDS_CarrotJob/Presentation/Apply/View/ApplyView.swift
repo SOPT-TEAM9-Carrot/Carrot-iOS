@@ -10,6 +10,10 @@ import UIKit
 import SnapKit
 import Then
 
+protocol TextFieldValueProtocol: AnyObject {
+    func textFieldValue(value: Bool)
+}
+
 final class ApplyView: UIView, UITextViewDelegate {
     
     // MARK: - UI Components
@@ -40,12 +44,18 @@ final class ApplyView: UIView, UITextViewDelegate {
     let applyButton = OrangeUIButton()
     private let introduceView = UIView()
     
+    // MARK: - Properties
+    
+    private var textFieldValue: Bool?
+    weak var textFieldValueDelegate: TextFieldValueProtocol?
+    
     // MARK: - View Life Cycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUI()
         setLayout()
+        setDelegate()
         introduceTextView.delegate = self
     }
     
@@ -82,6 +92,7 @@ extension ApplyView {
             $0.layer.borderWidth = 1
             $0.layer.borderColor = Color.gray6.cgColor
             $0.setLeftPaddingPoints(8)
+            $0.font = UIFont.notoSansFont(weightOf: .Medium, sizeOf: .font14)
             $0.attributedPlaceholder = NSAttributedString(
                 string: "당근마켓",
                 attributes: [NSAttributedString.Key.foregroundColor: Color.gray5])
@@ -104,10 +115,12 @@ extension ApplyView {
             $0.layer.cornerRadius = 3
             $0.layer.borderWidth = 1
             $0.layer.borderColor = Color.gray6.cgColor
+            $0.font = UIFont.notoSansFont(weightOf: .Medium, sizeOf: .font14)
             $0.setLeftPaddingPoints(8)
             $0.attributedPlaceholder = NSAttributedString(
                 string: "010 6686 5237",
-                attributes: [NSAttributedString.Key.foregroundColor: Color.gray5])
+                attributes: [NSAttributedString.Key.foregroundColor: Color.gray5]
+            )
             $0.keyboardType = .numberPad
         }
         genderLabel.do {
@@ -142,13 +155,14 @@ extension ApplyView {
             $0.layer.borderWidth = 1
             $0.layer.borderColor = Color.gray6.cgColor
             $0.setLeftPaddingPoints(8)
+            $0.font = UIFont.notoSansFont(weightOf: .Medium, sizeOf: .font14)
             $0.attributedPlaceholder = NSAttributedString(
-                string: "오이마켓",
+                string: "2023",
                 attributes: [NSAttributedString.Key.foregroundColor: Color.gray5])
             $0.keyboardType = .numberPad
         }
         birthDayWarningLabel.do {
-            $0.text = "ex)2023"
+//            $0.text = "ex)2023"
             $0.textAlignment = .center
             $0.font = .notoSansFont(weightOf: .Bold, sizeOf: .font12)
             $0.textColor = Color.errorRed
@@ -321,9 +335,39 @@ extension ApplyView {
         }
     }
     
+    // MARK: - Methods
+    
     func appllyButton() {
         fetchProfile()
     }
+    
+    private func setDelegate() {
+        nameTextField.delegate = self
+        phoneNumberTextField.delegate = self
+        birthDayLabelTextField.delegate = self
+    }
+    
+    private func isTextFieldValue() {
+        guard let name = nameTextField.text else { return }
+        guard let phoneNumber = phoneNumberTextField.text else { return }
+        guard let birthday = birthDayLabelTextField.text else { return }
+        let text = name + phoneNumber + birthday
+        print(text)
+        if !text.isEmpty {
+            textFieldValue = true
+        } else if text.isEmpty {
+            textFieldValue = false
+            print("Asdfakje;ilfja;liejf;laj")
+        }
+    }
+    
+    func sendTextFieldValue() {
+        isTextFieldValue()
+        guard let textFieldValue else { return }
+        textFieldValueDelegate?.textFieldValue(value: textFieldValue)
+    }
+    
+    // MARK: - @objc Methods
     
     @objc
     func appllyButtonTapped() {
@@ -386,5 +430,32 @@ extension ApplyView {
                 return
             }
         }
+    }
+}
+
+extension ApplyView: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderColor = Color.mainColor1.cgColor
+        textField.textColor = Color.mainColor1
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        textField.layer.borderColor = Color.mainColor1.cgColor
+        return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        textField.layer.borderColor = Color.mainColor1.cgColor
+        return true
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        guard let text = textField.text else { return true }
+        if text.isEmpty {
+            textField.layer.borderColor = Color.gray5.cgColor
+        }
+        isTextFieldValue()
+        return true
     }
 }

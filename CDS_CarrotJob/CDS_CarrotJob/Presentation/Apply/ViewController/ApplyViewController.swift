@@ -11,14 +11,13 @@ import Alamofire
 import SnapKit
 import Then
 
-final class ApplyViewController: UIViewController {
+final class ApplyViewController: UIViewController, ExitPopupDelegate {
     
     // MARK: - UI Components
     private let scrollView = UIScrollView()
     private let contentView = UIView()
     private let applyView = ApplyView()
     private let navigationView = ApplyNavigaitionBarView()
-    // MARK: - Properties
     
     // MARK: - Initializer
     
@@ -59,7 +58,7 @@ extension ApplyViewController {
     // MARK: - Layout Helper
     
     private func setLayout() {
-        view.addSubviews( navigationView, scrollView)
+        view.addSubviews(navigationView, scrollView)
         
         navigationView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide)
@@ -91,11 +90,18 @@ extension ApplyViewController {
         self.view.endEditing(true)
     }
     
+    func didExit() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     // MARK: - @objc Methods
     
     @objc
     private func popTapped() {
-        self.navigationController?.popViewController(animated: true)
+        let popupVC = ExitPopupViewController()
+        popupVC.modalPresentationStyle = .overFullScreen
+        popupVC.delegate = self
+        self.present(popupVC, animated: true)
     }
     
     @objc
@@ -104,5 +110,4 @@ extension ApplyViewController {
         print("Post 안된채로 PopToRootView!")
         self.navigationController?.popToRootViewController(animated: true)
     }
-
 }

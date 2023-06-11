@@ -149,7 +149,7 @@ extension DetailReviewPagingView {
     func passData(serverData: [DetailReviewModel], jobTitle: String) {
         let dataCount = serverData.count
         
-        (0...dataCount-1).forEach { index in
+        (0..<dataCount-1).forEach { index in
             let data = serverData[index]
             let reviewData: CustomReviewModel = .init(jobTitle: jobTitle, reviewerName: data.reviewerName, comment: data.comment, imageURL: data.imageURL)
             

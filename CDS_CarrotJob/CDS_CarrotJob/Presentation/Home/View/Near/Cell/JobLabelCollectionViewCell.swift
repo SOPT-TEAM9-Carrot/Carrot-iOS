@@ -20,8 +20,11 @@ final class JobLabelCollectionViewCell: UICollectionViewCell {
     
     // MARK: - UI Components
     
+    private let mediumConfig = UIImage.SymbolConfiguration(pointSize: 12, weight: .regular, scale: .default)
     private let titleLabel = UILabel()
     private let titleImage = NSTextAttachment()
+    private let calenderImage = NSTextAttachment()
+//    private let calender = UIImage(systemName: "calender", withConfiguration: mediumConfig)!
     
     // MARK: - View Life Cycle
     
@@ -58,6 +61,10 @@ extension JobLabelCollectionViewCell {
         titleImage.do {
             $0.image = Image.blackArrow
         }
+        
+        calenderImage.do {
+            $0.image = UIImage(systemName: "calender")
+        }
     }
     
     // MARK: - Layout Helper
@@ -77,17 +84,35 @@ extension JobLabelCollectionViewCell {
     
     func setDataBind(model: JobLabelModel) {
         let string = NSMutableAttributedString(string: model.title + "  ")
-        setImageColor(isSelected)
         let img = NSAttributedString(attachment: titleImage)
         // 도데체 왜 이 spacing이 적용이안되는지 도무지도무지 정말 모르겠어여
         titleLabel.labelWithImg(composition: string, img, spacing: 6)
     }
     
+    func setCalendarDataBind(model: JobLabelModel) {
+        let string = NSMutableAttributedString(string: "  " + model.title)
+        let mediumConfig = UIImage.SymbolConfiguration(pointSize: 14, weight: .regular, scale: .default)
+        let calendarImage = UIImage(systemName: "calendar", withConfiguration: mediumConfig)?.withTintColor(Color.gray2)
+        let imageAttachment = NSTextAttachment()
+        imageAttachment.image = calendarImage
+        let imageString = NSAttributedString(attachment: imageAttachment)
+        string.insert(imageString, at: 0)
+        titleLabel.labelWithImg(composition: string, spacing: 6)
+    }
+
     private func setImageColor(_ isSelected: Bool) {
         if isSelected {
             titleImage.image = Image.whiteArrow
         } else {
             titleImage.image = Image.blackArrow
+        }
+    }
+    
+    private func setCalenderColor(_ isSelected: Bool) {
+        if isSelected {
+            calenderImage.image?.withTintColor(Color.white)
+        } else {
+            calenderImage.image?.withTintColor(Color.gray2)
         }
     }
     
@@ -97,11 +122,13 @@ extension JobLabelCollectionViewCell {
             titleLabel.textColor = Color.white
             layer.borderWidth = 0
             setImageColor(isSelected)
+            setCalenderColor(isSelected)
         } else {
             contentView.backgroundColor = Color.white
             titleLabel.textColor = Color.gray1
             layer.borderWidth = 1
             setImageColor(isSelected)
+            setCalenderColor(isSelected)
         }
     }
 }
